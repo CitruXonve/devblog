@@ -1,7 +1,8 @@
 ---
 title: 10Gbps+ Ethernet Essentials
 tags:
-    - Ubuntu
+  - Ubuntu
+abbrlink: 877bbff9
 date: 2021-07-21 21:10:00
 ---
 

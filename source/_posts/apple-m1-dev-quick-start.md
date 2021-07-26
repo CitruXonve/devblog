@@ -1,7 +1,8 @@
 ---
 title: Apple M1 Development Quick-start
 tags:
-    - Mac
+  - Mac
+abbrlink: 844d69fa
 date: 2021-07-22 17:56:00
 ---
 

@@ -23,7 +23,7 @@
 	branch = master
 [submodule "themes/icarus"]
 	path = themes/icarus
-	url = https://github.com/ppoffice/hexo-theme-icarus.git
+	url = https://github.com/ppoffice/hexo-theme-icarus/
 [submodule "themes/indigo"]
 	path = themes/indigo
 	url = https://github.com/yscoder/hexo-theme-indigo

@@ -1,7 +1,8 @@
 ---
 title: Soft Router Solution on Ubuntu Server 20.04
 tags:
-    - Ubuntu
+  - Ubuntu
+abbrlink: b09b6fb9
 date: 2021-07-21 22:31:00
 ---
 
