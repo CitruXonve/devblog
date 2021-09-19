@@ -8,6 +8,8 @@ abbrlink: '92383761'
 date: 2021-02-23 23:09:41
 ---
 
+TL;DR
+
 ## What?
 
 A container is an executable unit of software in which application code is packaged (encapsulated), along with its libraries and dependencies, in common ways so that it can be run anywhere, whether
@@ -25,6 +27,8 @@ Benefits: isolates processes; controls resources allocated to them; small, fast 
 
 - Containers are small and lightweight, which makes them a good match for microservice architectures where applications are constructed of many loosely coupled and independently deployable smaller services.
 - The combination of a microservices architecture and containers is a common foundation for many teams that embrace DevOps as the way they build, ship, and run software.
+
+<!--more-->
 
 ### Orchestration
 

@@ -7,7 +7,7 @@
 
 ## Prerequisites
 
-- Node.js 11.x+ (recommended)
+- Node.js 12.x+ (**required**, [here is why](https://stackoverflow.com/questions/67516168/i-just-installed-hexo-static-site-generator-on-debian-and-ran-hexo-server-to-see))
 - [Hexo](https://hexo.io) 5.4.0 (recommended)
 - [Hexo Theme Icarus](https://github.com/ppoffice/hexo-theme-icarus/)
 
@@ -31,7 +31,8 @@ git submodule update --init --recursive --remote
 * Replace the `url: '__BASE_URL__'` by `https://localhost:4000/` to suppress syntax error!!
 
 ```bash
-hexo g
+[hexo clean]
+[hexo g]
 hexo s
 ```
 

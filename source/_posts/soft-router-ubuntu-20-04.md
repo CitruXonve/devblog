@@ -34,6 +34,8 @@ sudo systemctl enable hostapd
 sudo systemctl status hostapd
 ```
 
+<!--more-->
+
 ## Configurations
 
 - `Netplan` wraps the basic network interface configuration using `networkd` / `NetworkManager` as renderer.
@@ -74,11 +76,17 @@ or
 
 > route -n
 
-> sudo ip route add [CIDR] via [gateway_ip] dev[interface] metric [metric_value]
+> sudo ip route add [CIDR] via [gateway_ip] dev [interface] metric [metric_value]
 
-- Check in-bound traffic restrictions
+- Quick firewall rule setup
+
+Potential effect on incoming connection: `Operation timed out`.
+
+> sudo ufw allow [port_range]/[protocol]
 
 > sudo ufw allow from [CIDR]
+
+> sudo ufw allow [in|out on [interface]] [proto [protocol]] [from any|[CIDR] port [port_range]] [to any|[CIDR] port [port_range]]
 
 - Check IP forwarding and NAT
 

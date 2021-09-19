@@ -10,6 +10,8 @@ abbrlink: 541fef6d
 date: 2021-03-05 21:57:53
 ---
 
+TL;DR
+
 ## Data Analytics at a Glance
 
 **Analysis** is a detailed examination of something in order to understand its nature or determine its essential features. Data analysis is the process of compiling, processing, and analyzing data so that you can use it to make decisions.
@@ -27,6 +29,8 @@ The challenges identified in many data analysis solutions can be summarized by f
 - Semi-structured data is often stored in a series of key-value pairs that are grouped into elements within a file. *Often stored in NoSQL databases or CSV, XML or JSON files.*
 
 - Unstructured data is not structured in a consistent way. Some data may have structure similar to semi-structured data but others may only contain metadata. *Often takes the form of files or objects.*
+
+<!--more-->
 
 ## Volume – data storage
 When businesses have more data than they are able to process and analyze, they have a volume problem.
@@ -73,8 +77,7 @@ A subset of data from a data warehouse is called a data mart. Data marts only fo
 |---|---|---|
 |Data|Relational from transactional systems, operational databases, and line of business applications|Non-relational and relational from IoT devices, websites, mobile apps, social media, and corporate applications|
 |Schema|Designed prior to implementation (schema-on-write); Written at the time of analysis |(schema-on-read)|
-|Price/
-performance|Fastest query results using higher cost storage|Query results getting faster using low-cost storage|
+|Price/performance|Fastest query results using higher cost storage|Query results getting faster using low-cost storage|
 |Data quality|Highly curated data that serves as the central version of the truth|Any data, which may or may not be curated (e.g., raw data)|
 |Users|Business analysts|Data scientists, data developers, and business analysts (using curated data)|
 |Analytics|Batch reporting, BI, and visualizations|Machine learning, predictive analytics, data discovery, and profiling.|
@@ -82,14 +85,15 @@ performance|Fastest query results using higher cost storage|Query results gettin
 #### Amazon Redshift
 
 Amazon Redshift lets you set up and deploy a new data warehouse in minutes. Recommended storing massive amounts of structured data for complex analysis. It’s built to store and query datasets ranging from gigabytes to petabytes in size. Scalable and 10x performance vs traditional ones.
-	Benefits of Amazon Redshift
-	Faster performance
-	  10x faster than other data warehouses
-	Easy to set up, deploy, and manage
-	Secure
-	Scales quickly to meet your needs
+- Benefits of Amazon Redshift
+- Faster performance
+	- 10x faster than other data warehouses
+- Easy to set up, deploy, and manage
+- Secure
+- Scales quickly to meet your needs
 	
-Traditional data warehousing: pros and cons
+Traditional data warehousing: pros and cons:
+
 |Pros	|Cons|
 |---|---|
 |Fast data retrieval	|Costly to implement|
@@ -103,7 +107,7 @@ a tool for creating ETL operations called Amazon EMR. Amazon EMR is a managed Ha
 
 Hadoop supports rapid data transfers, which means you can speed up the processing time for complex queries. Whether you use Hadoop on-premises or Amazon EMR, you will use the same tools, with one major exception: Amazon EMR uses its own file system. And that means you can use your Amazon S3 data lake as the data store.
 
-Data storage on a BIG scale
+Data storage on a BIG scale:
 - When storing individual objects or files, we recommend Amazon S3.
 - When storing massive volumes of data, both semistructured and unstructured, we recommend building a data lake on Amazon S3.
 - When storing massive amounts of structured data for complex analysis, we recommend storing your data in Amazon Redshift.

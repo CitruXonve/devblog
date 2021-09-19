@@ -1,8 +1,9 @@
 ---
 title: How to backup LinkedIn saved posts manually
-date: 2021-08-03 22:10:36
 tags:
-    - js
+  - js
+abbrlink: 1cf8d649
+date: 2021-08-03 22:10:36
 ---
 
 ## What?
@@ -44,6 +45,8 @@ Code snippet for saving data as a downloadable JSON file ([source](http://bgrins
 ```
 
 This line looks weird, just an ad-hoc cure when the error of `undefined $` occurs with the arrow function operating on the jQuery selector. The cause of error still remains a mystery...
+
+<!--more-->
 
 ```javascript
 const jq = $

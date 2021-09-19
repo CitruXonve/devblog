@@ -10,6 +10,8 @@ abbrlink: 115e2ac7
 date: 2021-02-20 16:29:06
 ---
 
+TL;DR
+
 ## AWS IaaS
 
 ### Amazon S3
@@ -33,6 +35,8 @@ RDS Backups are automated, daily full backup; transaction logs are backed-up eve
 
 RDS can have up to 5 read replicas, within AZ, cross AZ or cross origin. Async replication. Reads are eventually consistent. Replicas can be promoted. **It is possible to setup multi-AZ read replicas for Disaster Recovery(DR).**
 
+<!--more-->
+
 ### DynamoDB
 
 DynamoDB is fully-managed scalable, fast and predictable performance NoSQL database. High availability and durability by 3 geographic replicas for each table. Eventually consistent or strong consistent choices. Secondary index for queries other than partition key and sort key.
@@ -50,8 +54,8 @@ SNS is kind of like SQS but SNS has topics and those topics can have subscribers
 
 ### IAM
 
-Users or Groups are attached to Policies.
-Services assume Roles to gain access to other services, and roles have policies.
+**Users or Groups are attached to Policies.**
+**Services assume Roles to gain access to other services, and roles have policies.**
 
 ## AWS Storage
 

@@ -6,6 +6,8 @@ abbrlink: 288a795e
 date: 2021-03-13 15:01:06
 ---
 
+TL;DR
+
 ### Cache is to reduce latency in the system.
 
 Cache prefers immutable or static data. 
@@ -27,6 +29,8 @@ delete() request both operations into caches and DBs; upon DB changed, trigger s
 ### Consistent hashing
 
 Consistent hashing maximizes the cache hits when adding and removing cache nodes; minimizes key re-distribution; mitigate hotkey problem
+
+<!--more-->
 
 Clockwise walk logic: Consider (partition a circle) placing nodes on a imaginary circle and distribute evenly in the clockwise direction. Hashing function can put them. When determining which node a request should go to, walk from the key location on the cycle, in that direction and encounter the nearest server.
 
