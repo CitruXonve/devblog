@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Category: Programing - CitruXonve&#039;s another far end</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="CitruXonve&#039;s another far end"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CitruXonve&#039;s another far end"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="CitruXonve&#039;s another far end"><meta property="og:url" content="https://devblog.citruxonve.net/"><meta property="og:site_name" content="CitruXonve&#039;s another far end"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://devblog.citruxonve.net/img/og_image.png"><meta property="article:author" content="CitruXonve"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://devblog.citruxonve.net"},"headline":"CitruXonve's another far end","image":["https://devblog.citruxonve.net/img/og_image.png"],"author":{"@type":"Person","name":"CitruXonve"},"publisher":{"@type":"Organization","name":"CitruXonve's another far end","logo":{"@type":"ImageObject","url":"https://devblog.citruxonve.net/img/logo.svg"}},"description":null}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="CitruXonve&#039;s another far end" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">CrXon Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Icarus Theme on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li><a href="/categories/ACM-ICPC/">ACM-ICPC</a></li><li class="is-active"><a href="#" aria-current="page">Programing</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-27T11:15:11.000Z" title="7/27/2015, 11:15:11 AM">07/27/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.643Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">21 minutes read (About 3109 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/78189e73/">ZOJ Monthly, July 2015</a></h1><div class="content"><h1 id="B-Help-Bob"><a href="#B-Help-Bob" class="headerlink" title="B.Help Bob"></a>B.Help Bob</h1><blockquote>
+<p>Time Limit: 2 Seconds      Memory Limit: 65536 KB    </p>
+<ul>
+<li><p>Problem Description<br>There is a game very popular in ZJU at present, Bob didn’t meant to participate in it. But he decided to join it after discovering a lot of pretty girls playing it.<br>There are n stones on the ground and they are marked as 1 to n respectively. There will be 2 players in each competition. And the game rules are simple, A and B take turns to move. Each round, one of them can only take 1 number away, and then pick out all the divisors of the choosed number. When anyone who can not take away 1 number any longer, he will fail the whole game.   </p>
+</li>
+<li><p>Input<br>There are multiple cases. Each case include an integer number n (0 ≤ n ≤ 100).   </p>
+</li>
+<li><p>Output<br>For each case, A win, output “win”. If not, output”fail”.   </p>
+</li>
+<li><p>Sample Input<br>3<br>4   </p>
+</li>
+<li><p>Sample Output<br>win<br>win   </p>
+</li>
+</ul>
+</blockquote>
+<p>乍一看是博弈，其实啥都没！问题中的决策不一定最优，只要求获胜的可能……<br>[code lang=”java”]<br>import java.io.<em>;<br>import java.util.</em>;<br>public class Main {<br>    public static void main(String[] args) throws IOException {<br>        StreamTokenizer in=new StreamTokenizer(new BufferedInputStream(System.in));<br>        PrintWriter out=new PrintWriter(System.out);<br>        while(in.nextToken()!=StreamTokenizer.TT_EOF){<br>            int n=(int)in.nval;<br>            if (n==0) out.println(&quot;fail&quot;);<br>            else out.println(&quot;win&quot;);<br>        }<br>        out.flush();<br>        out.close();<br>    }<br>}<br>[/code]</p>
+<h1 id="E-The-Exchange-of-Items"><a href="#E-The-Exchange-of-Items" class="headerlink" title="E.The Exchange of Items"></a>E.The Exchange of Items</h1><blockquote>
+<p>Time Limit: 2 Seconds      Memory Limit: 65536 KB   </p>
+<ul>
+<li><p>Problem Description<br>Bob lives in an ancient village, where transactions are done by one item exchange with another. Bob is very clever and he knows what items will become more valuable later on. So, Bob has decided to do some business with villagers.<br>At first, Bob has N kinds of items indexed from 1 to N, and each item has Ai. There are M ways to exchanges items. For the ith way (Xi, Yi), Bob can exchange one Xith item to one Yith item, vice versa. Now Bob wants that his ith item has exactly Bi, and he wonders what the minimal times of transactions is.   </p>
+</li>
+<li><p>Input<br>There are multiple test cases.<br>For each test case: the first line contains two integers: N and M (1 &lt; = N, M &lt;= 100).<br>The next N lines contains two integers: Ai and Bi (1 &lt; = Ai, Bi &lt;= 10,000).<br>Following M lines contains two integers: Xi and Yi (1 &lt; = Xi, Yi &lt;= N).<br>There is one empty line between test cases.   </p>
+</li>
+<li><p>Output<br>For each test case output the minimal times of transactions. If Bob could not reach his goal, output -1 instead.   </p>
+</li>
+<li><p>Sample Input<br>2 1<br>1 2<br>2 1<br>1 2   </p>
+</li>
+</ul>
+<p>4 2<br>1 3<br>2 1<br>3 2<br>2 3<br>1 2<br>3 4   </p>
+<ul>
+<li>Sample Output<br>1<br>-1   </li>
+</ul>
+</blockquote>
+<p>被这题的思维折腾哭了啊，从不可行的二分图，到搜索以及最短路径，再到乱七八糟的区间DP，不知多晚才拾起网络流……<br>伪最短路，RE<br>[code lang=”java”]<br>import java.io.<em>;<br>import java.util.</em>;<br>public class Main {<br>    static int[] a,f;<br>    static int[][] E;<br>    static int maxstep=10000;<br>    static int n,m;<br>    final static int pri=17;<br>    static int hashCode(int[] a){<br>        int s1=0,s2=0;<br>        int len=a.length;<br>        /<em>for(int i=0;i&lt;len;i++){<br>            s1</em>=19;<br>            s1+=a[i]%19;<br>        }<em>/<br>        for(int i=0;i&lt;len;i++){<br>            s2</em>=pri;<br>            s2+=Math.abs(a[i])%pri;<br>        }<br>        return s2;<br>    }<br>    static int spfa(int[] st){<br>        HashMap&lt;Integer, Integer&gt; mp=new HashMap&lt;Integer, Integer&gt;();<br>        BitSet vis=new BitSet();<br>        Queue&lt;int[]&gt; que=new LinkedList&lt;int[]&gt;();<br>        que.add(st);<br>        mp.put(hashCode(st), 0);<br>        vis.set(hashCode(st));<br>        while(!que.isEmpty()){<br>            int[] u=que.poll();<br>            int p=mp.get(hashCode(u));<br>            if (p&gt;=maxstep) return -1;<br>            for(int i=1;i&lt;=m;i++){<br>                int[] v=u.clone();<br>                v[E[0][i]]–;<br>                v[E[1][i]]++;<br>                int hv=hashCode(v);<br>                if (hv==0) return p+1;<br>                if (que.contains(v)){<br>                    int q=mp.get(hv);<br>                    if (p+1&lt;q){<br>                        //vis.replace(hv, p+1);<br>                        mp.remove(hv);<br>                        mp.put(hv, p+1);<br>                        if (!vis.get(hv)){<br>                            que.add(v);<br>                            vis.set(hv);<br>                        }<br>                    }<br>                }<br>                else{<br>                    mp.put(hv, p+1);<br>                    if (!vis.get(hv)){<br>                        que.add(v);<br>                        vis.set(hv);<br>                    }<br>                }<br>            }<br>        }<br>        return -1;<br>    }<br>    public static void main(String[] args) throws IOException {<br>        // TODO Auto-generated method stub<br>        StreamTokenizer in=new StreamTokenizer(new BufferedInputStream(System.in));<br>        PrintWriter out=new PrintWriter(System.out);<br>        while(in.nextToken()!=StreamTokenizer.TT_EOF){<br>            n=(int)in.nval;<br>            in.nextToken();<br>            m=(int)in.nval;<br>            a=new int[n+1];<br>            for(int i=1;i&lt;=n;i++){<br>                in.nextToken();<br>                int x=(int)in.nval;<br>                in.nextToken();<br>                int y=(int)in.nval;<br>                a[i]=y-x;<br>            }<br>            E=new int[2][m+1];<br>            for(int i=1;i&lt;=m;i++){<br>                in.nextToken();<br>                int u=(int)in.nval;<br>                in.nextToken();<br>                int v=(int)in.nval;<br>                E[0][i]=u;E[1][i]=v;<br>                //a[u]–;a[v]++;out.println(hashCode(a));<br>            }<br>            int res=spfa(a);<br>            out.println(res);<br>            out.flush();<br>        }<br>        out.close();<br>    }<br>}<br>[/code]<br>最小费用流，AC<br>[code lang=”java”]<br>import java.io.BufferedInputStream;<br>import java.io.BufferedReader;<br>import java.io.IOException;<br>import java.io.InputStream;<br>import java.io.InputStreamReader;<br>import java.io.OutputStreamWriter;<br>import java.io.PrintWriter;<br>import java.io.StreamTokenizer;<br>import java.math.BigInteger;<br>import java.util.ArrayList;<br>import java.util.Arrays;<br>import java.util.Comparator;<br>import java.util.HashMap;<br>import java.util.LinkedList;<br>import java.util.PriorityQueue;<br>import java.util.Queue;<br>import java.util.Scanner;<br>import java.util.Stack;<br>import java.util.StringTokenizer;</p>
+<p>import com.sun.org.apache.regexp.internal.recompile;</p>
+<p>public class Main {</p>
+<pre><code>public static void main(String[] args) throws IOException&#123;
+        StreamTokenizer cin = new StreamTokenizer(new BufferedInputStream(System.in)); 
+        InputReader in = new InputReader(System.in)  ;
+        PrintWriter out = new PrintWriter(System.out) ;
+
+        while(cin.nextToken() != cin.TT_EOF)&#123;
+                 new Task().solve(cin, out)  ;   //out.flush() ;
+        &#125;
+
+       out.flush() ;
+
+        /*
+        int t = in.nextInt() ;
+        while(t-- &amp;gt; 0)&#123;
+                  new Task().solve(in , out)  ;
+        &#125;
+        out.flush() ; 
+        */
+&#125;
+</code></pre><p>}</p>
+<p>class Task{</p>
+<pre><code>static  int[] a = new int[108] ;
+static  int[] b = new int[108] ;
+
+static  ArrayList&amp;lt;Integer&amp;gt;[] adj = new ArrayList[108] ;
+
+static  ArrayList&amp;lt;Integer&amp;gt;[] colorg = new ArrayList[108]  ;
+static  int[] color = new int[108] ;
+
+void dfs(int u , int c)&#123;
+         color[u] = c ;
+         colorg[c].add(u) ;
+         for(int v : adj[u])&#123;
+                if(color[v] == -1) dfs(v , c) ; 
+         &#125;
+&#125;
+
+
+int[]  dist = new int[108] ;
+boolean[] in = new boolean[108] ;
+
+void  spfa(int s)&#123;
+          Arrays.fill(dist, Integer.MAX_VALUE) ;
+          dist[s] = 0 ;
+          Arrays.fill(in, false) ;
+          in[s] = true ;
+          Queue&amp;lt;Integer&amp;gt; q = new LinkedList&amp;lt;Integer&amp;gt;() ;
+          q.add(s) ;
+          while(! q.isEmpty())&#123;
+                  int u = q.poll()  ;   in[u] = false ;
+                  for(int v : adj[u])&#123;
+                            if(dist[u] + 1 &amp;lt; dist[v])&#123;
+                                   dist[v] = dist[u] + 1 ;
+                                   if(! in[v])&#123;
+                                           in[v] = true ; q.add(v) ;
+                                   &#125;
+                            &#125;
+                  &#125;
+          &#125;
+&#125;
+
+ public void solve(StreamTokenizer  cin , PrintWriter out) throws IOException&#123;
+           int n =  (int) cin.nval ;
+           cin.nextToken() ; int m = (int) cin.nval ;
+
+           for(int i = 1 ; i &amp;lt;= n ; i++)&#123;
+                      cin.nextToken() ; a[i] = (int) cin.nval ;
+                   cin.nextToken() ; b[i] = (int) cin.nval ;
+           &#125;
+
+
+           for(int i = 1 ; i &amp;lt;= n ; i++) adj[i] = new ArrayList&amp;lt;Integer&amp;gt;() ;
+
+
+           while(m-- &amp;gt; 0)&#123;
+                  cin.nextToken() ;  int u = (int) cin.nval ;
+                  cin.nextToken() ;  int v = (int) cin.nval ;
+                  adj[u].add(v) ;
+                  adj[v].add(u) ;
+           &#125;
+
+           Arrays.fill(color, -1) ;
+           for(int i = 0 ; i &amp;lt;= n ; i++) colorg[i] = new ArrayList&amp;lt;Integer&amp;gt;() ;
+
+           int k = 0 ; 
+           for(int i = 1 ; i &amp;lt;= n ; i++)&#123;
+                  if(color[i] == -1)&#123;
+                        dfs(i , k++) ;
+                  &#125;
+           &#125;
+
+           int sum = 0 ;
+           for(int i = 0 ; i &amp;lt; k ; i++)&#123;
+                    int sa = 0 , sb = 0 ;
+                    for(int u : colorg[i])&#123;
+                             sa += a[u] ;
+                             sb += b[u] ;
+                             sum += Math.abs(a[u] - b[u]) ;
+                    &#125;
+                    if(sa != sb)&#123;
+                            out.println(-1) ;
+                             return  ;
+                    &#125; 
+           &#125;
+
+              ArrayList&amp;lt;Integer&amp;gt; adx = new ArrayList&amp;lt;Integer&amp;gt;() ; 
+              ArrayList&amp;lt;Integer&amp;gt; ady = new ArrayList&amp;lt;Integer&amp;gt;() ; 
+              for(int i = 1 ; i &amp;lt;= n ; i++)&#123;
+                      if(a[i] &amp;gt; b[i]) 
+                              adx.add(i) ;
+                      else if(a[i] &amp;lt; b[i])
+                              ady.add(i) ;       
+              &#125;
+
+
+              int N= adx.size() ;
+              int M= ady.size() ;
+              Mincostflow mcf = new Mincostflow(0 , 2*N+2*M+1)  ;
+
+              for(int i = 1 ; i &amp;lt;= N ; i++)&#123;
+                     int u = adx.get(i-1) ; 
+                     mcf.add(i, N + i, a[u] - b[u] , 0)  ;
+                     mcf.add(0, i, Integer.MAX_VALUE , 0) ;
+              &#125;
+
+              for(int i = 1 ; i &amp;lt;= M ; i++)&#123;
+                     int u = ady.get(i-1) ; 
+                     mcf.add(2*N + i, 2*N +  M +  i, b[u] - a[u] , 0 )  ;
+                     mcf.add(2*N+M+i , 2*N+2*M+1, Integer.MAX_VALUE , 0) ;
+              &#125;
+
+              for(int i = 1 ; i &amp;lt;= adx.size() ; i++)&#123;
+                      int u = adx.get(i-1) ;
+                      spfa(u) ;
+
+                      for(int j = 1 ; j &amp;lt;= ady.size() ; j++)&#123;
+                              int v = ady.get(j-1) ;
+                              if(dist[v] == Integer.MAX_VALUE) continue ;           
+                              mcf.add(N+i, 2*N+j, Integer.MAX_VALUE, dist[v] )  ;
+                      &#125;
+
+              &#125;
+
+
+
+              out.println(mcf.mincostflow()) ;
+
+
+ &#125;
+</code></pre><p>}</p>
+<p>class Mincostflow{</p>
+<pre><code>public Mincostflow(int sourse , int meet)&#123;
+             this.source = sourse ;
+             this.meet = meet ;
+             Arrays.fill(g, 0) ;
+             id = 1 ;
+&#125;
+
+static final int maxn = 5000 , maxm = 50000 ;
+static class Edge&#123;
+       int v , f , w , next ;
+       Edge()&#123;&#125;
+       Edge(int _v , int _f , int _w , int _next)&#123;
+                this.v = _v ;
+                this.f = _f ;
+                this.w = _w ;
+                this.next = _next ;
+       &#125;
+&#125;
+
+static int[]  g = new int[maxn + 10] ;
+static Edge[] e = new Edge[maxm + 10] ;
+int  source , meet ;
+int  id ;
+
+void  add(int u , int v  , int f , int w)&#123;
+      e[++id] = new Edge(v , f , w , g[u]) ;
+      g[u] = id ;
+      e[++id] = new Edge(u , 0 , -w , g[v]) ;
+      g[v] = id ;
+&#125;
+
+Queue&amp;lt;Integer&amp;gt; que  = new LinkedList&amp;lt;Integer&amp;gt;() ;
+static boolean[] in = new boolean[maxn + 10] ;
+static int[]  dist = new int[maxn + 10] ;
+static int[]  pv = new int[maxn + 10] ;
+static int[]  pe = new int[maxn + 10] ;
+
+boolean bfs()&#123;
+     while(! que.isEmpty()) que.poll() ;
+     que.add(source) ;
+     Arrays.fill(dist, Integer.MAX_VALUE) ;
+     dist[source] = 0  ;
+     in[source] = true ;
+     while(! que.isEmpty())&#123;
+           int u = que.poll() ;
+           in[u] = false ;
+           for(int i = g[u] ; i &amp;gt; 0; i = e[i].next)&#123;
+                int  v = e[i].v ;
+                if(e[i].f &amp;gt; 0 &amp;amp;&amp;amp; dist[u] + e[i].w &amp;lt; dist[v])&#123;
+                      dist[v] = dist[u] + e[i].w ;
+                      pv[v] = u ;
+                      pe[v] = i ;
+                      if(! in[v])&#123;
+                            in[v] = true ;  que.add(v) ;
+                      &#125;
+                &#125;
+           &#125;
+     &#125;
+     return  dist[meet] &amp;lt; Integer.MAX_VALUE  ;
+&#125;
+
+int  augment()&#123;
+     int u = meet  ;
+     int delta = Integer.MAX_VALUE ;
+     while(u != source)&#123;
+           delta = Math.min(delta , e[pe[u]].f) ;
+           u = pv[u] ;
+     &#125;
+     u = meet ;
+     while(u != source)&#123;
+           e[pe[u]].f -= delta ;
+           e[pe[u] ^ 1].f += delta ;
+           u = pv[u] ;
+     &#125;
+     return dist[meet] * delta ;
+&#125;
+
+int  mincostflow()&#123;
+     int ans = 0 ;
+     while(bfs())  ans += augment() ;
+     return ans ;
+&#125;
+</code></pre><p>}</p>
+<p>class InputReader{<br>    public BufferedReader reader;<br>    public StringTokenizer tokenizer;</p>
+<pre><code>public InputReader(InputStream stream)&#123;
+       reader = new BufferedReader(new InputStreamReader(stream), 32768);
+       tokenizer = null;
+&#125;
+
+public String next()&#123;
+    while(tokenizer == null || !tokenizer.hasMoreTokens())&#123;
+        try&#123;
+            tokenizer = new StringTokenizer(reader.readLine());
+        &#125;catch (IOException e) &#123;
+            throw new RuntimeException(e);
+        &#125;
+    &#125;
+    return tokenizer.nextToken();
+&#125;
+
+public int nextInt() &#123;
+    return Integer.parseInt(next());
+&#125;
+
+public long nextLong() &#123;
+    return Long.parseLong(next());
+&#125;
+</code></pre><p>}<br>[/code]</p>
+<h1 id="H-Twelves-Monkeys"><a href="#H-Twelves-Monkeys" class="headerlink" title="H.Twelves Monkeys"></a>H.Twelves Monkeys</h1><blockquote>
+<p>Time Limit: 5 Seconds      Memory Limit: 32768 KB   </p>
+<ul>
+<li><p>Problem Description<br>James Cole is a convicted criminal living beneath a post-apocalyptic Philadelphia. Many years ago, the Earth’s surface had been contaminated by a virus so deadly that it forced the survivors to move underground. In the years that followed, scientists had engineered an imprecise form of time travel. To earn a pardon, Cole allows scientists to send him on dangerous missions to the past to collect information on the virus, thought to have been released by a terrorist organization known as the Army of the Twelve Monkeys.<br>The time travel is powerful so that sicentists can send Cole from year x[i] back to year y[i]. Eventually, Cole finds that Goines is the founder of the Army of the Twelve Monkeys, and set out in search of him. When they find and confront him, however, Goines denies any involvement with the viruscan. After that, Cole goes back and tells scientists what he knew. He wants to quit the mission to enjoy life. He wants to go back to the any year before current year, but scientists only allow him to use time travel once. In case of failure, Cole will find at least one route for backup. Please help him to calculate how many years he can go with at least two routes.   </p>
+</li>
+<li><p>Input<br>The input file contains multiple test cases.<br>The first line contains three integers n,m,q(1≤ n ≤ 50000, 1≤ m ≤ 50000, 1≤ q ≤ 50000), indicating the maximum year, the number of time travel path and the number of queries.<br>The following m lines contains two integers x,y(1≤ y ≤ x ≤ 50000) indicating Cole can travel from year x to year y.<br>The following q lines contains one integers p(1≤ p ≤ n) indicating the year Cole is at now   </p>
+</li>
+<li><p>Output<br>For each test case, you should output one line, contain a number which is the total number of the year Cole can go.   </p>
+</li>
+<li><p>Sample Input<br>9 3 3<br>9 1<br>6 1<br>4 1<br>6<br>7<br>2   </p>
+</li>
+<li><p>Sample Output<br>5<br>0<br>1   </p>
+</li>
+<li><p>Hint<br>6 can go back to 1 for two route. One is 6-1, the other is 6-7-8-9-1. 6 can go back to 2 for two route. One is 6-1-2, the other is 6-7-8-9-1-2.</p>
+</li>
+</ul>
+</blockquote>
+<p>多好的静态区间查询啊，可是不好好写O(n)，写O(n^2)的就TLE。<br>[code lang=”cpp”]<br>vector&lt;pair&lt;int,int&gt; &gt; vec;<br>int n,m,q;</p>
+<p>int bisearch(int key){<br>        int l=1,r=m+1,mid=1,a;<br>        while(l&lt;r-1){<br>            mid=(l+r)&gt;&gt;1;<br>            a=vec[mid-1].first;<br>            if (a&lt;=key)<br>                l=mid;<br>            else<br>                r=mid;<br>        }<br>        if (vec[l-1].first&lt;key) return l;<br>        return l-1;<br>    }</p>
+<p>int main()<br>{<br>    while(~scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;q)){<br>            vec.clear();<br>            for(int i=1;i&lt;=m;i++){<br>                int u,v;<br>                scanf(&quot;%d%d&quot;,&amp;u,&amp;v);<br>                vec.push_back(make_pair(u,v));<br>            }<br>            sort(vec.begin(),vec.end());<br>            //for(int i=0;i&lt;m;i++) printf(&quot;%d:%d %d\n&quot;,i+1,vec[i].first,vec[i].second);<br>            for(int i=1;i&lt;=q;i++){<br>                int p;<br>                scanf(&quot;%d&quot;,&amp;p);<br>                int h=bisearch(p);<br>                if (m-h&lt;2){<br>                    puts(&quot;0&quot;);<br>                    continue;<br>                }<br>                int min1,min2;<br>                min1=min2=p;<br>                for(int j=h;j&lt;m;j++){<br>                    int k=vec[j].second;<br>                    if (k&lt;min1)<br>                    {<br>                        min2=min1;min1=k;<br>                    }<br>                    else<br>                        min2=min(min2,k);<br>                }</p>
+<pre><code>            //sort(v.begin(),v.end());
+            printf(&amp;quot;%d\n&amp;quot;,p-min2);
+        &#125;
+    &#125;
+return 0;
+</code></pre><p>}<br>[/code]<br>用线段树查询区间次小值也可行，但是从后往前处理跟方便，而且一次性完成。<br>[code lang=”java”]<br>/**</p>
+<ul>
+<li>2015年7月30日 上午10:02:07</li>
+<li>PrjName:zoj3888</li>
+<li>@ Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> static int[][] f;<br> final static int maxn=50010;<br> static Vector&lt;Vector&lt;Integer&gt;&gt; a=new Vector&lt;Vector&lt;Integer&gt;&gt;();<br> public static void main(String[] args) throws IOException{<pre><code>// TODO Auto-generated method stub
+StreamTokenizer in=new StreamTokenizer(new BufferedInputStream(System.in));
+PrintWriter out=new PrintWriter(System.out);
+for(int i=1;i&amp;lt;maxn;i++)
+    a.add(new Vector&amp;lt;Integer&amp;gt;());
+while(in.nextToken()!=StreamTokenizer.TT_EOF)&#123;
+    int n=(int)in.nval;
+    in.nextToken();
+    int m=(int)in.nval;
+    in.nextToken();
+    int q=(int)in.nval;
+    for(int i=1;i&amp;lt;=n;i++)
+        a.get(i-1).clear();
+    for(int i=1;i&amp;lt;=m;i++)&#123;
+        in.nextToken();
+        int u=(int)in.nval;
+        in.nextToken();
+        int v=(int)in.nval;
+        a.get(u-1).add(v);
+    &#125;
+    f=new int[n+2][2];
+    f[n+1][0]=f[n+1][1]=n+1;
+    for(int i=n;i&amp;gt;0;i--)&#123;
+        f[i][0]=Math.min(i, f[i+1][0]);
+        f[i][1]=Math.min(i, f[i+1][1]);
+        Vector&amp;lt;Integer&amp;gt; v=a.get(i-1);
+        for(int j=0;j&amp;lt;v.size();j++)
+            if (v.get(j)&amp;lt;=f[i][0])&#123;
+                f[i][1]=f[i][0];f[i][0]=v.get(j);
+            &#125;
+            else
+                f[i][1]=Math.min(f[i][1], v.get(j));
+    &#125;
+    while(q--&amp;gt;0)&#123;
+        in.nextToken();
+        int p=(int)in.nval;
+        out.println(p-f[p][1]);
+    &#125;
+&#125;
+out.flush();
+out.close();
+</code></pre> }</li>
+</ul>
+<p>}<br>[/code]</p>
+<h1 id="J-Wumpus"><a href="#J-Wumpus" class="headerlink" title="J.Wumpus"></a>J.Wumpus</h1><blockquote>
+<p>Time Limit: 2 Seconds      Memory Limit: 65536 KB   </p>
+<ul>
+<li>Problem Description<br>One day Leon finds a very classic game called Wumpus.The game is as follow.<br>Once an agent fell into a cave. The legend said that in this cave lived a kind of monster called Wumpus, and there were horrible pits which could lead to death everywhere. However, there were also a huge amount of gold in the cave. The agent must be careful and sensitive so that he could grab all of the gold and climb out of the cave safely.<br>The cave can be regarded as a n*n board. In each square there could be a Wumpus, a pit, a brick of gold, or nothing. The agent would be at position (0,0) at first and headed right.(As the picture below)<br><img src="http://acm.zju.edu.cn/onlinejudge/showImage.do?name=Wumpus1.png" width="700" height="540" class="alignnone" /><br>For each step, there are six possible movements including going forward, turning left, turning right, shooting, grabbing the gold, and climbing out of the cave. If the agent steps into a square containing a pit or Wumpus, he will die. When the agent shoots, the Wumpus in front of him will die. The goal of the agent is to grab all of the gold and return to the starting position and climb out(it’s OK if any Wumpus is still living).When a brick of gold is grabbed successfully, you will gain 1000 points. For each step you take, you will lose 10 points.<br>Your job is to help him compute the highest point he can possibly get.<br>For the purpose of simplification, we suppose that there is only one brick of gold and the agent cannot shoot the Wumpus.<br>If there is a pit at (0, 0), the agent dies immediately. There will not be a Wumpus at (0, 0).   </li>
+</ul>
+<p>Input<br>There are multiple cases. The first line will contain one integer k that indicates the number of cases.<br>For each case:<br>The first line will contain one integer n (n &lt; = 20).<br>The following lines will contain three integers, each line shows a position of an object. The first one indicates the type of the object. 1 for Wumpus, 2 for pit and 3 for gold. Then the next two integers show the x and y coordinates of the object.<br>The input end with -1 -1 -1. (It is guaranteed that no two things appear in one position.)   </p>
+<p>Output<br>The output contains one line with one integer, which is the highest point Leon could possibly get. If he cannot finish the game with a non-negative score, print “-1”.   </p>
+<p>Sample Input<br>2<br>3<br>1 1 1<br>2 2 0<br>3 2 2<br>-1 -1 -1<br>3<br>1 1 1<br>3 2 2<br>-1 -1 -1   </p>
+<p>Sample Output<br>850<br>870   </p>
+<p>Hint<br>For the sample 1, the following steps are taken:<br>turn left, forward, forward, turn right, forward, forward, grab, turn left, turn left, forward, forward, turn left, forward, forward, climb.<br>There are in all 15 steps, so the final score is 840. For the sample 2 , the path is as follow:<br><img src="http://acm.zju.edu.cn/onlinejudge/showImage.do?name=Wumpus2.png" width="700" height="540" class="alignnone" />   </p>
+</blockquote>
+<p>一来一去的搜索……</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-26T11:44:06.000Z" title="7/26/2015, 11:44:06 AM">07/26/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.643Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">2 minutes read (About 339 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/de536c8e/">BestCoder 1st Anniversary T_T</a></h1><div class="content"><h1 id="1001-Souvenir"><a href="#1001-Souvenir" class="headerlink" title="1001 Souvenir"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5310">1001 Souvenir</a></h1><p>Time Limit: 2000/1000 MS (Java/Others)  Memory Limit: 262144/262144 K (Java/Others)<br>[code lang=”java”]<br>/**</p>
+<ul>
+<li>2015年7月25日 下午7:07:41</li>
+<li>PrjName:0725-01</li>
+<li><p>@ Semprathlon<br>*/<br>public class Main {</p>
+<p> public static void main(String[] args) {</p>
+<pre><code>// TODO Auto-generated method stub
+InputReader in=new InputReader(System.in);
+PrintWriter out=new PrintWriter(System.out);
+int T=in.nextInt();
+while(T--&amp;gt;0)&#123;
+    int n=in.nextInt();
+    int m=in.nextInt();
+    int p=in.nextInt();
+    int q=in.nextInt();
+    int ans=0,has=0;
+    if (m*p&amp;gt;q)
+        ans+=n/m*q;
+    else ans+=n/m*m*p;
+    ans+=n%m*p;
+    if ((n+m)/m*q&amp;lt;ans) ans=(n+m)/m*q;
+    out.println(ans);
+&#125;
+out.flush();
+out.close();
+</code></pre><p> }</p>
+</li>
+</ul>
+<p>}<br>[/code]</p>
+<h1 id="1002-Hidden-String"><a href="#1002-Hidden-String" class="headerlink" title="1002 Hidden String"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5311">1002 Hidden String</a></h1><p>Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 262144/262144 K (Java/Others)<br>用Trie做查询时，往死胡同里钻而且根本停不下来，啊啊啊啊……<br>[code lang=”cpp”]</p>
+<p>#include &lt;cstdio&gt;</p>
+<p>#include &lt;cstring&gt;<br>char s[200], con[] = &quot;anniversary&quot;;</p>
+<p>int main()<br>{<br>    int T;<br>    scanf(&quot;%d&quot;, &amp;T);<br>    while(T–)<br>    {<br>        scanf(&quot;%s&quot;, s);<br>        int len = strlen(s);<br>        bool flag = false;<br>        for(int i = 0; i &lt;= 8; i++)<br>        {<br>            for(int j = i + 1; j &lt;= 9; j++)<br>            {<br>                int k = 0;<br>                while(k &lt; len &amp;&amp; strncmp(con, s + k, i + 1) != 0)<br>                    k ++;<br>                if(k == len)<br>                    continue;<br>                k += i + 1;<br>                while(k &lt; len &amp;&amp; strncmp(con + i + 1, s + k, j - i) != 0)<br>                    k ++;<br>                if(k == len)<br>                    continue;<br>                k += j - i;<br>                while(k &lt; len &amp;&amp; strncmp(con + j + 1, s + k, 10 - j) != 0)<br>                    k ++;<br>                if(k != len)<br>                {<br>                    flag = true;<br>                    break;<br>                }<br>            }<br>        }<br>        if(flag)<br>            puts(&quot;YES&quot;);<br>        else<br>            puts(&quot;NO&quot;);<br>    }<br>}<br>[/code]<br>这里的枚举倒是简洁得出奇。 </p>
+<h1 id="1003-Sequence"><a href="#1003-Sequence" class="headerlink" title="1003 Sequence"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5312">1003 Sequence</a></h1><p>Time Limit: 2000/2000 MS (Java/Others) Memory Limit: 262144/262144 K (Java/Others)<br>下意识地做了贪心，果然被hack</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-24T15:15:47.000Z" title="7/24/2015, 3:15:47 PM">07/24/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">a minute read (About 199 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/8b198553/">hdu 3853 LOOPS 递推求期望</a></h1><div class="content"><h1 id="hdu-3853-LOOPS"><a href="#hdu-3853-LOOPS" class="headerlink" title="hdu 3853 LOOPS"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=3853">hdu 3853 LOOPS</a></h1><p>计算期望，往往是从末状态到初状态倒推的，相见恨晚<br>[code lang=”cpp”]</p>
+<p>#include&lt;stdio.h&gt;</p>
+<p>#include&lt;iostream&gt;</p>
+<p>#include&lt;algorithm&gt;</p>
+<p>#include&lt;string.h&gt;</p>
+<p>#include&lt;math.h&gt;<br>using namespace std;<br>const int MAXN=1010;<br>const double eps=1e-5;<br>double dp[MAXN][MAXN];<br>double p1[MAXN][MAXN];<br>double p2[MAXN][MAXN];<br>double p3[MAXN][MAXN];</p>
+<p>int main()<br>{<br>    int R,C;<br>    while(scanf(&quot;%d%d&quot;,&amp;R,&amp;C)!=EOF)<br>    {<br>        for(int i=1;i&lt;=R;i++)<br>          for(int j=1;j&lt;=C;j++)<br>            scanf(&quot;%lf%lf%lf&quot;,&amp;p1[i][j],&amp;p2[i][j],&amp;p3[i][j]);<br>        dp[R][C]=0;<br>        for(int i=R;i&gt;=1;i–)<br>          for(int j=C;j&gt;=1;j–)<br>          {<br>              if(i==R&amp;&amp;j==C)continue;<br>              if(fabs(1-p1[i][j])&lt;eps)continue;<br>              dp[i][j]=p2[i][j]/(1-p1[i][j])<em>dp[i][j+1]+p3[i][j]/(1-p1[i][j])</em>dp[i+1][j]+2/(1-p1[i][j]);<br>          }<br>        printf(&quot;%.3lf\n&quot;,dp[1][1]);<br>    }<br>    return 0;<br>}<br>[/code]</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-24T11:12:44.000Z" title="7/24/2015, 11:12:44 AM">07/24/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">2 minutes read (About 225 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/19dec2a1/">2015 Multi-University Training Contest 2</a></h1><div class="content"><h1 id="1002-Buildings"><a href="#1002-Buildings" class="headerlink" title="1002 Buildings"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5301">1002 Buildings</a></h1><p>特别拐弯抹角的平面几何模拟计算<br>[code lang=”cpp”]</p>
+<p>#include&lt;cctype&gt;</p>
+<p>#include&lt;cmath&gt;</p>
+<p>#include&lt;cstdio&gt;</p>
+<p>#include&lt;cstring&gt;</p>
+<p>#include&lt;algorithm&gt;</p>
+<p>#include&lt;iostream&gt;</p>
+<p>#include&lt;string&gt;</p>
+<p>#include&lt;queue&gt;</p>
+<p>#include&lt;stack&gt;</p>
+<p>#include&lt;set&gt;</p>
+<p>#include&lt;map&gt;</p>
+<p>using namespace std;</p>
+<p>typedef long long LL;<br>typedef unsigned long long ULL;<br>const int maxn=210;<br>const int inf=0x7fffffff;<br>const double eps=1e-3;</p>
+<p>int N,M;</p>
+<p>int main()<br>{<br>    int x,y;<br>    while(~scanf(&quot;%d%d%d%d&quot;,&amp;N,&amp;M,&amp;x,&amp;y))<br>    {<br>        if (M&lt;N)<br>        {<br>            swap(N,M);<br>            swap(x,y);<br>        }<br>            int t0=(N+1)&gt;&gt;1;<br>            int up=x-1;<br>            int down=N-x;<br>            int left=y-1;<br>            int right=M-y;<br>            //cout&lt;&lt;t0&lt;&lt;endl;<br>            if ((N&amp;1)&amp;&amp;N==M&amp;&amp;x==y&amp;&amp;x==(N+1)/2)<br>                printf(&quot;%d\n&quot;,t0-1);<br>            /<em>else if (min(up,down)&gt;t0)<br>                printf(&quot;%d\n&quot;,min(max(left,right),min(up,down)));</em>/<br>            else<br>            {<br>                x=min(x,N-x+1);<br>                y=min(y,M-y+1);<br>                t0=max(t0,min(N-x,y));<br>                t0=min(t0,(M+1)/2);<br>                printf(&quot;%d\n&quot;,t0);<br>            }</p>
+<pre><code>&#125;
+return 0;
+</code></pre><p>}<br>[/code]</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-22T18:05:29.000Z" title="7/22/2015, 6:05:29 PM">07/22/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">10 minutes read (About 1495 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/80d7931b/">2015 Multi-University Training Contest 1</a></h1><div class="content"><h1 id="1002-Assignment-RMQ"><a href="#1002-Assignment-RMQ" class="headerlink" title="1002 Assignment RMQ"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5289">1002 Assignment</a> RMQ</h1><p>[code lang=”java”]<br>/**</p>
+<ul>
+<li>2015年7月21日 下午1:40:29</li>
+<li>PrjName:0721-02</li>
+<li><p>@ Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> final static int maxm=20,maxn=100010;<br> static int[] a;<br> static int[][] maxsum,minsum;<br> static int n,k;</p>
+<p> static void RMQ(){ //预处理-&gt;O(nlogn){</p>
+<pre><code>for(int i = 1; i != maxm; ++i)
+    for(int j = 1; j &amp;lt;= n; ++j)
+        if(j + (1 &amp;lt;&amp;lt; i) - 1 &amp;lt;= n)&#123;
+            maxsum[i][j] = Math.max(maxsum[i - 1][j], maxsum[i - 1][j + (1 &amp;lt;&amp;lt; i &amp;gt;&amp;gt; 1)]);
+            minsum[i][j] = Math.min(minsum[i - 1][j], minsum[i - 1][j + (1 &amp;lt;&amp;lt; i &amp;gt;&amp;gt; 1)]);
+        &#125;
+</code></pre><p> }</p>
+<p> static int query(int src,int des){</p>
+<pre><code>int k = (int)(Math.log(des - src + 1.0) / Math.log(2.0));
+int maxres = Math.max(maxsum[k][src], maxsum[k][des - (1 &amp;lt;&amp;lt; k) + 1]);
+int minres = Math.min(minsum[k][src], minsum[k][des - (1 &amp;lt;&amp;lt; k) + 1]);
+return maxres-minres;
+</code></pre><p> }</p>
+<p> static int bisearch(int p){</p>
+<pre><code>int l=p,r=n;
+int res=p;
+while(l&amp;lt;=r)&#123;
+    int mid=(l+r)&amp;gt;&amp;gt;1;
+    int dif=query(p,mid);
+    if (dif&amp;lt;k)&#123;
+        res=mid;l=mid+1;
+    &#125;
+    else
+        r=mid-1;
+&#125;
+return res-p+1;
+</code></pre><p> }</p>
+<p> public static void main(String[] args) throws IOException{</p>
+<pre><code>// TODO Auto-generated method stub
+InputReader in=new InputReader(System.in);
+PrintWriter out=new PrintWriter(System.out);
+int T=in.nextInt();
+while(T--&amp;gt;0)&#123;
+    n=in.nextInt();
+    k=in.nextInt();
+    a=new int[n+1];
+    maxsum=new int[maxm][n+1];
+    minsum=new int[maxm][n+1];
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        a[i]=in.nextInt();
+        maxsum[0][i]=minsum[0][i]=a[i];
+    &#125;
+    RMQ();
+    long res=0L;
+    for(int i=1;i&amp;lt;=n;i++)
+        //out.print(bisearch(i)+&amp;quot; &amp;quot;);
+        res+=bisearch(i);
+    out.println(res);
+&#125;
+out.flush();
+out.close();
+</code></pre><p> }</p>
+</li>
+</ul>
+<p>}</p>
+<p>class InputReader{<br>    public BufferedReader reader;<br>    public StringTokenizer tokenizer;</p>
+<pre><code>public InputReader(InputStream stream)&#123;
+       reader = new BufferedReader(new InputStreamReader(stream), 32768);
+       tokenizer = null;
+&#125;
+
+public String next()&#123;
+    while(tokenizer == null || !tokenizer.hasMoreTokens())&#123;
+        try&#123;
+            tokenizer = new StringTokenizer(reader.readLine());
+        &#125;catch (IOException e) &#123;
+            throw new RuntimeException(e);
+        &#125;
+    &#125;
+    return tokenizer.nextToken();
+&#125;
+
+public int nextInt() &#123;
+    return Integer.parseInt(next());
+&#125;
+
+public long nextLong() &#123;
+    return Long.parseLong(next());
+&#125;
+</code></pre><p>}<br>[/code]</p>
+<h1 id="1007-Tricks-Device"><a href="#1007-Tricks-Device" class="headerlink" title="1007 Tricks Device"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5294">1007 Tricks Device</a></h1><p>netflow,maxflow,Dinic<br>[code lang=”java”]<br>/**</p>
+<ul>
+<li>2015年7月22日 上午10:07:44</li>
+<li>PrjName:0721-07</li>
+<li>@ Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;</li>
+</ul>
+<p>class Edge{<br>    int to,cap,rev,next;<br>    Edge(){}<br>    Edge(int t,int w,int r,int nt){<br>        to=t;cap=w;rev=r;next=nt;<br>    }<br>    Edge(Edge e){<br>        this.to=e.to;<br>        this.cap=e.cap;<br>        this.rev=e.rev;<br>        this.next=e.next;<br>    }<br>    void set(int t,int w,int r,int nt){<br>        to=t;cap=w;rev=r;next=nt;<br>    }<br>    void set(Edge e){<br>        this.to=e.to;<br>        this.cap=e.cap;<br>        this.rev=e.rev;<br>        this.next=e.next;<br>    }<br>}<br>class Queue&lt;T&gt;{<br>    T[] data;<br>    int size,h,r;<br>    /<em>Queue(Class&lt;T&gt; c,int sz){<br>        size=sz;<br>        @SuppressWarnings(&quot;unchecked&quot;)<br>        final T[] tmp=(T[])Array.newInstance(c, sz);<br>        data=tmp;<br>    }</em>/<br>    Queue(int sz){<br>        size=sz;<br>        data=(T[])new Object[sz];<br>    }<br>    void clear(){<br>        h=r=0;<br>    }<br>    boolean empty(){<br>        return h==r;<br>    }<br>    boolean full(){<br>        return (r+1)%size==h;<br>    }<br>    void push(T n){<br>        data[r]=n;<br>        r=(r+1)%size;<br>    }<br>    T pop(){<br>        T tmp=data[h];<br>        h=(h+1)%size;<br>        return tmp;<br>    }<br>}</p>
+<p>public class Main {<br>    static int[] head,dis,cnt;<br>    static boolean[] vis;<br>    static Edge[] G;<br>    static int n,m;<br>    static Queue&lt;Integer&gt; que;<br>    static void bfs(int st){<br>        Arrays.fill(dis, -1);<br>        que.clear();<br>        dis[st]=0;<br>        vis[st]=true;<br>        que.push(st);<br>        while(!que.empty()){<br>            int u=que.pop();<br>            for(int i=head[u];i&gt;-1;i=G[i].next){<br>                int v=G[i].to;<br>                if (G[i].cap&gt;0&amp;&amp;!vis[v]){<br>                    dis[v]=dis[u]+1;<br>                    que.push(v);<br>                    vis[v]=true;<br>                }<br>            }<br>        }<br>    }<br>    static int dfs(int u,int d){<br>        if (u==n) return d;<br>        int res=0;<br>        for(int i=head[u];i&gt;-1;i=G[i].next){<br>            int v=G[i].to;<br>            if (G[i].cap&gt;0&amp;&amp;dis[v]==dis[u]+1){<br>                int tmp=dfs(v,Math.min(d,G[i].cap));<br>                G[i].cap-=tmp;<br>                G[G[i].rev].cap+=tmp;<br>                d-=tmp;<br>                res+=tmp;<br>            }<br>        }<br>        return res;<br>    }<br>    static int max_flow(int s,int t){<br>        int res=0;<br>        for(;;){<br>            Arrays.fill(vis, false);<br>            bfs(s);<br>            if (!vis[t]) return res;<br>            res+=dfs(s,Integer.MAX_VALUE);<br>        }<br>    }<br>    static void addedge(int from,int to,int cap){<br>        G[head[0]]=new Edge(to, cap, head[0]+1, head[from]);<br>        head[from]=head[0]++;<br>        G[head[0]]=new Edge(from,cap,head[0]-1,head[to]);<br>        head[to]=head[0]++;<br>    }<br>    static void spfa(int st){<br>        que.clear();<br>        que.push(st);<br>        dis[st]=0;<br>        vis[st]=true;<br>        while(!que.empty()){<br>            int u=que.pop();vis[u]=false;<br>            for(int i=head[u];i&gt;-1;i=G[i].next){<br>                int v=G[i].to;<br>                if (dis[u]+G[i].cap&lt;dis[v]){<br>                    dis[v]=dis[u]+G[i].cap;<br>                    if (!vis[v]){<br>                        que.push(v);<br>                        vis[v]=true;<br>                    }<br>                }<br>            }<br>        }<br>    }<br>    static int spfa2(int s,int t){<br>        Arrays.fill(cnt, Integer.MAX_VALUE);<br>        Arrays.fill(vis, false);<br>        que.clear();<br>        que.push(s);<br>        cnt[s]=0;<br>        vis[s]=true;<br>        while(!que.empty()){<br>            int u=que.pop();vis[u]=false;<br>            for(int i=head[u];i&gt;-1;i=G[i].next){<br>                int v=G[i].to;<br>                if (dis[u]+G[i].cap!=dis[v]) continue;<br>                if (!vis[v]){<br>                    que.push(v);<br>                    vis[v]=true;<br>                }<br>                cnt[v]=Math.min(cnt[v], cnt[u]+1);<br>            }</p>
+<pre><code>    &#125;
+    return cnt[t];
+&#125;
+static void init()&#123;
+    G=new Edge[(m&amp;lt;&amp;lt;1)+1];
+    head=new int[(m&amp;lt;&amp;lt;1)+1];
+    dis=new int[n+1];
+    cnt=new int[n+1];
+    vis=new boolean[n+1];
+    Arrays.fill(head, -1);
+    Arrays.fill(dis, Integer.MAX_VALUE);
+    head[0]=1;
+    //que=new Queue(Integer.class,(m&amp;lt;&amp;lt;1)+1);
+    que=new Queue&amp;lt;Integer&amp;gt;((m&amp;lt;&amp;lt;1)+1);
+&#125;
+public static void main(String[] args) throws IOException,InterruptedException &#123;
+    // TODO Auto-generated method stub
+    StreamTokenizer cin = new StreamTokenizer(new BufferedInputStream(System.in)); 
+    //InputReader in=new InputReader(System.in);
+    PrintWriter out=new PrintWriter(System.out);
+    while(cin.nextToken()!=StreamTokenizer.TT_EOF)&#123;
+        n=(int)cin.nval;
+        cin.nextToken();
+        m=(int)cin.nval;
+        init();
+        for(int i=1;i&amp;lt;=m;i++)&#123;
+            cin.nextToken();
+            int u=(int)cin.nval;
+            cin.nextToken();
+            int v=(int)cin.nval;
+            cin.nextToken();
+            int w=(int)cin.nval;
+            addedge(u, v, w);
+            //addedge(v, u, w);
+        &#125;
+        spfa(1);
+        //out.println(dis[n]);
+        //max_flow(1, n);
+        //init2();
+        Dinic dinic=new Dinic(1, n);
+        for(int u=1;u&amp;lt;=n;u++)
+            for(int i=head[u];i&amp;gt;-1;i=G[i].next)&#123;
+                int v=G[i].to;
+                if (dis[u]+G[i].cap==dis[v])
+                    dinic.add(u, v, 1);
+            &#125;
+        /*init();
+        for(int i=1;i&amp;lt;=U[0];i++)
+            addedge(U[i],V[i].to,1);*/
+        out.println(dinic.maxflow()+&amp;quot; &amp;quot;+(m-spfa2(1,n)));
+        /*for(int i=1;i&amp;lt;=n;i++)
+            for(int j=head[i];j&amp;gt;-1;j=G[j].next)
+                out.println(j+&amp;quot;\t:&amp;quot;+i+&amp;quot; &amp;quot;+G[j].to+&amp;quot; &amp;quot;+G[j].cap+&amp;quot; &amp;quot;+G[j].rev+&amp;quot; &amp;quot;+G[j].next);*/
+
+    &#125;
+    out.flush();
+    out.close();
+&#125;
+</code></pre><p>}</p>
+<p>class Dinic{<br>    public Dinic(int sourse , int meet){<br>                 this.sourse = sourse ;<br>                 this.meet = meet ;<br>                 Arrays.fill(g,  0) ;<br>                 id = 1 ;<br>    }</p>
+<pre><code>static final  int  maxn = 2008 , maxm = 500000 ;
+static class Edge&#123;
+       int v , f ,next ;
+       Edge()&#123;&#125;
+       Edge(int _v , int _f , int _next)&#123;
+             this.v = _v ;
+             this.f = _f ;
+             this.next = _next ;
+       &#125;
+&#125;;
+int  sourse , meet ;
+int  id ;
+static Edge[] e = new Edge[maxm*2 + 10] ;
+static int[] g = new int[maxn + 10] ;
+
+public void  add(int u , int v , int f)&#123;
+          e[++id] = new Edge(v , f ,g[u]) ;
+          g[u] = id ;
+          e[++id] = new Edge(u , 0 , g[v]) ;
+          g[v] = id ;
+&#125;
+
+Queue&amp;lt;Integer&amp;gt; que  = new Queue&amp;lt;Integer&amp;gt;(maxm);
+static boolean[] vis = new boolean[maxn + 10] ;
+static int[]  dist = new int[maxn + 10] ;
+
+void bfs()&#123;
+         Arrays.fill(dist, 0) ;
+         while(! que.empty()) que.pop() ;
+         que.push(sourse) ;
+         vis[sourse] = true ;
+         while(! que.empty())&#123;
+              int u = que.pop() ;
+              for(int i = g[u] ; i &amp;gt; 0 ; i = e[i].next)&#123;
+                   int v = e[i].v ;
+                   if(e[i].f  &amp;gt; 0 &amp;amp;&amp;amp; !vis[v])&#123;
+                         que.push(v) ;
+                         dist[v] = dist[u] + 1 ;
+                         vis[v] = true ;
+                   &#125;
+              &#125;
+         &#125;
+&#125;
+
+int  dfs(int u , int delta)&#123;
+         if(u == meet) return delta ;
+         int ans = 0 ;
+         for(int i = g[u] ; i &amp;gt; 0  &amp;amp;&amp;amp; delta &amp;gt; 0  ; i = e[i].next)&#123;
+               int  v = e[i].v ;
+               if(e[i].f  &amp;gt; 0 &amp;amp;&amp;amp; dist[v] == dist[u] + 1)&#123;
+                    int d = dfs(v , Math.min(delta , e[i].f)) ;
+                    e[i].f -= d ;
+                    e[i^1].f += d ;
+                    delta -= d ;
+                    ans += d ;
+               &#125;
+         &#125;
+         return ans ;
+&#125;
+
+public int  maxflow()&#123;
+             int ans = 0 ;
+             while(true)&#123;
+                 Arrays.fill(vis, false) ;
+                 bfs() ;
+                 if(! vis[meet]) return ans  ;
+                 ans += dfs(sourse , Integer.MAX_VALUE) ;
+             &#125;
+&#125;
+</code></pre><p>}</p>
+<p>class InputReader{<br>    public BufferedReader reader;<br>    public StringTokenizer tokenizer;</p>
+<pre><code>public InputReader(InputStream stream)&#123;
+       reader = new BufferedReader(new InputStreamReader(stream), 32768);
+       tokenizer = null;
+&#125;
+
+public String next()&#123;
+    while(tokenizer == null || !tokenizer.hasMoreTokens())&#123;
+        try&#123;
+            tokenizer = new StringTokenizer(reader.readLine());
+        &#125;catch (IOException e) &#123;
+            throw new RuntimeException(e);
+        &#125;
+    &#125;
+    return tokenizer.nextToken();
+&#125;
+
+public int nextInt() &#123;
+    return Integer.parseInt(next());
+&#125;
+
+public long nextLong() &#123;
+    return Long.parseLong(next());
+&#125;
+</code></pre><p>}<br>[/code]<br>特别复杂的套模板</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-20T10:46:38.000Z" title="7/20/2015, 10:46:38 AM">07/20/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.643Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">4 minutes read (About 573 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/97dd1257/">Bestcoder</a></h1><div class="content"><p>Protest一时爽，final test全爆零 QwQ</p>
+<h1 id="1001-wyh2000-and-a-string-problem"><a href="#1001-wyh2000-and-a-string-problem" class="headerlink" title="1001 wyh2000 and a string problem"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5284">1001 wyh2000 and a string problem</a></h1><p>[code lang=”java”]<br>out.println(str.matches(&quot;.<em>w.</em>y.<em>h.</em>&quot;)||str.matches(&quot;.<em>v{2,}.</em>y.<em>h.</em>&quot;)?&quot;Yes&quot;:&quot;No&quot;);<br>[/code]<br>偷懒着用正则表达式，华丽地TLE……<br>后来就醉了一样的胡乱的写了个匹配也不太行……<br>[code lang=”java”]<br>import java.io.<em>;<br>import java.util.</em>;<br>import java.math.<em>;<br>import java.util.regex.</em>;<br>import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;<br>public class Main {<br>    static boolean check(String str){<br>        int res=0;<br>        int i,len=str.length();<br>        for(i=0;i&lt;len-1;i++)<br>            if (str.charAt(i)==’w’||str.charAt(i)==’v’&amp;&amp;str.charAt(i+1)==’v’){<br>                res|=1;break;<br>            }<br>        for(;i&lt;len;i++)<br>            if (str.charAt(i)==’y’){<br>                res|=2;break;<br>            }<br>        for(;i&lt;len;i++)<br>            if (str.charAt(i)==’h’){<br>                res|=4;break;<br>            }<br>        return res==7;<br>    }<br>    public static void main(String[] args)  throws IOException{<br>        // TODO Auto-generated method stub<br>         InputReader in = new InputReader(System.in)  ;<br>         PrintWriter out = new PrintWriter(System.out) ;<br>         int T=in.nextInt();<br>         while(T–&gt;0){<br>             String str=in.next();<br>             out.println(check(str)?&quot;Yes&quot;:&quot;No&quot;);<br>             out.flush();<br>         }<br>         out.close();<br>    }<br>}<br>[/code]</p>
+<h1 id="1002-wyh2000-and-pupil"><a href="#1002-wyh2000-and-pupil" class="headerlink" title="1002 wyh2000 and pupil"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5285">1002 wyh2000 and pupil</a></h1><p>[code lang=”cpp”]</p>
+<p>#include&lt;cctype&gt;</p>
+<p>#include&lt;cmath&gt;</p>
+<p>#include&lt;cstdio&gt;</p>
+<p>#include&lt;cstring&gt;</p>
+<p>#include&lt;algorithm&gt;</p>
+<p>#include&lt;iostream&gt;</p>
+<p>#include&lt;string&gt;</p>
+<p>#include&lt;queue&gt;</p>
+<p>#include&lt;stack&gt;</p>
+<p>#include&lt;set&gt;</p>
+<p>#include&lt;map&gt;</p>
+<p>using namespace std;</p>
+<p>typedef long long LL;<br>typedef unsigned long long ULL;<br>const int maxn=200010;<br>const int inf=0x7fffffff;<br>const double eps=1e-3;</p>
+<p>short col[maxn];<br>int s[2];</p>
+<p>struct Edge<br>{<br>    int to,next;<br>    Edge(){}<br>    Edge(int v,int w):to(v),next(w){}<br>} edge[maxn];<br>int head[maxn];</p>
+<p>void addedge(int u,int v)<br>{<br>    edge[head[0]]=Edge(v,head[u]);<br>    head[u]=head[0]++;<br>}</p>
+<p>void init()<br>{<br>    fill(head,head+maxn,-1);<br>    head[0]=1;<br>}</p>
+<p>int bfs(int u)<br>{<br>    queue&lt;int&gt; q;<br>    q.push(u);<br>    col[u]=0;<br>    while(!q.empty())<br>    {<br>        int p=q.front();<br>        s[col[p]]++;<br>        q.pop();<br>        for(int i=head[p];i!=-1;i=edge[i].next)<br>        {<br>            int v=edge[i].to;<br>            if (col[v]&gt;=0)<br>            {<br>                if (col[v]==col[p]) return -1;<br>            }<br>            else<br>            {<br>                col[v]=1^col[p];<br>                q.push(v);<br>            }</p>
+<pre><code>    &#125;
+&#125;
+return 0;
+</code></pre><p>}</p>
+<p>int main()<br>{<br>    int T;<br>    scanf(&quot;%d&quot;,&amp;T);<br>    while(T–)<br>    {<br>        init();<br>        int n,m;<br>        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);<br>        for(int i=1;i&lt;=m;i++)<br>        {<br>            int u,v;<br>            scanf(&quot;%d%d&quot;,&amp;u,&amp;v);<br>            addedge(u,v);<br>            addedge(v,u);<br>        }</p>
+<pre><code>    int sum=0;
+    fill(col+1,col+n+1,-1);
+    for(int i=1;i&amp;lt;=n;i++)
+        if (col[i]&amp;lt;0)
+    &#123;
+        s[0]=s[1]=0;
+        if (bfs(i)&amp;lt;0)
+        &#123;
+            sum=-1;break;
+        &#125;
+        else sum+=max(s[0],s[1]);
+    &#125;
+    if (n==sum) sum--;
+    if (sum&amp;lt;1||n-sum&amp;lt;1)
+        puts(&amp;quot;Poor wyh&amp;quot;);
+    else
+        printf(&amp;quot;%d %d\n&amp;quot;,sum,n-sum);
+&#125;
+return 0;
+</code></pre><p>}<br>[/code]<br>事实证明这并不是二分图匹配；并没有什么典型的算法让两个集合中的一个最大……<br>用DFS或BFS都可实现填色。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-18T11:32:31.000Z" title="7/18/2015, 11:32:31 AM">07/18/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.643Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">3 minutes read (About 430 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/24de410e/">hdu 5115 Dire Wolf 区间DP</a></h1><div class="content"><p>2014ACM/ICPC亚洲区北京站<br><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5115">Dire Wolf</a><br>[code lang=”java”]<br>/**</p>
+<ul>
+<li>2015年7月18日 上午9:55:52</li>
+<li>PrjName:hdu5115</li>
+<li>@ Semprathlon<br><em>/<br>import java.io.</em>;<br>public class Main {<br> final static long inf=0x7FFFFFFFFFFFFFFFL;<br> static long min(long a,long b){<pre><code>return Math.min(a, b);
+</code></pre> }<br> public static void main(String[] args)  throws IOException{<pre><code>// TODO Auto-generated method stub
+StreamTokenizer in=new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+PrintWriter out=new PrintWriter(new OutputStreamWriter(System.out));
+in.nextToken();
+int T=(int)in.nval,cas=0;
+int[] a,b;
+long[][] f;
+while(T--&amp;gt;0)&#123;
+    in.nextToken();
+    int n=(int)in.nval;
+    a=new int[n+2];
+    b=new int[n+2];
+    f=new long[n+2][n+2];
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        in.nextToken();
+        a[i]=(int)in.nval;
+    &#125;
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        in.nextToken();
+        b[i]=(int)in.nval;
+    &#125;
+    f[1][1]=a[1]+b[2];
+    f[n][n]=a[n]+b[n-1];
+    for(int i=2;i&amp;lt;n;i++)
+        f[i][i]=a[i]+b[i-1]+b[i+1];
+    for(int i=1;i&amp;lt;=n;i++)
+        for(int j=i+1;j&amp;lt;=n;j++)
+            f[i][j]=inf;
+    for(int j=0;j&amp;lt;=n;j++)
+        for(int i=1;i+j&amp;lt;n+1;i++)
+            for(int k=i;k&amp;lt;=i+j;k++)&#123;
+                f[i][i+j]=min(f[i][i+j],f[i][k-1]+f[k+1][i+j]+a[k]+b[i-1]+b[i+j+1]);
+                //out.print(f[i][i+j]+&amp;quot; &amp;quot;);
+            &#125;
+    /*for(int i=0;i&amp;lt;=n+1;i++)&#123;out.println();
+        for(int j=0;j&amp;lt;=n+1;j++)
+            out.print(f[i][j]+&amp;quot;\t&amp;quot;);    
+    &#125;*/
+</code></pre></li>
+</ul>
+<pre><code>        /*for(int i=0;i&amp;lt;n;i++)
+            for(int j=1;j&amp;lt;n-i;j++)&#123;
+                if (j==1)
+                    min(f[j][j+i],f[j+1][j+i]+a[j]);
+                if (j&amp;gt;1)
+                    min(f[j][j+i],f[j+1][j+i]+a[j]+b[j-1]);
+                if (i+j&amp;lt;n)
+                    min(f[j][j+i],f[j][j+i-1]+a[j+i]+b[j+i+1]);
+                if (i+j==n)
+                    min(f[j][j+i],f[j][j+i-1]+a[j+i]);
+                for(int k=j+1;k&amp;lt;j+i;k++)
+                    min(f[j][j+i],f[j][k-1]+a[k]+f[k+1][j+i]);
+            &#125;*/
+        out.println(&amp;quot;Case #&amp;quot;+(++cas)+&amp;quot;: &amp;quot;+f[1][n]);
+        out.flush();
+    &#125;
+
+    out.close();
+&#125;
+</code></pre><p>}<br>[/code]<br>贪心真的是要贪婪死了。。。<br>已消除区段。。。其实对后续操作没有影响，符合无后效性。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-18T11:12:18.000Z" title="7/18/2015, 11:12:18 AM">07/18/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.643Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">3 minutes read (About 382 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/fb58aa85/">ACM-ICPC 2014 Beijing Regional / hdu 5115 区间DP</a></h1><div class="content"><p>贪心？走进死胡同了吧</p>
+<p>[code lang=”java”]<br>/**</p>
+<ul>
+<li>2015年7月18日 上午9:55:52</li>
+<li>PrjName:hdu5115</li>
+<li>@ Semprathlon<br><em>/<br>import java.io.</em>;<br>public class Main {<br> final static long inf=0x7FFFFFFFFFFFFFFFL;<br> static long min(long a,long b){<pre><code>return Math.min(a, b);
+</code></pre> }<br> public static void main(String[] args)  throws IOException{<pre><code>// TODO Auto-generated method stub
+StreamTokenizer in=new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+PrintWriter out=new PrintWriter(new OutputStreamWriter(System.out));
+in.nextToken();
+int T=(int)in.nval,cas=0;
+int[] a,b;
+long[][] f;
+while(T--&amp;gt;0)&#123;
+    in.nextToken();
+    int n=(int)in.nval;
+    a=new int[n+2];
+    b=new int[n+2];
+    f=new long[n+2][n+2];
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        in.nextToken();
+        a[i]=(int)in.nval;
+    &#125;
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        in.nextToken();
+        b[i]=(int)in.nval;
+    &#125;
+    f[1][1]=a[1]+b[2];
+    f[n][n]=a[n]+b[n-1];
+    for(int i=2;i&amp;lt;n;i++)
+        f[i][i]=a[i]+b[i-1]+b[i+1];
+    for(int i=1;i&amp;lt;=n;i++)
+        for(int j=i+1;j&amp;lt;=n;j++)
+            f[i][j]=inf;
+    for(int j=0;j&amp;lt;=n;j++)
+        for(int i=1;i+j&amp;lt;n+1;i++)
+            for(int k=i;k&amp;lt;=i+j;k++)&#123;
+                f[i][i+j]=min(f[i][i+j],f[i][k-1]+f[k+1][i+j]+a[k]+b[i-1]+b[i+j+1]);
+                //out.print(f[i][i+j]+&amp;quot; &amp;quot;);
+            &#125;
+    /*for(int i=0;i&amp;lt;=n+1;i++)&#123;out.println();
+        for(int j=0;j&amp;lt;=n+1;j++)
+            out.print(f[i][j]+&amp;quot;\t&amp;quot;);    
+    &#125;*/
+</code></pre></li>
+</ul>
+<pre><code>        /*for(int i=0;i&amp;lt;n;i++)
+            for(int j=1;j&amp;lt;n-i;j++)&#123;
+                if (j==1)
+                    min(f[j][j+i],f[j+1][j+i]+a[j]);
+                if (j&amp;gt;1)
+                    min(f[j][j+i],f[j+1][j+i]+a[j]+b[j-1]);
+                if (i+j&amp;lt;n)
+                    min(f[j][j+i],f[j][j+i-1]+a[j+i]+b[j+i+1]);
+                if (i+j==n)
+                    min(f[j][j+i],f[j][j+i-1]+a[j+i]);
+                for(int k=j+1;k&amp;lt;j+i;k++)
+                    min(f[j][j+i],f[j][k-1]+a[k]+f[k+1][j+i]);
+            &#125;*/
+        out.println(&amp;quot;Case #&amp;quot;+(++cas)+&amp;quot;: &amp;quot;+f[1][n]);
+        out.flush();
+    &#125;
+
+    out.close();
+&#125;
+</code></pre><p>}<br>[/code]</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-18T08:08:29.000Z" title="7/18/2015, 8:08:29 AM">07/18/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.639Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">3 minutes read (About 386 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/e2070e83/">ACdreamOJ 1726 hash 二进制表示下的枚举</a></h1><div class="content"><p><a target="_blank" rel="noopener" href="http://acdream.info/problem?pid=1726">http://acdream.info/problem?pid=1726</a></p>
+<h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><p>Recently, Losanto find an interesting Math game. The rule is simple: Tell you a number H, and you can choose some numbers from a set {a[1],a[2],……,a[n]}.If the sum of the number you choose is H, then you win. Losanto just want to know whether he can win the game.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>There are several cases.<br>In each case, there are two numbers in the first line n (the size of the set) and H. The second line has n numbers {a[1],a[2],……,a[n]}.0&lt;n&lt;=40, 0&lt;=H&lt;10^9, 0&lt;=a[i]&lt;10^9,All the numbers are integers.   </p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>If Losanto could win the game, output “Yes” in a line. Else output “No” in a line.   </p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>10 87<br>2 3 4 5 7 9 10 11 12 13<br>10 38<br>2 3 4 5 7 9 10 11 12 13   </p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>No<br>Yes</p>
+<p>最大的n值为40，需枚举的状态略多；于是折成两半枚举。前后两段合拼时，不是正向地求和，而是逆向查询，节约了时间   </p>
+<p>[code lang=”java”]<br>/**</p>
+<ul>
+<li>2015年7月17日 下午5:41:50</li>
+<li>PrjName:acd1726</li>
+<li>@ Semprathlon<br>*<em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> public static void main(String[] args) throws IOException {<pre><code>StreamTokenizer cin = new StreamTokenizer(new InputStreamReader(System.in));
+PrintWriter out = new PrintWriter(System.out);
+HashSet&amp;lt;Long&amp;gt; map = new HashSet&amp;lt;Long&amp;gt;();
+while (cin.nextToken() != StreamTokenizer.TT_EOF) &#123;
+    int n = (int) cin.nval;
+    cin.nextToken();
+    int m = (int) cin.nval;
+    map.clear();
+    int[] num = new int[n];
+    for (int i = 0; i &amp;lt; n; i++) &#123;
+        cin.nextToken();
+        num[i] = (int) cin.nval;
+    &#125;
+    int t = (n + 1) / 2;
+    for (int i = 0; i &amp;lt; (1 &amp;lt;&amp;lt; t); i++) &#123;
+        long sum = 0;
+        for (int j = 0; j &amp;lt; t; j++) &#123;
+            if ((i &amp;amp; (1 &amp;lt;&amp;lt; j)) &amp;gt; 0)
+                sum += num[j];
+        &#125;
+        if (sum &amp;gt; m)
+            continue;
+        map.add(sum);
+    &#125;
+    int tt = n - t;
+    boolean flag = map.contains(m);
+    for (int i = 0; i &amp;lt; (1 &amp;lt;&amp;lt; tt); i++) &#123;
+        long sum = 0;
+        for (int j = 0; j &amp;lt; tt; j++) &#123;
+            if ((i &amp;amp; (1 &amp;lt;&amp;lt; j)) &amp;gt; 0)
+                sum += num[t + j];
+        &#125;
+        if (sum &amp;gt; m)
+            continue;
+        if (map.contains(m - sum)) &#123;
+            flag = true;
+            break;
+        &#125;
+    &#125;
+    if (flag)
+        out.println(&amp;quot;Yes&amp;quot;);
+    else
+        out.println(&amp;quot;No&amp;quot;);
+    // out.flush();
+&#125;
+out.flush();
+</code></pre> }<br>}<br>[/code]</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-07-17T19:56:17.000Z" title="7/17/2015, 7:56:17 PM">07/17/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.643Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">2 minutes read (About 253 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/4832a320/">hdu 4810 Wall Painting 位操作</a></h1><div class="content"><p>本题题意甚是费解。<br>找到合适的位操作，再运用组合数，是关键。</p>
+<p>[code lang=”java”]<br>/**</p>
+<ul>
+<li>2015年7月15日 上午11:21:15</li>
+<li>PrjName:hdu4825</li>
+<li>@ Semprathlon<br>*/</li>
+</ul>
+<p>import java.io.*;</p>
+<p>class Trie {<br>    private final int maxd = 33;<br>    private long data;<br>    private Trie ch0, ch1;</p>
+<pre><code>void insert(long n) &#123;
+    Trie rt = this;
+    for (int i = maxd - 1; i &amp;gt;= 0; i--) &#123;
+        if ((n &amp;amp; (1L &amp;lt;&amp;lt; i)) == 0L) &#123;// 0
+            if (rt.ch0 == null)
+                rt.ch0 = new Trie();
+            rt = rt.ch0;
+        &#125; else &#123;// 1
+            if (rt.ch1 == null)
+                rt.ch1 = new Trie();
+            rt = rt.ch1;
+        &#125;
+        if (i == 0)
+            rt.data = n;
+    &#125;
+&#125;
+
+long query(long n) &#123;
+    Trie rt = this;
+    for (int i = maxd - 1; i &amp;gt;= 0; i--) &#123;
+        if ((n &amp;amp; (1L &amp;lt;&amp;lt; i)) &amp;gt; 0L &amp;amp;&amp;amp; rt.ch0 != null || rt.ch1 == null)// 0
+            rt = rt.ch0;
+        else if (rt.ch1 != null)// 1
+            rt = rt.ch1;
+    &#125;
+    return rt.data;
+&#125;
+</code></pre><p>}</p>
+<p>public class Main {<br>    public static void main(String[] args) throws IOException {<br>        StreamTokenizer in = new StreamTokenizer(new BufferedReader(<br>                new InputStreamReader(System.in)));<br>        PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));<br>        int cas = 0;<br>        in.nextToken();<br>        int T = (int) in.nval;<br>        while (T– &gt; 0) {<br>            Trie tr = new Trie();<br>            in.nextToken();<br>            int n = (int) in.nval;<br>            in.nextToken();<br>            int m = (int) in.nval;<br>            for (int i = 1; i &lt;= n; i++) {<br>                in.nextToken();<br>                tr.insert((long) in.nval);<br>            }<br>            out.println(&quot;Case #&quot; + (++cas) + &quot;:&quot;);<br>            for (int i = 1; i &lt;= m; i++) {<br>                in.nextToken();<br>                out.println(tr.query((long) in.nval));<br>            }<br>        }<br>        out.flush();<br>        out.close();<br>    }</p>
+<p>}<br>[/code]</p>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/categories/ACM-ICPC/Programing/page/5/">Previous</a></div><div class="pagination-next"><a href="/categories/ACM-ICPC/Programing/page/7/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/categories/ACM-ICPC/Programing/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/categories/ACM-ICPC/Programing/page/5/">5</a></li><li><a class="pagination-link is-current" href="/categories/ACM-ICPC/Programing/page/6/">6</a></li><li><a class="pagination-link" href="/categories/ACM-ICPC/Programing/page/7/">7</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/categories/ACM-ICPC/Programing/page/10/">10</a></li></ul></nav></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://ui-avatars.com/api/?name=Citru+Xonve&amp;background=0D8ABC&amp;color=fff&amp;size=128" alt="CitruXonve"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">CitruXonve</p><p class="is-size-6 is-block">Data Platform Engineer, Fullstack, UI/UX</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seattle, WA, US</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">281</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">36</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">138</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/CitruXonve" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/CitruXonve"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://www.facebook.com/AngelikaShyu/"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/Angelika_Shyu"><i class="fab fa-twitter"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/ACM-ICPC/"><span class="level-start"><span class="level-item">ACM-ICPC</span></span><span class="level-end"><span class="level-item tag">94</span></span></a><ul><li><a class="level is-mobile" href="/categories/ACM-ICPC/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">94</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/About/"><span class="level-start"><span class="level-item">About</span></span><span class="level-end"><span class="level-item tag">22</span></span></a></li><li><a class="level is-mobile" href="/categories/Computing/"><span class="level-start"><span class="level-item">Computing</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Computing/Graphic/"><span class="level-start"><span class="level-item">Graphic</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing/Graphic/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Computing-Cloud/"><span class="level-start"><span class="level-item">Computing - Cloud</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing-Cloud/Notes/"><span class="level-start"><span class="level-item">Notes</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Criticisms/"><span class="level-start"><span class="level-item">Criticisms</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Deployment/"><span class="level-start"><span class="level-item">Deployment</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/DevOps/"><span class="level-start"><span class="level-item">DevOps</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">25</span></span></a><ul><li><a class="level is-mobile" href="/categories/Developing/Environment/"><span class="level-start"><span class="level-item">Environment</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Developing/Server/"><span class="level-start"><span class="level-item">Server</span></span><span class="level-end"><span class="level-item tag">6</span></span></a><ul><li><a class="level is-mobile" href="/categories/Developing/Server/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Developing/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Development/"><span class="level-start"><span class="level-item">Development</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/English/"><span class="level-start"><span class="level-item">English</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Environment/"><span class="level-start"><span class="level-item">Environment</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Environment/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Graphic/"><span class="level-start"><span class="level-item">Graphic</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Graphic/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Graphic/Developing/Game/"><span class="level-start"><span class="level-item">Game</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Hardware/"><span class="level-start"><span class="level-item">Hardware</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Industrial/"><span class="level-start"><span class="level-item">Industrial</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Network/"><span class="level-start"><span class="level-item">Network</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">34</span></span></a></li><li><a class="level is-mobile" href="/categories/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">21</span></span></a><ul><li><a class="level is-mobile" href="/categories/Programing/ACM-ICPC/"><span class="level-start"><span class="level-item">ACM-ICPC</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Programing/ACM-ICPC/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Server/"><span class="level-start"><span class="level-item">Server</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/Web/About/"><span class="level-start"><span class="level-item">About</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/iOS/"><span class="level-start"><span class="level-item">iOS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/ACM-ICPC/"><span class="tag">ACM-ICPC</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"><span class="tag">AC自动机</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AWS/"><span class="tag">AWS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Adobe/"><span class="tag">Adobe</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Apache/"><span class="tag">Apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/BFS/"><span class="tag">BFS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/BIT/"><span class="tag">BIT</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bestcoder/"><span class="tag">Bestcoder</span><span class="tag">23</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bitset/"><span class="tag">Bitset</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bootstrap/"><span class="tag">Bootstrap</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CCPC/"><span class="tag">CCPC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Catalan/"><span class="tag">Catalan</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CentOS/"><span class="tag">CentOS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Clover/"><span class="tag">Clover</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Compiler/"><span class="tag">Compiler</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Contest/"><span class="tag">Contest</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Cpp/"><span class="tag">Cpp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DFS/"><span class="tag">DFS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DNS/"><span class="tag">DNS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DP/"><span class="tag">DP</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DSDT/"><span class="tag">DSDT</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Data-Analytics/"><span class="tag">Data Analytics</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dinic/"><span class="tag">Dinic</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker/"><span class="tag">Docker</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Eclipse/"><span class="tag">Eclipse</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Expect/"><span class="tag">Expect</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Fibonacci/"><span class="tag">Fibonacci</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GLUT/"><span class="tag">GLUT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GPT/"><span class="tag">GPT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GUI/"><span class="tag">GUI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gentoo/"><span class="tag">Gentoo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Geometry/"><span class="tag">Geometry</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Github/"><span class="tag">Github</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Graduate/"><span class="tag">Graduate</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash/"><span class="tag">Hash</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JNUOJ/"><span class="tag">JNUOJ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/K8s/"><span class="tag">K8s</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/KMP/"><span class="tag">KMP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Live-Archive/"><span class="tag">Live Archive</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MBR/"><span class="tag">MBR</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MS-DOS/"><span class="tag">MS=DOS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mac/"><span class="tag">Mac</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Manhattan/"><span class="tag">Manhattan</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Multi-Uni/"><span class="tag">Multi-Uni</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mobius%E5%8F%8D%E6%BC%94/"><span class="tag">Möbius反演</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NetworkFlow/"><span class="tag">NetworkFlow</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NoSQL/"><span class="tag">NoSQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OS/"><span class="tag">OS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenCV/"><span class="tag">OpenCV</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenGL/"><span class="tag">OpenGL</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/RMQ/"><span class="tag">RMQ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Regional/"><span class="tag">Regional</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Repost/"><span class="tag">Repost</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Ryzen/"><span class="tag">Ryzen</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQLserver/"><span class="tag">SQLserver</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSL/"><span class="tag">SSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/System-Design/"><span class="tag">System Design</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TOEFL/"><span class="tag">TOEFL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Trie/"><span class="tag">Trie</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UEFI/"><span class="tag">UEFI</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UX/"><span class="tag">UX</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Ubuntu/"><span class="tag">Ubuntu</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Unix/"><span class="tag">Unix</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Windows/"><span class="tag">Windows</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Wordpress/"><span class="tag">Wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ZOJ/"><span class="tag">ZOJ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ajax/"><span class="tag">ajax</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/asm/"><span class="tag">asm</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/css/"><span class="tag">css</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cuda/"><span class="tag">cuda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cudnn/"><span class="tag">cudnn</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/curl/"><span class="tag">curl</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/es6/"><span class="tag">es6</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/font/"><span class="tag">font</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ftp/"><span class="tag">ftp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gitlab/"><span class="tag">gitlab</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hardware/"><span class="tag">hardware</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/html/"><span class="tag">html</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/https/"><span class="tag">https</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/iOS/"><span class="tag">iOS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/interview/"><span class="tag">interview</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/javascript/"><span class="tag">javascript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jdk/"><span class="tag">jdk</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jquery/"><span class="tag">jquery</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/js/"><span class="tag">js</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kext/"><span class="tag">kext</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/macOS/"><span class="tag">macOS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nginx/"><span class="tag">nginx</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/node/"><span class="tag">node</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nodejs/"><span class="tag">nodejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/npm/"><span class="tag">npm</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/react/"><span class="tag">react</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/react-native/"><span class="tag">react native</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/regex/"><span class="tag">regex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/string/"><span class="tag">string</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"><span class="tag">二分图</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"><span class="tag">二分查找</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%BC%88/"><span class="tag">博弈</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"><span class="tag">容斥原理</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"><span class="tag">并查集</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"><span class="tag">并行计算</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"><span class="tag">微积分</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/"><span class="tag">扫描线</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%88%97/"><span class="tag">数列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E7%8B%AC/"><span class="tag">数独</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E8%AE%BA/"><span class="tag">数论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87/"><span class="tag">概率</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%8B%9F/"><span class="tag">模拟</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/"><span class="tag">欧拉回路</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/"><span class="tag">百度之星</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E4%B9%8E/"><span class="tag">知乎</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"><span class="tag">离散化</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB/"><span class="tag">约瑟夫</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"><span class="tag">线段树</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E8%B5%9B/"><span class="tag">网络赛</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%83%8C%E5%8C%85/"><span class="tag">背包</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"><span class="tag">背包问题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AC%E8%BD%BD%E5%8D%9A%E6%96%87/"><span class="tag">转载博文</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%92%E5%BD%92/"><span class="tag">递归</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="http://marisa.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">雾雨魔理沙</span></span><span class="level-right"><span class="level-item tag">marisa.moe</span></span></a></li><li><a class="level is-mobile" href="https://blinkfox.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">闪烁之狐</span></span><span class="level-right"><span class="level-item tag">blinkfox.github.io</span></span></a></li><li><a class="level is-mobile" href="https://phesoca.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">绯索卡</span></span><span class="level-right"><span class="level-item tag">phesoca.com</span></span></a></li><li><a class="level is-mobile" href="https://paperneko.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">笈川伊織（紙喵）</span></span><span class="level-right"><span class="level-item tag">paperneko.moe</span></span></a></li><li><a class="level is-mobile" href="https://neko.ayaka.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Ayaka Neko</span></span><span class="level-right"><span class="level-item tag">neko.ayaka.moe</span></span></a></li><li><a class="level is-mobile" href="https://blog.skk.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Sukka</span></span><span class="level-right"><span class="level-item tag">blog.skk.moe</span></span></a></li><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li><li><a class="level is-mobile" href="https://funactional.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Function</span></span><span class="level-right"><span class="level-item tag">funactional.github.io</span></span></a></li><li><a class="level is-mobile" href="http://www.kuangbin.net/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">kuangbin</span></span><span class="level-right"><span class="level-item tag">www.kuangbin.net</span></span></a></li><li><a class="level is-mobile" href="http://hzwer.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">hzwer</span></span><span class="level-right"><span class="level-item tag">hzwer.com</span></span></a></li><li><a class="level is-mobile" href="http://tsyao.tk/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">tsyao</span></span><span class="level-right"><span class="level-item tag">tsyao.tk</span></span></a></li><li><a class="level is-mobile" href="http://c.ejq.me/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">氢酱</span></span><span class="level-right"><span class="level-item tag">c.ejq.me</span></span></a></li><li><a class="level is-mobile" href="http://coderunion.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">CoderUnion</span></span><span class="level-right"><span class="level-item tag">coderunion.github.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/dangxuandev" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">当轩</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://zhuanlan.zhihu.com/simplyy" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">SimplyY</span></span><span class="level-right"><span class="level-item tag">zhuanlan.zhihu.com</span></span></a></li><li><a class="level is-mobile" href="http://blog.xen0n.name/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">xen0n</span></span><span class="level-right"><span class="level-item tag">blog.xen0n.name</span></span></a></li><li><a class="level is-mobile" href="https://github.com/NaturalL" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">NaturalL</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://huaji8.top/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">幻想帖</span></span><span class="level-right"><span class="level-item tag">huaji8.top</span></span></a></li><li><a class="level is-mobile" href="https://otakism.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">宅談</span></span><span class="level-right"><span class="level-item tag">otakism.com</span></span></a></li><li><a class="level is-mobile" href="https://liyin.date/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">天空之间</span></span><span class="level-right"><span class="level-item tag">liyin.date</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="CitruXonve&#039;s another far end" height="28"></a><p class="is-size-7"><span>&copy; 2021 CitruXonve</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Icarus Theme on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

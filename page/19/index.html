@@ -1,0 +1,1217 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>CitruXonve&#039;s another far end</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="CitruXonve&#039;s another far end"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CitruXonve&#039;s another far end"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="CitruXonve&#039;s another far end"><meta property="og:url" content="https://devblog.citruxonve.net/"><meta property="og:site_name" content="CitruXonve&#039;s another far end"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://devblog.citruxonve.net/img/og_image.png"><meta property="article:author" content="CitruXonve"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://devblog.citruxonve.net"},"headline":"CitruXonve's another far end","image":["https://devblog.citruxonve.net/img/og_image.png"],"author":{"@type":"Person","name":"CitruXonve"},"publisher":{"@type":"Organization","name":"CitruXonve's another far end","logo":{"@type":"ImageObject","url":"https://devblog.citruxonve.net/img/logo.svg"}},"description":null}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="CitruXonve&#039;s another far end" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">CrXon Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Icarus Theme on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-17T21:03:31.000Z" title="9/17/2015, 9:03:31 PM">09/17/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.651Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">6 minutes read (About 853 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/45407af6/">2015 ACM/ICPC Asia Regional Changchun Online</a></h1><div class="content"><p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2015+ACM%2FICPC+Asia+Regional+Changchun+Online&amp;source=1&amp;searchmode=source">Show All Problems</a></p>
+<table>
+<thead>
+<tr>
+<th>Soluble Problems</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alisha’s Party</td>
+</tr>
+<tr>
+<td>Unknown Treasure</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Alisha’s-Party"><a href="#Alisha’s-Party" class="headerlink" title="Alisha’s Party"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5437">Alisha’s Party</a></h2><p>[code lang=”java”]<br>/** Sep 13, 2015 12:39:06 PM</p>
+<ul>
+<li>PrjName:0913-01</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;</li>
+</ul>
+<p>public class Main {<br>    static Person[] per;<br>    static Pair[] cm;<br>    static PriorityQueue&lt;Person&gt; que = new PriorityQueue&lt;Person&gt;(new Person.Comp());<br>    static Vector&lt;String&gt; ans = new Vector&lt;String&gt;();</p>
+<pre><code>public static void main(String[] args) throws IOException &#123;
+    InputReader in = new InputReader(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+    int T = in.nextInt();
+    while (T-- &amp;gt; 0) &#123;
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int q = in.nextInt();
+        per = new Person[n];
+        for (int i = 0; i &amp;lt; n; i++)
+            per[i] = new Person(in.next(), in.nextInt(), i + 1);
+        cm = new Pair[m];
+        for (int i = 0; i &amp;lt; m; i++)
+            cm[i] = new Pair(in.nextInt(), in.nextInt());
+        Arrays.sort(cm, new Pair.Comp());
+        que.clear();
+        int t = 0;
+        ans.clear();
+        for (int i = 0; i &amp;lt; n; i++) &#123;
+            que.add(per[i]);
+            if (t &amp;lt; m &amp;amp;&amp;amp; cm[t].l == i + 1) &#123;
+                for (int j = 0; j &amp;lt; cm[t].r &amp;amp;&amp;amp; !que.isEmpty(); j++)
+                    ans.add(que.poll().name);
+                t++;
+            &#125;
+        &#125;
+        while (!que.isEmpty())
+            ans.add(que.poll().name);
+        while (q-- &amp;gt; 0) &#123;
+            out.print(ans.get(in.nextInt() - 1) + (q &amp;gt; 0 ? &amp;quot; &amp;quot; : &amp;quot;&amp;quot;));
+        &#125;
+        out.println();
+    &#125;
+    out.flush();
+    out.close();
+&#125;
+</code></pre><p>}</p>
+<p>class Person {<br>    String name;<br>    int v, t;<br>    Person() {<br>    }<br>    Person(String _nm, int _v, int _t) {<br>        name = _nm;<br>        v = _v;<br>        t = _t;<br>    }<br>    static class Comp implements Comparator&lt;Person&gt; {<br>        public int compare(Person p1, Person p2) {<br>            if (p1.v == p2.v)<br>                return Integer.compare(p1.t, p2.t);<br>            return -Integer.compare(p1.v, p2.v);<br>        }<br>    }<br>}</p>
+<p>class Pair {<br>    int l, r;<br>    Pair() {<br>    }<br>    Pair(int a, int b) {<br>        l = a;<br>        r = b;<br>    }<br>    static class Comp implements Comparator&lt;Pair&gt; {<br>        public int compare(Pair o1, Pair o2) {<br>            if (o1.l == o2.l)<br>                return Integer.compare(o1.r, o2.r);<br>            return Integer.compare(o1.l, o2.l);<br>        }<br>    }<br>}<br>[/code]</p>
+<p>能不能别再搞那个复杂的合并了啊……还有不要对空优先队列做push操作啊……</p>
+<h2 id="Unknown-Treasure"><a href="#Unknown-Treasure" class="headerlink" title="Unknown Treasure"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5446">Unknown Treasure</a></h2><p>[code lang=”java”]<br>/** Sep 13, 2015 9:26:58 AM</p>
+<ul>
+<li>PrjName:0913-10</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;</li>
+</ul>
+<p>public class Main {</p>
+<pre><code>final static int maxn = 110000;
+static long[] fac = new long[maxn];
+static long[] p, a;
+static long x, y;
+
+static void Get_Fac(long n) &#123;
+    fac[0] = 1;
+    for (int i = 1; i &amp;lt;= n; i++) &#123;
+        fac[i] = fac[i - 1] * i;
+        fac[i] %= n;
+    &#125;
+&#125;
+
+static void extgcd(long a, long b) &#123;
+    if (b == 0L) &#123;
+        x = 1L;
+        y = 0L;
+        return;
+    &#125;
+    extgcd(b, a % b);
+    long t = x;
+    x = y;
+    y = t - a / b * y;
+&#125;
+
+static long pow_mod(long n, long m, long mod) &#123;
+    long res = 1L;
+    n %= mod;
+    while (m &amp;gt; 0L) &#123;
+        if ((m &amp;amp; 1L) &amp;gt; 0L)
+            res = res * n % mod;
+        n = n * n % mod;
+        m &amp;gt;&amp;gt;= 1;
+    &#125;
+    return res;
+&#125;
+
+static long mul_mod(long n, long m, long mod) &#123;
+    long ans = 0L;
+    n %= mod;
+    while (m &amp;gt; 0L) &#123;
+        if ((m &amp;amp; 1L) &amp;gt; 0L)
+            ans = (ans + n) % mod;
+        m &amp;gt;&amp;gt;= 1;
+        n = (n + n) % mod;
+    &#125;
+    return ans;
+&#125;
+
+static long div_mod(long n, long m, long mod) &#123;
+    return n * pow_mod(m, mod - 2, mod) % mod;
+&#125;
+
+static long C(long n, long m, long mod) &#123;
+    int a = (int) (n % mod), b = (int) (m % mod);
+    return div_mod(fac[a], mul_mod(fac[a - b], fac[b], mod), mod);
+&#125;
+
+static long Lucas(long n, long m, long mod) &#123;
+    long ret = 1L;
+    while (n &amp;gt; 0L &amp;amp;&amp;amp; m &amp;gt; 0L) &#123;
+        if (n % mod &amp;lt; m % mod)
+            return 0L;
+        ret = mul_mod(ret, C(n, m, mod), mod);
+        ret %= mod;
+        n /= mod;
+        m /= mod;
+    &#125;
+    return ret;
+&#125;
+
+// 中国剩余定理 x == a[i] (mod m[i]) 共有n个方程。
+static long CRT(long n, long[] a, long[] m) &#123;
+    long pro = 1L, res = 0L;
+    for (int i = 0; i &amp;lt; n; i++)
+        pro *= m[i];
+    for (int i = 0; i &amp;lt; n; i++) &#123;
+        long w = pro / m[i];
+        extgcd(m[i], w);
+        res = (res + mul_mod(y, mul_mod(w, a[i], pro), pro)) % pro;
+    &#125;
+    return (res + pro) % pro;
+&#125;
+
+public static void main(String[] args) &#123;
+    InputReader in = new InputReader(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+    int T = in.nextInt();
+    while (T-- &amp;gt; 0) &#123;
+        long n = in.nextLong();
+        long m = in.nextLong();
+        long num = in.nextLong();
+        p = new long[15];
+        a = new long[15];
+        for (int i = 0; i &amp;lt; num; i++)
+            p[i] = in.nextLong();
+        for (int i = 0; i &amp;lt; num; i++) &#123;
+            Get_Fac(p[i]);
+            a[i] = Lucas(n, m, p[i]);
+        &#125;
+        out.println(CRT(num, a, p));
+    &#125;
+    out.flush();
+    out.close();
+&#125;
+</code></pre><p>}<br>[/code]<br>一堆数论模板的集体亮相……但是为何解n个方程的中国剩余定理模板就难以被收集？</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-12T10:59:03.000Z" title="9/12/2015, 10:59:03 AM">09/12/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.651Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">a few seconds read (About 12 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/6951c07e/">2015 Codercup编程世界杯 北京 清华大学</a></h1><div class="content"><p>远征帝都</p>
+<p>题目纵览</p>
+<iframe src="http://saikr.com/uploads/files/20150918/1442579628471936.pdf" width="100%" height="100%" scrolling="auto" frameborder="0"></iframe>
+
+<hr>
+<p>官方题解</p>
+<iframe src="http://saikr.com/uploads/files/20150918/1442579627662777.pdf" width="100%" height="600" scrolling="auto" frameborder="0"></iframe></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-09T20:46:28.000Z" title="9/9/2015, 8:46:28 PM">09/09/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.651Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">9 minutes read (About 1378 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/9f6b805d/">hdu 5130 2014 ACM/ICPC Regional Guangzhou 计算几何</a></h1><div class="content"><p>由高中平面解析几何得：平面某一点P与两点A、B满足|PA|=k|PB|，则点P的轨迹是一个圆。<br>所以应求多边形与圆的公共面积，可将多边形分解为三角形来求。<br>[code lang=”java”]<br>/** Sep 9, 2015 3:23:33 PM</p>
+<ul>
+<li>PrjName:hdu5130</li>
+<li><p>@author Semprathlon<br><em>/<br>import java.util.</em>;<br>import java.io.*;<br>public class Main {</p>
+<p> /**</p>
+<ul>
+<li>@param args<br><em>/<br>static double sqr(double x){<br> return x</em>x;<br>}<br>public static void main(String[] args) throws IOException{<br> // TODO Auto-generated method stub<br> InputReader in=new InputReader(System.in);<br> PrintWriter out=new PrintWriter(System.out);<br> int cas=0;<br> while(in.nextLine()!=null){<pre><code>int n=in.nextInt();
+double k=in.nextDouble();
+Polygon pl=new Polygon(n);
+for(int i=0;i&amp;lt;n;i++)
+    pl.v[i]=new Point(in.nextInt(), in.nextInt());
+pl.v[n]=pl.v[0];
+Point A=new Point(in.nextDouble(),in.nextDouble());
+Point B=new Point(in.nextDouble(), in.nextDouble());
+Point O=new Point(-(B.x-k*k*A.x)/(k*k-1), -(B.y-k*k*A.y)/(k*k-1));
+double r=Math.sqrt(sqr((B.x-k*k*A.x)/(k*k-1))+sqr((B.y-k*k*A.y)/(k*k-1))-k*k*(sqr(A.x)+sqr(A.y))/(k*k-1)+(sqr(B.x)+sqr(B.y))/(k*k-1));
+Round R=new Round(r, O.x, O.y);
+double ans=0;
+for(int i=0;i&amp;lt;n;i++)
+    ans+=Round.TriAngleCircleInsection(R, pl.v[i], pl.v[i+1]);
+out.println(String.format(&amp;quot;Case %d: %.6f&amp;quot;, ++cas,Math.abs(ans)));
+//out.println(r+&amp;quot; &amp;quot;+O.x+&amp;quot; &amp;quot;+O.y);
+//out.println(R.GetCirclePolyIntersectionArea(pl));
+</code></pre> }<br> out.flush();<br> out.close();<br>}</li>
+</ul>
+</li>
+</ul>
+<p>}<br>class Point {<br>    double x, y;</p>
+<pre><code>Point() &#123;&#125;
+Point(double _x, double _y) &#123;&#125;
+Point(Point p) &#123;&#125;
+Point add(Point r) &#123;&#125;
+Point sub(Point r) &#123;&#125;
+Point mul(double r) &#123;&#125;
+Point move(double dx, double dy) &#123;&#125;
+Point rotate(double a) &#123;&#125;
+Point rotate(double dx, double dy, double a) &#123;&#125;
+static Point mid(Point a, Point b) &#123;&#125;
+static double dist(Point a, Point b) &#123;&#125;
+public boolean equals(Point p) &#123;&#125;
+static void swap(Point a, Point b) &#123;&#125;
+static class Comp implements Comparator&amp;lt;Point&amp;gt; &#123;&#125;
+
+final static double eps = 1e-3;
+static int dcmp(double d) &#123;
+    if (Math.abs(d) &amp;lt; eps)
+        return 0;
+    return d &amp;gt; 0 ? 1 : -1;
+&#125;
+</code></pre><p>}<br>class Vector extends Point {<br>    Vector() {}<br>    Vector(double _x, double _y) {}<br>    Vector(Point a, Point b) {}<br>    Vector(Point p) {}<br>    static double angle(Vector a, Vector b) {}<br>    static double angle(Point a, Point b) {}<br>    static double angle(Point o, Point a, Point b) {}<br>    double dot(Vector r) {}<br>    double cross(Vector r) {}<br>    double length() {}<br>    Vector normal() {}<br>    static Point GetLineIntersection(Point p, Vector v, Point q, Vector w) {}<br>    static Point GetLineIntersection(Point p, Point v, Point q, Point w) {}<br>    static Vector add(Vector a, Vector b) {}<br>    static double dot(Vector a, Vector b) {}<br>    static double cross(Vector a, Vector b) {}<br>    static double cross(Point a, Point b) {}<br>    static double cross(Point o, Point a, Point b) {}<br>    static double cross(Point a, Point b, Point c, Point d) {}<br>    static double length(Vector r) {}<br>}<br>class Line extends Vector {<br>    Point s, e;</p>
+<pre><code>Line() &#123;&#125;
+Line(Point _s, Point _e) &#123;&#125;
+Line(double x1, double y1, double x2, double y2) &#123;&#125;
+Vector vector()&#123;&#125;
+static boolean isLineInter(Line l1, Line l2) &#123;&#125;
+static boolean isSegInter(Point s1, Point e1, Point s2, Point e2) &#123;&#125;
+static boolean isSegInter2(Point p1, Point p2, Point p3, Point p4)&#123;&#125;
+static boolean isSegInter(Line l1, Line l2) &#123;&#125;
+static boolean isSegInter2(Line l1, Line l2) &#123;&#125;
+</code></pre><p>}<br>class Polygon extends Vector {<br>    int num;<br>    Point[] v;<br>    Polygon() {}<br>    Polygon(int n) {}</p>
+<pre><code>boolean IsConvexBag() &#123;
+    int direction = 0;// 1:右手正螺旋，逆时针 -1:左手正螺旋，顺时针
+    for (int i = 0; i &amp;lt; num; i++) &#123;
+        int tmp = dcmp(cross(v[i], v[i + 1], v[i + 1], v[i + 2]));
+
+        if (direction == 0) // 避免最初的点出现共线的情况
+            direction = tmp;
+
+        if (direction * tmp &amp;lt; 0) // 只要Vec是凸包，那么无论Vec的旋转方向如何，direction*temp都会&amp;gt;=0
+            return false;
+    &#125;
+    return true;
+&#125;
+</code></pre><p>}<br>class Round extends Vector {<br>    double r;<br>    Point o;<br>    final static double pi = Math.acos(-1.0);</p>
+<pre><code>Round(double _r, double _x, double _y) &#123;&#125;
+static double Rad2Deg(double rad) &#123;&#125;
+static double Deg2Rad(double deg) &#123;&#125;
+double Area() &#123;&#125;
+
+static double CommonArea(Round A, Round B) &#123;
+    double area = 0.0;
+    Round M = dcmp(A.r - B.r) &amp;gt; 0 ? A : B;
+    Round N = dcmp(A.r - B.r) &amp;gt; 0 ? B : A;
+    double D = dist(M.o, N.o);
+    if (dcmp(M.r + N.r - D) &amp;gt; 0 &amp;amp;&amp;amp; dcmp(M.r - N.r - D) &amp;lt; 0) &#123;
+        double cosM = (M.r * M.r + D * D - N.r * N.r) / (2.0 * M.r * D);
+        double cosN = (N.r * N.r + D * D - M.r * M.r) / (2.0 * N.r * D);
+        double alpha = 2.0 * Math.acos(cosM);
+        double beta = 2.0 * Math.acos(cosN);
+
+        double TM = 0.5 * M.r * M.r * Math.sin(alpha);
+        double TN = 0.5 * N.r * N.r * Math.sin(beta);
+        double FM = 0.5 * alpha / pi * M.Area();
+        double FN = 0.5 * beta / pi * N.Area();
+        area = FM + FN - TM - TN;
+    &#125; else if (dcmp(M.r - N.r - D) &amp;gt;= 0) &#123;
+        area = N.Area();
+    &#125;
+    return area;
+&#125;
+
+/* 判断圆与多边形的关系 */
+boolean IsFitPoly(Polygon pl) &#123;
+    for (int i = 0; i &amp;lt;= pl.num; i++) &#123;
+        int k = dcmp(Math.abs(cross(o, pl.v[i], o, pl.v[i + 1]) / dist(pl.v[i], pl.v[i + 1])) - r);
+        if (k &amp;lt; 0)
+            return false;
+    &#125;
+    return true;
+&#125;
+
+boolean IsInPoly(Polygon pl) &#123;
+    double CircleAngle = 0.0; // 环绕角
+    for (int i = 1; i &amp;lt;= pl.num; i++) // 注意重复边不计算
+        if (dcmp(cross(o, pl.v[i], o, pl.v[i + 1])) &amp;gt;= 0)
+            CircleAngle += angle(o, pl.v[i], pl.v[i + 1]);
+        else
+            CircleAngle -= angle(o, pl.v[i], pl.v[i + 1]);
+
+    if (dcmp(CircleAngle) == 0) // CircleAngle=0, Peg在多边形外部
+        return false;
+    else if (dcmp(CircleAngle - pi) == 0 || dcmp(CircleAngle + pi) == 0) // CircleAngle=180,
+                                                                            // Peg在多边形边上(不包括顶点)
+    &#123;
+        if (dcmp(r) == 0)
+            return true;
+    &#125; else if (dcmp(CircleAngle - 2 * pi) == 0 || dcmp(CircleAngle + 2 * pi) == 0) // CircleAngle=360,
+                                                                                    // Peg在多边形边内部
+        return true;
+    else // CircleAngle=(0,360)之间的任意角， Peg在多边形顶点上
+    &#123;
+        if (dcmp(r) == 0)
+            return true;
+    &#125;
+    return false;
+&#125;
+
+static double TriAngleCircleInsection(Round C, Point A, Point B)
+&#123;
+    Vector OA = new Vector(A.sub(C.o)), OB = new Vector(B.sub(C.o));
+    Vector BA = new Vector(A.sub(B)), BC = new Vector(C.o.sub(B));
+    Vector AB = new Vector(B.sub(A)), AC = new Vector(C.o.sub(A));
+    double DOA = OA.length(), DOB = OB.length(),DAB = AB.length(), r = C.r;
+    if(dcmp(cross(OA,OB)) == 0) return 0;
+    if(dcmp(DOA-C.r) &amp;lt; 0 &amp;amp;&amp;amp; dcmp(DOB-C.r) &amp;lt; 0) return cross(OA,OB)*0.5;
+    else if(dcmp(DOB-r)&amp;lt;0 &amp;amp;&amp;amp; dcmp(DOA-r) &amp;gt;= 0) &#123;
+        double x = (dot(BA,BC) + Math.sqrt(r*r*DAB*DAB-cross(BA,BC)*cross(BA,BC)))/DAB;
+        double TS = cross(OA,OB)*0.5;
+        return Math.asin(TS*(1-x/DAB)*2/r/DOA)*r*r*0.5+TS*x/DAB;
+    &#125;
+    else if(dcmp(DOB-r) &amp;gt;=0 &amp;amp;&amp;amp; dcmp(DOA-r) &amp;lt;0 ) &#123;
+        double y = (dot(AB,AC)+Math.sqrt(r*r*DAB*DAB-cross(AB,AC)*cross(AB,AC)))/DAB;
+        double TS = cross(OA,OB)*0.5;
+        return Math.asin(TS*(1-y/DAB)*2/r/DOB)*r*r*0.5+TS*y/DAB;
+    &#125;
+    else if(dcmp(Math.abs(cross(OA,OB))-r*DAB)&amp;gt;=0 || dcmp(dot(AB,AC)) &amp;lt;= 0 || dcmp(dot(BA,BC)) &amp;lt;= 0) &#123;
+        if(dcmp(dot(OA,OB)) &amp;lt; 0) &#123;
+            if(dcmp(cross(OA,OB)) &amp;lt; 0) return (-Math.acos(-1.0)-Math.asin(cross(OA,OB)/DOA/DOB))*r*r*0.5;
+            else                 return ( Math.acos(-1.0)-Math.asin(cross(OA,OB)/DOA/DOB))*r*r*0.5;
+        &#125;
+        else                     return Math.asin(cross(OA,OB)/DOA/DOB)*r*r*0.5;
+    &#125;
+    else &#123;
+        double x = (dot(BA,BC)+Math.sqrt(r*r*DAB*DAB-cross(BA,BC)*cross(BA,BC)))/DAB;
+        double y = (dot(AB,AC)+Math.sqrt(r*r*DAB*DAB-cross(AB,AC)*cross(AB,AC)))/DAB;
+        double TS = cross(OA,OB)*0.5;
+        return (Math.asin(TS*(1-x/DAB)*2/r/DOA)+Math.asin(TS*(1-y/DAB)*2/r/DOB))*r*r*0.5 + TS*((x+y)/DAB-1);
+    &#125;
+&#125;
+</code></pre><p>}<br>[/code]</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-08T23:43:08.000Z" title="9/8/2015, 11:43:08 PM">09/08/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">2 minutes read (About 252 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/c5eccff6/">hdu 2203 亲和串 KMP</a></h1><div class="content"><h2 id="亲和串"><a href="#亲和串" class="headerlink" title="亲和串"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2203">亲和串</a></h2><p>[code lang=”java”]<br>/** Sep 8, 2015 10:56:55 PM</p>
+<ul>
+<li>PrjName:hdu2203</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> public static void main(String[] args) throws IOException{<pre><code>// TODO Auto-generated method stub
+InputReader in=new InputReader(System.in);
+PrintWriter out=new PrintWriter(System.out);
+while(in.nextLine()!=null)&#123;
+    String s=in.next();
+    s=new String(s+s);
+    String t=in.next();
+    out.println(KMP.Index(s, t)&amp;gt;-1?&amp;quot;yes&amp;quot;:&amp;quot;no&amp;quot;);
+&#125;
+out.flush();
+out.close();
+</code></pre> }</li>
+</ul>
+<p>}<br>class KMP{<br>    static int next[];<br>    static void getNext(String T){<br>        next=new int[T.length()+1];<br>        int j = 0, k = -1; next[0] = -1;<br>        while(j &lt; T.length())<br>            if(k == -1 || T.charAt(j) == T.charAt(k))<br>                next[++j] = ++k;<br>            else<br>                k = next[k];<br>    }<br>    static int Index(String S,String T)<br>    {<br>        int i = 0, j = 0;<br>        getNext(T);</p>
+<pre><code>    for(i = 0; i &amp;lt; S.length()&amp;amp;&amp;amp;j&amp;lt;T.length(); i++)
+    &#123;
+        while(j &amp;gt; 0 &amp;amp;&amp;amp; S.charAt(i) != T.charAt(j))
+            j = next[j];
+        if(S.charAt(i) == T.charAt(j))
+            j++;
+    &#125;
+    if(j == T.length())
+        return i - T.length();
+    else
+        return -1;
+&#125;
+static int Count(String S,String T)
+&#123;
+    int res = 0,j=0;
+    if(S.length() == 1 &amp;amp;&amp;amp; T.length() == 1)
+    &#123;
+        if(S.charAt(0) == T.charAt(0))
+            return 1;
+        else
+            return 0;
+    &#125;
+    getNext(T);
+    for(int i = 0; i &amp;lt; S.length(); i++)
+    &#123;
+        while(j &amp;gt; 0 &amp;amp;&amp;amp; S.charAt(i) != T.charAt(j))
+            j = next[j];
+        if(S.charAt(i) == T.charAt(j))
+            j++;
+        if(j == T.length())
+        &#123;
+            res++;
+            j = next[j];
+        &#125;
+    &#125;
+    return res;
+&#125;
+</code></pre><p>}<br>[/code]</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-08T23:21:09.000Z" title="9/8/2015, 11:21:09 PM">09/08/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.651Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">2 minutes read (About 314 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/969eea4f/">hdu 2222 Keywords Search AC自动机</a></h1><div class="content"><h2 id="Keywords-Search"><a href="#Keywords-Search" class="headerlink" title="Keywords Search"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2222">Keywords Search</a></h2><p>[code lang=”java”]<br>/** Sep 8, 2015 8:34:27 PM</p>
+<ul>
+<li>PrjName:hdu2222</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;</li>
+</ul>
+<p>public class Main {</p>
+<pre><code>/**
+ * @param args
+ */
+static AC ac = new AC();
+
+public static void main(String[] args) throws IOException &#123;
+    // TODO Auto-generated method stub
+    InputReader in = new InputReader(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+    int T = in.nextInt();
+    while (T-- &amp;gt; 0) &#123;
+        int n = in.nextInt();
+        ac.clear();
+        for (int i = 1; i &amp;lt;= n; i++)
+            ac.insert(in.next());
+        ac.build();
+        out.println(ac.query(in.next()));
+    &#125;
+    out.flush();
+    out.close();
+&#125;
+</code></pre><p>}</p>
+<p>class AC {<br>    final int maxl = 500010, maxc = 26;<br>    final char fstc = ‘a’;<br>    int root, L;<br>    int[][] next;<br>    int[] fail, end;<br>    Queue&lt;Integer&gt; que = new LinkedList&lt;Integer&gt;();</p>
+<pre><code>AC() &#123;
+    next = new int[maxl][maxc];
+    fail = new int[maxl];
+    end = new int[maxl];
+    L = 0;
+    root = newnode();
+&#125;
+
+void clear() &#123;
+    Arrays.fill(fail, 0);
+    Arrays.fill(end, 0);
+    L = 0;
+    root = newnode();
+&#125;
+
+int newnode() &#123;
+    Arrays.fill(next[L], -1);
+    end[L++] = 0;
+    return L - 1;
+&#125;
+
+void insert(String str) &#123;
+    int now = root;
+    for (int i=0;i&amp;lt;str.length();i++) &#123;
+        char ch=str.charAt(i);
+        if (next[now][ch - fstc] == -1)
+            next[now][ch - fstc] = newnode();
+        now = next[now][ch - fstc];
+    &#125;
+    end[now]++;
+&#125;
+
+void build() &#123;
+    que.clear();
+    fail[root] = root;
+    for (int i = 0; i &amp;lt; maxc; i++)
+        if (next[root][i] == -1)
+            next[root][i] = root;
+        else &#123;
+            fail[next[root][i]] = root;
+            que.add(next[root][i]);
+        &#125;
+    while (!que.isEmpty()) &#123;
+        int now = que.poll();
+        for (int i = 0; i &amp;lt; maxc; i++)
+            if (next[now][i] == -1)
+                next[now][i] = next[fail[now]][i];
+            else &#123;
+                fail[next[now][i]] = next[fail[now]][i];
+                que.add(next[now][i]);
+            &#125;
+    &#125;
+&#125;
+
+int query(String str) &#123;
+    int now = root, res = 0;
+    for (int i=0;i&amp;lt;str.length();i++) &#123;
+        char ch=str.charAt(i);
+        now = next[now][ch - fstc];
+        int tmp = now;
+        while (tmp != root) &#123;
+            res += end[tmp];
+             end[tmp] = 0;
+            tmp = fail[tmp];
+        &#125;
+    &#125;
+    return res;
+&#125;
+</code></pre><p>}<br>[/code]</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-06T21:15:56.000Z" title="9/6/2015, 9:15:56 PM">09/06/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">2 minutes read (About 238 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/a8ac2317/">hdu 1204 糖果大战 概率过程</a></h1><div class="content"><h1 id="hdu-1204"><a href="#hdu-1204" class="headerlink" title="hdu 1204"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=1204">hdu 1204</a></h1><p>通过本题接触到了存在于《概率论与数理统计》教材，但是不在学校教学范围内的概率过程知识。<br>接受这种新的认知，才能避免落入高中局限的概率观的窠臼。<br>[code lang=”java”]<br>/** Sep 5, 2015 9:45:04 PM</p>
+<ul>
+<li>PrjName:hdu1204</li>
+<li>@author Semprathlon<br><em>/<br>import java.awt.Toolkit;<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> /**<ul>
+<li>@param args<br>*/<br>static double pow(double n,int m){<br> double res=1;<br> while(m&gt;0){<pre><code>if ((m&amp;amp;1)&amp;gt;0) res=res*n;
+n=n*n;
+m&amp;gt;&amp;gt;=1;
+</code></pre> }<br> return res;<br>}<br>public static void main(String[] args) throws IOException{<br> // TODO Auto-generated method stub<br> InputReader in=new InputReader(System.in);<br> PrintWriter out=new PrintWriter(System.out);<br> while(in.nextLine()!=null){<pre><code>int n=in.nextInt();
+int m=in.nextInt();
+double p=in.nextDouble();
+double q=in.nextDouble();
+if (n==0)
+    out.println(&amp;quot;0.00&amp;quot;);
+else if (m==0)
+    out.println(&amp;quot;1.00&amp;quot;);
+else if (p==0||q==1)
+    out.println(&amp;quot;0.00&amp;quot;);
+else if (p==1||q==0)
+    out.println(&amp;quot;1.00&amp;quot;);
+else&#123;
+    double k=q*(1.0-p)/p/(1.0-q);
+    double ans=p==q?n*1.0/(m+n):(1.0-pow(k, n))/(1.0-pow(k, n+m));
+    out.println(String.format(&amp;quot;%.2f&amp;quot;, ans));
+&#125;
+</code></pre> }<br> out.flush();<br> out.close();<br>}<br>}<br>[/code]</li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-05T21:40:16.000Z" title="9/5/2015, 9:40:16 PM">09/05/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">7 minutes read (About 1003 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/97dd1257/">Bestcoder</a></h1><div class="content"><h2 id="1001-A-problem-of-sorting"><a href="#1001-A-problem-of-sorting" class="headerlink" title="1001 A problem of sorting"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5427">1001 A problem of sorting</a></h2><p>[code lang=”java”]<br>/** Sep 5, 2015 7:07:52 PM</p>
+<ul>
+<li>PrjName:Bc54-01</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> final static int maxn=116;<br> static String s;<br> static Vector&lt;String&gt;[] vec=new Vector[maxn];<br> public static void main(String[] args) throws IOException{<pre><code>// TODO Auto-generated method stub
+InputReader in=new InputReader(System.in);
+PrintWriter out=new PrintWriter(System.out);
+for(int i=0;i&amp;lt;maxn;i++)
+    vec[i]=new Vector&amp;lt;String&amp;gt;();
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(br.readLine());
+while(T--&amp;gt;0)&#123;
+    for(int i=0;i&amp;lt;maxn;i++)
+        vec[i].clear();
+    int n=Integer.parseInt(br.readLine());
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        s=new String(br.readLine());
+        int y=0,tmp=1,j;
+        for(j=s.length()-1;j&amp;gt;0;j--)
+            if (s.charAt(j)&amp;gt;=&apos;0&apos;&amp;amp;&amp;amp;s.charAt(j)&amp;lt;=&apos;9&apos;)&#123;
+                y+=tmp*(s.charAt(j)-&apos;0&apos;);
+                tmp*=10;
+            &#125;
+            else 
+                break;
+        s=s.substring(0, j);
+        vec[y-1900].add(s);
+    &#125;
+    for(int i=maxn-1;i&amp;gt;=0;i--)
+        for(int j=0;j&amp;lt;vec[i].size();j++)
+            out.println(vec[i].get(j));
+&#125;
+out.flush();
+out.close();
+</code></pre> }<br>}<br>[/code]</li>
+</ul>
+<h2 id="1002-The-Factor"><a href="#1002-The-Factor" class="headerlink" title="1002 The Factor"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5428">1002 The Factor</a></h2><p>[code lang=”java”]<br>/** Sep 5, 2015 7:30:23 PM</p>
+<ul>
+<li>PrjName:Bc54-02</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> final static int maxn=109000;<br> static int[] a;<br> static int[] pri,phi,fstp;<br> static void get_prime(){<pre><code>pri=new int[maxn];
+fstp=new int[maxn];
+phi=new int[maxn];
+phi[1]=1;
+for(int i=2;i&amp;lt;maxn;i++)&#123;
+    if (fstp[i]==0)&#123;
+        pri[++pri[0]]=i;
+        phi[i]=i-1;
+    &#125;
+    for(int j=1;j&amp;lt;=pri[0]&amp;amp;&amp;amp;i*pri[j]&amp;lt;maxn;j++)&#123;
+        int k=i*pri[j];
+        fstp[k]=pri[j];
+        //if (fstp[i]==pri[j])&#123;
+        if (i%pri[j]==0)&#123;
+            phi[k]=phi[i]*pri[j];
+            break;
+        &#125;
+        else
+            phi[k]=phi[i]*(pri[j]-1);
+    &#125;
+&#125;
+</code></pre> }<br> static int get_fstp(int n){<pre><code>if (n&amp;lt;maxn)
+    return fstp[n]&amp;gt;0?fstp[n]:n;
+for(int i=2;i&amp;lt;maxn;i++)
+    if (n%i==0)
+        return fstp[i]&amp;gt;0?fstp[i]:i;
+return 0;
+</code></pre> }<br> static Vector&lt;Integer&gt; get_prime_factor(int n){<pre><code>Vector&amp;lt;Integer&amp;gt; res=new Vector&amp;lt;Integer&amp;gt;();
+while(n&amp;gt;1&amp;amp;&amp;amp;fstp[n]&amp;gt;0)&#123;
+    res.add(fstp[n]);
+    n/=fstp[n];
+&#125;
+if (n&amp;gt;1) res.add(n);
+return res;
+</code></pre> }<br> static Vector&lt;Integer&gt; v=new Vector&lt;Integer&gt;();<br> static Integer[] f;<br> public static void main(String[] args) throws IOException{<pre><code>InputReader in=new InputReader(System.in);
+PrintWriter out=new PrintWriter(System.out);
+get_prime();
+int T=in.nextInt();
+while(T--&amp;gt;0)&#123;
+    int n=in.nextInt();
+    v.clear();
+    a=new int[n+1];
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        a[i]=in.nextInt();
+        if (a[i]==1) continue;
+        int tmp=get_fstp(a[i]);
+        v.add(tmp);
+        if (a[i]/tmp&amp;gt;1) v.add(get_fstp(a[i]/tmp));
+    &#125;
+    /*v.sort(new Comparator&amp;lt;Integer&amp;gt;() &#123;
+        public int compare(Integer o1,Integer o2)&#123;
+            return Integer.compare(o1, o2);
+        &#125;
+    &#125;);*/
+    f=v.toArray(new Integer[0]);
+    Arrays.sort(f);
+    if (v.size()&amp;lt;2)
+        out.println(-1);
+    else 
+        out.println(f[0]*f[1]);
+&#125;
+out.flush();
+out.close();
+</code></pre> }<br>}<br>[/code]<br>⬆️当时想太多了啊，何必把找到的因子全存进vector啊，白白吃了个RE……<br>（测试还发现HDU尚不支持Vector的sort方法，还未支持到Java7？）<br>[code lang=”java”]<br>/** Sep 8, 2015 16:02:23 PM</li>
+<li>PrjName:Bc54-02</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> final static int maxn=45000;<br> static int[] a;<br> static int[] pri,fstp;<br> static void get_prime(){<pre><code>pri=new int[maxn];
+fstp=new int[maxn];
+for(int i=2;i&amp;lt;maxn;i++)&#123;
+    if (fstp[i]==0)&#123;
+        pri[++pri[0]]=i;
+    &#125;
+    for(int j=1;j&amp;lt;=pri[0]&amp;amp;&amp;amp;i*pri[j]&amp;lt;maxn;j++)&#123;
+        int k=i*pri[j];
+        fstp[k]=pri[j];
+        if (i%pri[j]==0)
+            break;
+    &#125;
+&#125;
+</code></pre> }<br> static int get_fstp(int n){<pre><code>if (n&amp;lt;maxn)
+    return fstp[n]&amp;gt;0?fstp[n]:n;
+for(int i=2;i&amp;lt;maxn;i++)
+    if (n%i==0)
+        return fstp[i]&amp;gt;0?fstp[i]:i;
+return n;
+</code></pre> }<br> static int max1,max2,sum;<br> static void init(){<pre><code>max1=max2=0x3fffffff;sum=0;
+</code></pre> }<br> static void update(int s){<pre><code>if (s&amp;lt;max1)&#123;
+    max2=max1;max1=s;
+&#125;
+else 
+    max2=Math.min(max2, s);
+sum++;
+</code></pre> }<br> public static void main(String[] args) throws IOException{<pre><code>InputReader in=new InputReader(System.in);
+PrintWriter out=new PrintWriter(System.out);
+get_prime();
+int T=in.nextInt();
+while(T--&amp;gt;0)&#123;
+    init();
+    int n=in.nextInt();
+    a=new int[n+1];
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        a[i]=in.nextInt();
+        if (a[i]==1) continue;
+        int tmp=get_fstp(a[i]);
+        update(tmp);
+        if (a[i]/tmp&amp;gt;1) update(get_fstp(a[i]/tmp));
+    &#125;
+    if (sum&amp;lt;2)
+        out.println(-1);
+    else 
+        out.println(max1*(long)max2);
+&#125;
+out.flush();
+out.close();
+</code></pre> }<br>}<br>[/code]</li>
+</ul>
+<h2 id="1003-Geometric-Progression"><a href="#1003-Geometric-Progression" class="headerlink" title="1003 Geometric Progression"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5429">1003 Geometric Progression</a></h2><p>[code lang=”java”]<br>/** Sep 5, 2015 8:05:33 PM</p>
+<ul>
+<li>PrjName:Bc54-03</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.math.BigInteger;<br>import java.util.*;<br>public class Main {<br> final static int maxn=101;<br> static BigInteger a[]=new BigInteger[maxn];<br> public static void main(String[] args) throws IOException{<pre><code>InputReader in=new InputReader(System.in);
+PrintWriter out=new PrintWriter(System.out);
+int T=in.nextInt();
+while(T--&amp;gt;0)&#123;
+    int n=in.nextInt();
+    boolean zero=false,nonzero=false;
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        a[i]=new BigInteger(in.next());
+        if (a[i].equals(BigInteger.ZERO))
+            zero|=true;
+        else
+            nonzero|=true;
+    &#125;
+    boolean ans=(zero&amp;amp;&amp;amp;nonzero)?false:true;
+    if (ans)
+    for(int i=2;i&amp;lt;n;i++)
+        if (!a[i].pow(2).equals(a[i-1].multiply(a[i+1])))&#123;
+            ans=false;
+            break;
+        &#125;
+    out.println(ans?&amp;quot;Yes&amp;quot;:&amp;quot;No&amp;quot;);
+&#125;
+out.flush();
+out.close();
+</code></pre> }<br>}<br>[/code]<br>不明不白地送了个WA，没有考虑好数列中值为0的项。<br>这题不是暑假多校才做过的么？</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-02T21:23:06.000Z" title="9/2/2015, 9:23:06 PM">09/02/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">7 minutes read (About 1056 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/65c4bded/">2014 ACM/ICPC Asia Regional Anshan Online</a></h1><div class="content"><p>hdu 5001 Walk 概率dp<br>其实就是这么直白，正难则反<br>[code lang=”java”]<br>/** Sep 2, 2015 8:29:38 PM</p>
+<ul>
+<li>PrjName:hdu5001</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;</li>
+</ul>
+<p>public class Main {</p>
+<pre><code>/**
+ * @param args
+ */
+static int n, m, d;
+static int[] deg;
+static int[][] u;
+static double[][] f;
+
+static double solve(int x) &#123;
+    f = new double[d + 1][n + 1];
+    for (int i = 1; i &amp;lt;= n; i++)
+        f[0][i] = 1.0 / n;
+    for (int i = 1; i &amp;lt;= d; i++)
+        for (int j = 1; j &amp;lt;= n; j++) &#123;
+            if (j == x)
+                continue;
+            for (int k = 1; k &amp;lt;= u[j][0]; k++)
+                f[i][u[j][k]] += f[i - 1][j] / u[j][0];
+        &#125;
+    double ans = 0;
+    for (int i = 1; i &amp;lt;= n; i++)
+        if (i != x)
+            ans += f[d][i];
+    return ans;
+&#125;
+
+public static void main(String[] args) throws IOException &#123;
+    // TODO Auto-generated method stub
+    InputReader in = new InputReader(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+    int T = in.nextInt();
+    while (T-- &amp;gt; 0) &#123;
+        n = in.nextInt();
+        m = in.nextInt();
+        d = in.nextInt();
+        u = new int[n + 1][m + 1];
+        deg = new int[n + 1];
+        for (int i = 1; i &amp;lt;= m; i++) &#123;
+            int x = in.nextInt();
+            deg[x]++;
+            int y = in.nextInt();
+            deg[y]++;
+            u[x][++u[x][0]] = y;
+            u[y][++u[y][0]] = x;
+        &#125;
+
+        for (int i = 1; i &amp;lt;= n; i++)
+            out.println(String.format(&amp;quot;%.6f&amp;quot;, solve(i)));
+    &#125;
+    out.flush();
+    out.close();
+&#125;
+</code></pre><p>}<br>[/code]<br>不知为何，printf+格式字符串会出现莫名的PE</p>
+<p>hdu 4998 Rotate<br>[code lang=”java”]<br>/** Sep 2, 2015 5:58:24 PM</p>
+<ul>
+<li>PrjName:hdu4998</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;</li>
+</ul>
+<p>public class Main {</p>
+<pre><code>/**
+ * @param args
+ */
+final static double eps = 1e-5;
+final static double pi = Math.acos(-1.0);
+
+static int dcmp(double d) &#123;
+    if (Math.abs(d) &amp;lt; eps)
+        return 0;
+    return d &amp;gt; 0 ? 1 : -1;
+&#125;
+
+public static void main(String[] args) throws IOException &#123;
+    // TODO Auto-generated method stub
+    InputReader in = new InputReader(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+    int T = in.nextInt();
+    while (T-- &amp;gt; 0) &#123;
+        int n = in.nextInt();
+        Point p1 = new Point(0, 0), q1 = new Point(p1);
+        Point p2 = new Point(0, 1), q2 = new Point(p2);
+        for (int i = 1; i &amp;lt;= n; i++) &#123;
+            double x = in.nextDouble();
+            double y = in.nextDouble();
+            double a = in.nextDouble();
+            q1 = q1.rotate(x, y, a);
+            q2 = q2.rotate(x, y, a);
+        &#125;
+        Vector v1 = new Vector(p1, q1).normal();
+        Vector v2 = new Vector(p2, q2).normal();
+        Point o = Vector.GetLineIntersection(Point.mid(p1, q1), v1, Point.mid(p2, q2), v2);
+        double ans = Vector.angle(o, p1, q1);
+        if (Vector.cross(new Vector(o, p1), new Vector(o, q1)) &amp;lt; 0)
+            ans = 2 * pi - ans;
+        out.printf(&amp;quot;%.5f %.5f %.5f\n&amp;quot;, o.x, o.y, ans);
+    &#125;
+    out.flush();
+    out.close();
+&#125;
+
+static class Point &#123;
+    double x, y;
+
+    Point() &#123;
+    &#125;
+
+    Point(double _x, double _y) &#123;
+        x = _x;
+        y = _y;
+    &#125;
+
+    Point(Point p) &#123;
+        this(p.x, p.y);
+    &#125;
+
+    boolean equals(Point p) &#123;
+        return dcmp(x - p.x) == 0 &amp;amp;&amp;amp; dcmp(y - p.y) == 0;
+    &#125;
+
+    Point add(Point r) &#123;
+        return new Point(x + r.x, y + r.y);
+    &#125;
+
+    Point sub(Point r) &#123;
+        return new Point(x - r.x, y - r.y);
+    &#125;
+
+    Point mul(double r) &#123;
+        return new Point(x * r, y * r);
+    &#125;
+
+    Point move(double dx, double dy) &#123;
+        return new Point(x + dx, y + dy);
+    &#125;
+
+    Point rotate(double a) &#123;
+        return new Point(x * Math.cos(a) - y * Math.sin(a), x * Math.sin(a) + y * Math.cos(a));
+    &#125;
+
+    Point rotate(double dx, double dy, double a) &#123;
+        return this.move(-dx, -dy).rotate(a).move(dx, dy);
+    &#125;
+
+    static Point mid(Point a, Point b) &#123;
+        return new Point((a.x + b.x) / 2.0, (a.y + b.y) / 2.0);
+    &#125;
+&#125;
+
+static class Vector extends Point &#123;
+    Vector(double _x, double _y) &#123;
+        x = _x;
+        y = _y;
+    &#125;
+
+    Vector(Point a, Point b) &#123;
+        this(b.x - a.x, b.y - a.y);
+    &#125;
+
+    Vector(Point p) &#123;
+        this(p.x, p.y);
+    &#125;
+
+    static double angle(Vector a, Vector b) &#123;
+        return Math.acos(dot(a, b) / a.length() / b.length());
+    &#125;
+
+    static double angle(Point o, Point a, Point b) &#123;
+        return angle(new Vector(o, a), new Vector(o, b));
+    &#125;
+
+    double dot(Vector r) &#123;
+        return x * r.x + y * r.y;
+    &#125;
+
+    double cross(Vector r) &#123;
+        return x * r.y - y * r.x;
+    &#125;
+
+    double length() &#123;
+        return Math.sqrt(this.dot(this));
+    &#125;
+
+    Vector normal() &#123;
+        double len = this.length();
+        return new Vector(-y / len, x / len);
+    &#125;
+
+    static Point GetLineIntersection(Point p, Vector v, Point q, Vector w) &#123;// 求直线交点
+        Vector u = new Vector(p.sub(q));
+        double t = cross(w, u) / cross(v, w);
+        return p.add(v.mul(t));
+    &#125;
+
+    static Point GetLineIntersection(Point p, Point v, Point q, Point w) &#123;
+        return GetLineIntersection(p, new Vector(v), q, new Vector(w));
+    &#125;
+
+    static Vector add(Vector a, Vector b) &#123;
+        return new Vector(a.add(b));
+    &#125;
+
+    static double dot(Vector a, Vector b) &#123;
+        return a.dot(b);
+    &#125;
+
+    static double cross(Vector a, Vector b) &#123;
+        return a.cross(b);
+    &#125;
+
+    static double cross(Point o, Point a, Point b) &#123;
+        return cross(new Vector(o, a), new Vector(o, b));
+    &#125;
+
+    static double length(Vector r) &#123;
+        return r.length();
+    &#125;
+&#125;
+</code></pre><p>}<br>[/code]<br>说得好像很繁的样子   </p>
+<p>hdu 5000<br>[code lang=”java”]<br>/** Sep 3, 2015 9:43:43 PM</p>
+<ul>
+<li>PrjName:hdu5000</li>
+<li><p>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {</p>
+<p> /**</p>
+<ul>
+<li>@param args<br>*/<br>final static int mod=1000000007;<br>static int[] a,f;<br>public static void main(String[] args) throws IOException{<br> // TODO Auto-generated method stub<br> InputReader in=new InputReader(System.in);<br> PrintWriter out=new PrintWriter(System.out);<br> int T=in.nextInt();<br> while(T–&gt;0){<pre><code>int n=in.nextInt();
+int sum=0;
+a=new int[n+1];
+for(int i=1;i&amp;lt;=n;i++)&#123;
+    a[i]=in.nextInt();
+    sum+=a[i];
+&#125;
+sum&amp;gt;&amp;gt;=1;
+f=new int[sum+1];
+f[0]=1;
+for(int i=1;i&amp;lt;=n;i++)
+    for(int j=sum;j&amp;gt;=0;j--)
+        for(int k=1;k&amp;lt;=j&amp;amp;&amp;amp;k&amp;lt;=a[i];k++)&#123;
+            f[j]+=f[j-k];
+            f[j]%=mod;
+        &#125;
+out.println(f[sum]);
+</code></pre> }<br> out.flush();<br> out.close();<br>}</li>
+</ul>
+</li>
+</ul>
+<p>}<br>class InputReader{<br>    public BufferedReader reader;<br>    public StringTokenizer tokenizer;</p>
+<pre><code>public InputReader(InputStream stream)&#123;
+       reader = new BufferedReader(
+               new InputStreamReader(stream), 32768);
+       tokenizer = null;
+&#125;
+
+public String next()&#123;
+    while(tokenizer == null || !tokenizer.hasMoreTokens())&#123;
+        try&#123;
+            tokenizer = new StringTokenizer(
+                       reader.readLine());
+        &#125;catch (IOException e) &#123;
+            throw new RuntimeException(e);
+        &#125;
+    &#125;
+    return tokenizer.nextToken();
+&#125;
+
+public int nextInt() &#123;
+    return Integer.parseInt(next());
+&#125;
+
+public long nextLong() &#123;
+    return Long.parseLong(next());
+&#125;
+</code></pre><p>}<br>[/code]<br>非常奇怪，找到sum/2可得最优解这个规律就算是成功了一半了</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-09-01T16:18:03.000Z" title="9/1/2015, 4:18:03 PM">09/01/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">4 minutes read (About 638 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/d6d71da6/">hdu 2089 数位dp</a></h1><div class="content"><h1 id="不要62"><a href="#不要62" class="headerlink" title="不要62"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2089">不要62</a></h1><p>具有教科书性质的数位dp应用实例。<br>[code lang=”java”]<br>/** Aug 31, 2015 9:57:30 PM</p>
+<ul>
+<li>PrjName:hdu2089</li>
+<li>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> /**<ul>
+<li>@param args<br>*/<br>final static int maxl=7;<br>static int[][] f;<br>static int[] digit;<br>static void init(){<br> f=new int[maxl+1][10];<br> f[0][0]=1;<br> for(int i=1;i&lt;=maxl;i++)//从低位到高位！<pre><code>for(int j=0;j&amp;lt;10;j++)
+    for(int k=0;k&amp;lt;10;k++)
+        if (k!=4&amp;amp;&amp;amp;!(j==6&amp;amp;&amp;amp;k==2))
+            f[i][j]+=f[i-1][k];
+</code></pre>}<br>static int solve(int n){<br> //if (n==0) return 1;<br> digit=new int[maxl+1];<br> while(n&gt;0){<pre><code>digit[++digit[0]]=n%10;
+n/=10;
+</code></pre> }<br> int res=0;<br> for(int i=digit[0];i&gt;0;i–){//从高位到低位！<pre><code>for(int j=0;j&amp;lt;digit[i];j++)
+    if(j!=4&amp;amp;&amp;amp;!(j==2&amp;amp;&amp;amp;digit[i+1]==6))//限制前j位，枚举后digit[0]-j位
+        res+=f[i][j];
+if(digit[i]==4||digit[i]==2&amp;amp;&amp;amp;digit[i+1]==6) break;
+</code></pre> }<br> return res;<br>}<br>public static void main(String[] args) throws IOException{<br> // TODO Auto-generated method stub<br> StreamTokenizer in=new StreamTokenizer(new BufferedInputStream(System.in));<br> PrintWriter out=new PrintWriter(System.out);<br> init();<br> while(in.nextToken()!=StreamTokenizer.TT_EOF){<pre><code>int n=(int)in.nval;
+in.nextToken();
+int m=(int)in.nval;
+if (n==0&amp;amp;&amp;amp;m==0) break;
+//out.println(solve(n)+&amp;quot; &amp;quot;+solve(m+1));
+out.println(solve(m+1)-solve(n));
+</code></pre> }<br> out.flush();<br> out.close();<br>}<br>}<br>[/code]<br>[code lang=”java”]<br>/** Sep 1, 2015 8:57:53 PM</li>
+</ul>
+</li>
+<li>PrjName:hdu2089-2</li>
+<li><p>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {<br> /**</p>
+<ul>
+<li><p>@param args<br>*/<br>final static int maxl = 8;<br>static int[][] f, g;<br>static int[] digit;<br>static void init() {<br> f = new int[maxl + 1][10];<br> f[0][0] = 1;<br> g = new int[maxl + 1][10];<br> g[0][0] = 1;<br>}<br>static void getd(int n) {<br> digit = new int[maxl + 1];<br> while (n &gt; 0) {</p>
+<pre><code>digit[++digit[0]] = n % 10;
+n /= 10;
+</code></pre><p> }<br>}<br>static int dfs(int d, int r, boolean c) {<br> if (d == 0) {</p>
+<pre><code>if (c)
+    f[d + 1][r]++;
+return 0;
+</code></pre><p> }<br> if (!(f[d + 1][r] &gt; 0)) {</p>
+<pre><code>int add = 0;
+int up = c ? 9 : digit[d];
+for (int i = 0; i &amp;lt;= up; i++)
+    if (!(r == 6 &amp;amp;&amp;amp; i == 2)) &#123;
+        if (!(f[d][i] &amp;gt; 0))
+            dfs(d - 1, i, c || i != up);
+        if (i != 4)
+            add += f[d][i];
+    &#125;
+f[d + 1][r] += add;
+</code></pre><p> }<br> int res = digit[d] == 4 || digit[d] == 2 &amp;&amp; digit[d + 1] == 6 ? 0 : dfs(d - 1, 0, false);<br> for (int i = 0; i &lt; digit[d]; i++)</p>
+<pre><code>if (i != 4 &amp;amp;&amp;amp; !(i == 2 &amp;amp;&amp;amp; digit[d + 1] == 6))
+    res += f[d][i];
+</code></pre><p> return res;<br>}<br>static int solve(int n) {<br> int res = 0;<br> getd(n);<br> return dfs(digit[0], 0, true);<br>}<br>public static void main(String[] args) throws IOException {<br> // TODO Auto-generated method stub<br> StreamTokenizer in = new StreamTokenizer(new BufferedInputStream(System.in));<br> PrintWriter out = new PrintWriter(System.out);<br> init();</p>
+<p> while (in.nextToken() != StreamTokenizer.TT_EOF) {</p>
+<pre><code>int n = (int) in.nval;
+in.nextToken();
+int m = (int) in.nval;
+if (n == 0 &amp;amp;&amp;amp; m == 0)
+    break;
+out.println(solve(m + 1) - solve(n));
+</code></pre><p> }<br> out.flush();<br> out.close();<br>}<br>}<br>[/code]</p>
+<ul>
+<li>为何生成与统计分两步走？<br>因为前i+1位的各种情况以前i位为依据生成，不能打断这个递推的连续性。<br>待统计时再筛选所需。</li>
+<li>为何solve(m+1)?<br>便捷化处理，搜集&lt;m+1的答案即≤m的答案。   </li>
+<li>为何这个记忆化搜索极易写挂？<br>许多人根据数字的可选或不可选来划分状态，而此处为了清晰的体现数位的筛选辄以数字为状态。<br>状态的更新与统计仍是分离的。   </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2015-08-30T10:30:54.000Z" title="8/30/2015, 10:30:54 AM">08/30/2015</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-09-19T01:01:43.647Z" title="9/19/2021, 1:01:43 AM">09/19/2021</time></span><span class="level-item"> Semprathlon / Simfae Dean </span><span class="level-item"><a class="link-muted" href="/categories/ACM-ICPC/">ACM-ICPC</a><span> / </span><a class="link-muted" href="/categories/ACM-ICPC/Programing/">Programing</a></span><span class="level-item">7 minutes read (About 1048 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/97dd1257/">Bestcoder</a></h1><div class="content"><p>迟到了半小时开打，不然rank还可以更好看点……</p>
+<h1 id="1001-Rikka-with-Graph"><a href="#1001-Rikka-with-Graph" class="headerlink" title="1001 Rikka with Graph"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5422">1001 Rikka with Graph</a></h1><p>Time Limit: 2000/1000 MS (Java/Others)   Memory Limit: 65536/65536 K (Java/Others)<br>[code lang=”java”]<br>/** Aug 29, 2015 7:39:29 PM</p>
+<ul>
+<li>PrjName:Bc53-01</li>
+<li><p>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {</p>
+<p> /**</p>
+<ul>
+<li>@param args<br>*/<br>public static void main(String[] args) throws IOException{<br> // TODO Auto-generated method stub<br> StreamTokenizer in=new StreamTokenizer(new BufferedInputStream(System.in));<br> PrintWriter out=new PrintWriter(System.out);<br> while(in.nextToken()!=StreamTokenizer.TT_EOF){<pre><code>int n=(int)in.nval;
+in.nextToken();
+int m=(int)in.nval;
+boolean has=false;
+//out.println(n+&amp;quot;-&amp;quot;+m);
+for(int i=1;i&amp;lt;=m;i++)&#123;
+    in.nextToken();
+    int u=(int)in.nval;
+    in.nextToken();
+    int v=(int)in.nval;
+    if (u==1&amp;amp;&amp;amp;v==n||u==n&amp;amp;&amp;amp;v==1)
+        has=true;
+&#125;
+if (has)
+    out.println(1+&amp;quot; &amp;quot;+n*(n-1)/2);
+else
+    out.println(1+&amp;quot; &amp;quot;+1);
+</code></pre> }<br> out.flush();<br> out.close();<br>}<br>}<br>[/code]<br>如果点1与点n直接相连，那么就是距离最短了。</li>
+</ul>
+</li>
+</ul>
+<h1 id="1002-Rikka-with-Tree"><a href="#1002-Rikka-with-Tree" class="headerlink" title="1002 Rikka with Tree"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=5423">1002 Rikka with Tree</a></h1><p>要同时满足不同与相似，就是要求结点数相等，各结点到树根1的距离分别相等（即深度分别相同），且存在父节点不同的结点。<br>可以说就是判断同一深度上的结点互换后是否能得到新的结构。<br>若有某一深度上的结点数多于一个，那么大概可以通过同层互换获得新的结构。<br>[code lang=”java”]<br>/** Aug 29, 2015 7:59:14 PM</p>
+<ul>
+<li>PrjName:Bc53-02</li>
+<li><p>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {</p>
+<p> /**</p>
+<ul>
+<li>@param args<br>*/<br>final static int maxn=2010;<br>static Graph G=new Graph(maxn);<br>static int[] dep;<br>static HashSet&lt;Integer&gt; st=new HashSet&lt;Integer&gt;();<br>static void bfs(int st){<br> Queue&lt;Integer&gt; que=new LinkedList&lt;Integer&gt;();<br> que.add(st);<br> while(!que.isEmpty()){<pre><code>int u=que.poll();
+for(int i=G.h[u];i&amp;gt;-1;i=G.edge[i].next)&#123;
+    int v=G.edge[i].to;
+    if (dep[v]&amp;gt;0) continue;
+    dep[v]=dep[u]+1;
+    que.add(v);
+&#125;
+</code></pre> }<br>}<br>public static void main(String[] args) throws IOException{<br> // TODO Auto-generated method stub<br> StreamTokenizer in=new StreamTokenizer(new BufferedInputStream(System.in));<br> PrintWriter out=new PrintWriter(System.out);<br> while(in.nextToken()!=StreamTokenizer.TT_EOF){<pre><code>int n=(int)in.nval;
+G.clear();
+dep=new int[n+1];
+dep[1]=1;
+for(int i=1;i&amp;lt;n;i++)&#123;
+    in.nextToken();
+    int u=(int)in.nval;
+    in.nextToken();
+    int v=(int)in.nval;
+    G.add(u, v);
+    G.add(v, u);
+&#125;
+bfs(1);
+boolean ans=true;
+st.clear();
+for(int i=1;i&amp;lt;=n;i++)
+    if (st.contains(dep[i]))&#123;
+        ans=false;
+        break;
+    &#125;
+    else
+        st.add(dep[i]);
+out.println(ans?&amp;quot;YES&amp;quot;:&amp;quot;NO&amp;quot;);
+</code></pre> }<br> out.flush();<br> out.close();<br>}</li>
+</ul>
+</li>
+</ul>
+<p>}<br>class Edge{<br>    int to,next;<br>    Edge(int _u,int _v){<br>        to=_u;next=_v;<br>    }<br>}<br>class Graph{<br>    int[] h;<br>    int sz;<br>    Edge[] edge;<br>    Graph(int size){<br>        sz=size;<br>        h=new int[sz+1];<br>        edge=new Edge[sz+1];<br>        Arrays.fill(h, -1);<br>        h[0]=0;<br>    }<br>    void clear(){<br>        h=new int[sz+1];<br>        edge=new Edge[sz+1];<br>        Arrays.fill(h, -1);<br>        h[0]=0;<br>    }<br>    void add(int u,int v){<br>        edge[h[0]]=new Edge(v,h[u]);<br>        h[u]=h[0]++;<br>    }<br>}<br>[/code]<br>然而错了。<br>适当地列举一些情况，发现若树的深度仅有2，那么它始终是特殊的。<br>可是加上这一判断仍不够。<br>进一步的举例发现，若树上非最底层有某一层结点多于一个，就能变换形成新结构<br>[code lang=”java”]<br>/** Aug 29, 2015 7:59:14 PM</p>
+<ul>
+<li>PrjName:Bc53-02</li>
+<li><p>@author Semprathlon<br><em>/<br>import java.io.</em>;<br>import java.util.*;<br>public class Main {</p>
+<p> /**</p>
+<ul>
+<li>@param args<br>*/<br>final static int maxn=2010;<br>static Graph G=new Graph(maxn);<br>static int[] dep;<br>static HashSet&lt;Integer&gt; st=new HashSet&lt;Integer&gt;();<br>static void bfs(int st){<br> Queue&lt;Integer&gt; que=new LinkedList&lt;Integer&gt;();<br> que.add(st);<br> while(!que.isEmpty()){<pre><code>int u=que.poll();
+for(int i=G.h[u];i&amp;gt;-1;i=G.edge[i].next)&#123;
+    int v=G.edge[i].to;
+    if (dep[v]&amp;gt;0) continue;
+    dep[v]=dep[u]+1;
+    que.add(v);
+&#125;
+</code></pre> }<br>}<br>public static void main(String[] args) throws IOException{<br> // TODO Auto-generated method stub<br> StreamTokenizer in=new StreamTokenizer(new BufferedInputStream(System.in));<br> PrintWriter out=new PrintWriter(System.out);<br> while(in.nextToken()!=StreamTokenizer.TT_EOF){<pre><code>int n=(int)in.nval;
+G.clear();
+dep=new int[n+1];
+dep[1]=1;
+for(int i=1;i&amp;lt;n;i++)&#123;
+    in.nextToken();
+    int u=(int)in.nval;
+    in.nextToken();
+    int v=(int)in.nval;
+    G.add(u, v);
+    G.add(v, u);
+&#125;
+bfs(1);
+boolean ans=true;
+st.clear();
+int maxd=0;
+for(int i=1;i&amp;lt;=n;i++)
+    maxd=Math.max(dep[i], maxd);
+for(int i=1;i&amp;lt;=n;i++)
+    if (st.contains(dep[i]))&#123;
+        if (dep[i]&amp;lt;maxd)&#123;
+            ans=false;
+            break;
+        &#125;
+    &#125;
+    else
+        st.add(dep[i]);
+if (maxd&amp;lt;3)
+    ans=true;
+out.println(ans?&amp;quot;YES&amp;quot;:&amp;quot;NO&amp;quot;);
+</code></pre> }<br> out.flush();<br> out.close();<br>}</li>
+</ul>
+</li>
+</ul>
+<p>}<br>class Edge{<br>    int to,next;<br>    Edge(int _u,int _v){<br>        to=_u;next=_v;<br>    }<br>}<br>class Graph{<br>    int[] h;<br>    int sz;<br>    Edge[] edge;<br>    Graph(int size){<br>        sz=size;<br>        h=new int[sz+1];<br>        edge=new Edge[sz+1];<br>        Arrays.fill(h, -1);<br>        h[0]=0;<br>    }<br>    void clear(){<br>        h=new int[sz+1];<br>        edge=new Edge[sz+1];<br>        Arrays.fill(h, -1);<br>        h[0]=0;<br>    }<br>    void add(int u,int v){<br>        edge[h[0]]=new Edge(v,h[u]);<br>        h[u]=h[0]++;<br>    }<br>}<br>[/code]<br>这与题解中所说的“一棵树是独特的当且仅当任意处于每一个深度的点数是1 1 1 1 … 1 1 x”相符（我个人将这种形态称作“呈扫帚状”）</p>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/18/">Previous</a></div><div class="pagination-next"><a href="/page/20/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/18/">18</a></li><li><a class="pagination-link is-current" href="/page/19/">19</a></li><li><a class="pagination-link" href="/page/20/">20</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/29/">29</a></li></ul></nav></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://ui-avatars.com/api/?name=Citru+Xonve&amp;background=0D8ABC&amp;color=fff&amp;size=128" alt="CitruXonve"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">CitruXonve</p><p class="is-size-6 is-block">Data Platform Engineer, Fullstack, UI/UX</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seattle, WA, US</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">281</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">36</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">138</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/CitruXonve" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/CitruXonve"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://www.facebook.com/AngelikaShyu/"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/Angelika_Shyu"><i class="fab fa-twitter"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/ACM-ICPC/"><span class="level-start"><span class="level-item">ACM-ICPC</span></span><span class="level-end"><span class="level-item tag">94</span></span></a><ul><li><a class="level is-mobile" href="/categories/ACM-ICPC/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">94</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/About/"><span class="level-start"><span class="level-item">About</span></span><span class="level-end"><span class="level-item tag">22</span></span></a></li><li><a class="level is-mobile" href="/categories/Computing/"><span class="level-start"><span class="level-item">Computing</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Computing/Graphic/"><span class="level-start"><span class="level-item">Graphic</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing/Graphic/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Computing-Cloud/"><span class="level-start"><span class="level-item">Computing - Cloud</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing-Cloud/Notes/"><span class="level-start"><span class="level-item">Notes</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Criticisms/"><span class="level-start"><span class="level-item">Criticisms</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Deployment/"><span class="level-start"><span class="level-item">Deployment</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/DevOps/"><span class="level-start"><span class="level-item">DevOps</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">25</span></span></a><ul><li><a class="level is-mobile" href="/categories/Developing/Environment/"><span class="level-start"><span class="level-item">Environment</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Developing/Server/"><span class="level-start"><span class="level-item">Server</span></span><span class="level-end"><span class="level-item tag">6</span></span></a><ul><li><a class="level is-mobile" href="/categories/Developing/Server/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Developing/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Development/"><span class="level-start"><span class="level-item">Development</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/English/"><span class="level-start"><span class="level-item">English</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Environment/"><span class="level-start"><span class="level-item">Environment</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Environment/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Graphic/"><span class="level-start"><span class="level-item">Graphic</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Graphic/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Graphic/Developing/Game/"><span class="level-start"><span class="level-item">Game</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Hardware/"><span class="level-start"><span class="level-item">Hardware</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Industrial/"><span class="level-start"><span class="level-item">Industrial</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Network/"><span class="level-start"><span class="level-item">Network</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">34</span></span></a></li><li><a class="level is-mobile" href="/categories/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">21</span></span></a><ul><li><a class="level is-mobile" href="/categories/Programing/ACM-ICPC/"><span class="level-start"><span class="level-item">ACM-ICPC</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Programing/ACM-ICPC/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Server/"><span class="level-start"><span class="level-item">Server</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/Web/About/"><span class="level-start"><span class="level-item">About</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/iOS/"><span class="level-start"><span class="level-item">iOS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/ACM-ICPC/"><span class="tag">ACM-ICPC</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"><span class="tag">AC自动机</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AWS/"><span class="tag">AWS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Adobe/"><span class="tag">Adobe</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Apache/"><span class="tag">Apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/BFS/"><span class="tag">BFS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/BIT/"><span class="tag">BIT</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bestcoder/"><span class="tag">Bestcoder</span><span class="tag">23</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bitset/"><span class="tag">Bitset</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bootstrap/"><span class="tag">Bootstrap</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CCPC/"><span class="tag">CCPC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Catalan/"><span class="tag">Catalan</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CentOS/"><span class="tag">CentOS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Clover/"><span class="tag">Clover</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Compiler/"><span class="tag">Compiler</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Contest/"><span class="tag">Contest</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Cpp/"><span class="tag">Cpp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DFS/"><span class="tag">DFS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DNS/"><span class="tag">DNS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DP/"><span class="tag">DP</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DSDT/"><span class="tag">DSDT</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Data-Analytics/"><span class="tag">Data Analytics</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dinic/"><span class="tag">Dinic</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker/"><span class="tag">Docker</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Eclipse/"><span class="tag">Eclipse</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Expect/"><span class="tag">Expect</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Fibonacci/"><span class="tag">Fibonacci</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GLUT/"><span class="tag">GLUT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GPT/"><span class="tag">GPT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GUI/"><span class="tag">GUI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gentoo/"><span class="tag">Gentoo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Geometry/"><span class="tag">Geometry</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Github/"><span class="tag">Github</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Graduate/"><span class="tag">Graduate</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash/"><span class="tag">Hash</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JNUOJ/"><span class="tag">JNUOJ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/K8s/"><span class="tag">K8s</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/KMP/"><span class="tag">KMP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Live-Archive/"><span class="tag">Live Archive</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MBR/"><span class="tag">MBR</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MS-DOS/"><span class="tag">MS=DOS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mac/"><span class="tag">Mac</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Manhattan/"><span class="tag">Manhattan</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Multi-Uni/"><span class="tag">Multi-Uni</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mobius%E5%8F%8D%E6%BC%94/"><span class="tag">Möbius反演</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NetworkFlow/"><span class="tag">NetworkFlow</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NoSQL/"><span class="tag">NoSQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OS/"><span class="tag">OS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenCV/"><span class="tag">OpenCV</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenGL/"><span class="tag">OpenGL</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/RMQ/"><span class="tag">RMQ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Regional/"><span class="tag">Regional</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Repost/"><span class="tag">Repost</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Ryzen/"><span class="tag">Ryzen</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQLserver/"><span class="tag">SQLserver</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSL/"><span class="tag">SSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/System-Design/"><span class="tag">System Design</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TOEFL/"><span class="tag">TOEFL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Trie/"><span class="tag">Trie</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UEFI/"><span class="tag">UEFI</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UX/"><span class="tag">UX</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Ubuntu/"><span class="tag">Ubuntu</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Unix/"><span class="tag">Unix</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Windows/"><span class="tag">Windows</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Wordpress/"><span class="tag">Wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ZOJ/"><span class="tag">ZOJ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ajax/"><span class="tag">ajax</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/asm/"><span class="tag">asm</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/css/"><span class="tag">css</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cuda/"><span class="tag">cuda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cudnn/"><span class="tag">cudnn</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/curl/"><span class="tag">curl</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/es6/"><span class="tag">es6</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/font/"><span class="tag">font</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ftp/"><span class="tag">ftp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gitlab/"><span class="tag">gitlab</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hardware/"><span class="tag">hardware</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/html/"><span class="tag">html</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/https/"><span class="tag">https</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/iOS/"><span class="tag">iOS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/interview/"><span class="tag">interview</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/javascript/"><span class="tag">javascript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jdk/"><span class="tag">jdk</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jquery/"><span class="tag">jquery</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/js/"><span class="tag">js</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kext/"><span class="tag">kext</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/macOS/"><span class="tag">macOS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nginx/"><span class="tag">nginx</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/node/"><span class="tag">node</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nodejs/"><span class="tag">nodejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/npm/"><span class="tag">npm</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/react/"><span class="tag">react</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/react-native/"><span class="tag">react native</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/regex/"><span class="tag">regex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/string/"><span class="tag">string</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"><span class="tag">二分图</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"><span class="tag">二分查找</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%BC%88/"><span class="tag">博弈</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"><span class="tag">容斥原理</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"><span class="tag">并查集</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"><span class="tag">并行计算</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"><span class="tag">微积分</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/"><span class="tag">扫描线</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%88%97/"><span class="tag">数列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E7%8B%AC/"><span class="tag">数独</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E8%AE%BA/"><span class="tag">数论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87/"><span class="tag">概率</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%8B%9F/"><span class="tag">模拟</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/"><span class="tag">欧拉回路</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/"><span class="tag">百度之星</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E4%B9%8E/"><span class="tag">知乎</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"><span class="tag">离散化</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB/"><span class="tag">约瑟夫</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"><span class="tag">线段树</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E8%B5%9B/"><span class="tag">网络赛</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%83%8C%E5%8C%85/"><span class="tag">背包</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"><span class="tag">背包问题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AC%E8%BD%BD%E5%8D%9A%E6%96%87/"><span class="tag">转载博文</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%92%E5%BD%92/"><span class="tag">递归</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="http://marisa.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">雾雨魔理沙</span></span><span class="level-right"><span class="level-item tag">marisa.moe</span></span></a></li><li><a class="level is-mobile" href="https://blinkfox.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">闪烁之狐</span></span><span class="level-right"><span class="level-item tag">blinkfox.github.io</span></span></a></li><li><a class="level is-mobile" href="https://phesoca.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">绯索卡</span></span><span class="level-right"><span class="level-item tag">phesoca.com</span></span></a></li><li><a class="level is-mobile" href="https://paperneko.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">笈川伊織（紙喵）</span></span><span class="level-right"><span class="level-item tag">paperneko.moe</span></span></a></li><li><a class="level is-mobile" href="https://neko.ayaka.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Ayaka Neko</span></span><span class="level-right"><span class="level-item tag">neko.ayaka.moe</span></span></a></li><li><a class="level is-mobile" href="https://blog.skk.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Sukka</span></span><span class="level-right"><span class="level-item tag">blog.skk.moe</span></span></a></li><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li><li><a class="level is-mobile" href="https://funactional.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Function</span></span><span class="level-right"><span class="level-item tag">funactional.github.io</span></span></a></li><li><a class="level is-mobile" href="http://www.kuangbin.net/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">kuangbin</span></span><span class="level-right"><span class="level-item tag">www.kuangbin.net</span></span></a></li><li><a class="level is-mobile" href="http://hzwer.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">hzwer</span></span><span class="level-right"><span class="level-item tag">hzwer.com</span></span></a></li><li><a class="level is-mobile" href="http://tsyao.tk/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">tsyao</span></span><span class="level-right"><span class="level-item tag">tsyao.tk</span></span></a></li><li><a class="level is-mobile" href="http://c.ejq.me/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">氢酱</span></span><span class="level-right"><span class="level-item tag">c.ejq.me</span></span></a></li><li><a class="level is-mobile" href="http://coderunion.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">CoderUnion</span></span><span class="level-right"><span class="level-item tag">coderunion.github.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/dangxuandev" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">当轩</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://zhuanlan.zhihu.com/simplyy" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">SimplyY</span></span><span class="level-right"><span class="level-item tag">zhuanlan.zhihu.com</span></span></a></li><li><a class="level is-mobile" href="http://blog.xen0n.name/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">xen0n</span></span><span class="level-right"><span class="level-item tag">blog.xen0n.name</span></span></a></li><li><a class="level is-mobile" href="https://github.com/NaturalL" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">NaturalL</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://huaji8.top/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">幻想帖</span></span><span class="level-right"><span class="level-item tag">huaji8.top</span></span></a></li><li><a class="level is-mobile" href="https://otakism.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">宅談</span></span><span class="level-right"><span class="level-item tag">otakism.com</span></span></a></li><li><a class="level is-mobile" href="https://liyin.date/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">天空之间</span></span><span class="level-right"><span class="level-item tag">liyin.date</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="CitruXonve&#039;s another far end" height="28"></a><p class="is-size-7"><span>&copy; 2021 CitruXonve</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Icarus Theme on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
