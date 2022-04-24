@@ -225,9 +225,9 @@ widgets:
         # Author name
         author: CitruXonve
         # Author title
-        author_title: Data Platform Engineer, Fullstack, UI/UX
+        author_title: Fullstack Developer, Data Platform, UI/UX
         # Author's current location
-        location: Seattle, WA, US
+        location: Sunnyvale, CA, US
         # URL or path to the avatar image
         avatar: https://ui-avatars.com/api/?name=Citru+Xonve&background=0D8ABC&color=fff&size=128
         # Whether show the rounded avatar image
