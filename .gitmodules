@@ -1,32 +1,3 @@
-[submodule "themes/landscape"]
-	path = themes/landscape
-	url = https://github.com/hexojs/hexo-theme-landscape.git
-[submodule "themes/alpha-dust"]
-	path = themes/alpha-dust
-	url = https://github.com/klugjo/hexo-theme-alpha-dust
-[submodule "themes/matery"]
-	path = themes/matery
-	url = https://github.com/blinkfox/hexo-theme-matery
-[submodule "themes/typescript"]
-	path = themes/typescript
-	url = https://github.com/artchen/hexo-theme-typescript
-[submodule "themes/one"]
-	path = themes/one
-	url = https://github.com/EYHN/hexo-theme-one
-[submodule "themes/landscape-plus"]
-	path = themes/landscape-plus
-	url = https://github.com/CitruXonve/landscape-plus
-	branch = master
-[submodule "themes/paperbox"]
-	path = themes/paperbox
-	url = https://github.com/CitruXonve/hexo-theme-paperbox
-	branch = master
 [submodule "themes/icarus"]
 	path = themes/icarus
-	url = https://github.com/ppoffice/hexo-theme-icarus/
-[submodule "themes/indigo"]
-	path = themes/indigo
-	url = https://github.com/yscoder/hexo-theme-indigo
-[submodule "themes/hueman"]
-	path = themes/hueman
-	url = https://github.com/ppoffice/hexo-theme-hueman
+	url = https://github.com/ppoffice/hexo-theme-icarus.git
