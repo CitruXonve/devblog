@@ -8,7 +8,7 @@
 ## Prerequisites
 
 - Node.js 12.x+ (**required**, [here is why](https://stackoverflow.com/questions/67516168/i-just-installed-hexo-static-site-generator-on-debian-and-ran-hexo-server-to-see))
-- [Hexo](https://hexo.io) 5.4.0 (recommended)
+- [Hexo](https://hexo.io) 6.1.0 (recommended)
 - [Hexo Theme Icarus](https://github.com/ppoffice/hexo-theme-icarus/)
 
 ## Quick start from scratch
