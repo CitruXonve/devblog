@@ -95,3 +95,11 @@ Potential effect on incoming connection: `Operation timed out`.
 > sudo iptables -A FORWARD -i [interface] -j ACCEPT
 
 > sudo iptables -t nat -A POSTROUTING -o [interface] -j MASQUERADE
+
+- How to clean up iptable rules?
+
+[Clues](https://serverfault.com/questions/200635/best-way-to-clear-all-iptables-rules)
+
+- Read more
+
+[ifconfig vs ip](https://www.tecmint.com/ifconfig-vs-ip-command-comparing-network-configuration/)

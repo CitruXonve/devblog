@@ -1,5 +1,6 @@
 ---
 title: Building Chrome extension and Google Text-to-speech quick start
+abbrlink: 3c7f4494
 date: 2021-10-31 22:02:14
 tags:
 ---

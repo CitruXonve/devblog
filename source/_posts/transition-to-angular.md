@@ -1,9 +1,10 @@
 ---
 title: Transition into Angular
-date: 2021-10-31 21:53:53
 tags:
-    - Frontend
-    - Angular
+  - Frontend
+  - Angular
+abbrlink: ba638386
+date: 2021-10-31 21:53:53
 ---
 
 Emergent transition from `React` into `Angular` due to terms and conditions.
