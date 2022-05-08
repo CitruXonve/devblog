@@ -1,9 +1,10 @@
 ---
-title: Universal Code Competition Template in Python3 (editing) [2022]
-date: 2022-04-24 00:11:12
+title: 'Universal Code Competition Template in Python3 (editing) [2022]'
 tags:
-    - Template
-    - Python
+  - Template
+  - Python
+abbrlink: 59fdfde7
+date: 2022-04-24 00:11:12
 ---
 
 *  [Legacy Version](/posts/41b311d1/)

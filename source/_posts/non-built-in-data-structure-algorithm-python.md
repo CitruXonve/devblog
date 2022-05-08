@@ -1,9 +1,10 @@
 ---
 title: Non Built-in Data Structures And Algorithms in Python3
-date: 2022-04-24 00:35:30
 tags:
-    - Template
-    - Python
+  - Template
+  - Python
+abbrlink: a6fa13e5
+date: 2022-04-24 00:35:30
 ---
 
 ### Unordered MultiSet
