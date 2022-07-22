@@ -91,15 +91,7 @@ A ZFS pool should surely pre-exist there to allow for the operations introduced 
 
 - Unblock network access from firewalls
 
-    `netatalk.service` typically listens on TCP port **568**.
-
-    `afpd.service` typically listens on UDP port **5353**.
-
-    > sudo ufw allow in proto tcp from any port 568
-
-    > sudo ufw allow in proto udp from any port 5353
-
-    Moreover, unblock `afp` protocol requests ([example](https://wiki.archlinux.org/title/Netatalk)):
+    Unblock `afp` protocol requests ([example](https://wiki.archlinux.org/title/Netatalk)):
     > sudo iptables -A INPUT -p tcp --dport afpovertcp -j ACCEPT
 
 ### Usage
