@@ -1,9 +1,10 @@
 ---
 title: Generative AI on Arch Linux FAQ
-date: 2023-04-09 00:35:36
 tags:
-    - Arch Linux
-    - Stable Diffusion
+  - Arch Linux
+  - Stable Diffusion
+abbrlink: 72c2fcb
+date: 2023-04-09 00:35:36
 ---
 
 ### Dependencies
