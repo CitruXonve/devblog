@@ -28,7 +28,7 @@ git submodule update --init --recursive --remote
 
 # Local testing
 
-* Replace the `url: '__BASE_URL__'` by `https://localhost:4000/` to suppress syntax error!!
+* By default, the hexo local server listens at `http://localhost:4000/`.
 
 ```bash
 [hexo clean]

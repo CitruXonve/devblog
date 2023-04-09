@@ -1,0 +1,42 @@
+version: 1
+
+workflows:
+  version: 1
+  build:
+    jobs:
+      - build:
+         filters:
+            branches:
+              only: master
+
+jobs:
+  build:
+    docker:
+      - image: node:17.5
+    steps:
+      - checkout
+      - run:
+          name: Github identity initialization
+          command: |
+            git config user.email "angelikaxu54@gmail.com"
+            git config user.name "CitruXonve"
+      - run:
+          name: Github submodules sync-up
+          command: |
+            git submodule sync
+            git submodule update --init
+      - run:
+          name: NPM dependencies
+          command: npm install
+      - run:
+          name: Github-pages CNAME setup
+          command: |
+            mkdir ./public
+            echo "$CUSTOM_HOST_NAME" > ./public/CNAME
+      - run: 
+          name: Hexo deployment
+          command: |
+            sed -i "s|http://localhost:4000/|$BASE_URL|g" ./_config.yml
+            sed -i "s|__ASSETS_HOST_NAME__|$ASSETS_HOST_NAME|g" ./source/_posts/wp*.md
+            sed -i "s/__DEPLOY_ACCESS_TOKEN__/$DEPLOY_ACCESS_TOKEN/g" ./_config.yml
+            ./node_modules/.bin/hexo d -g

@@ -5,7 +5,7 @@ keywords: null
 author: CitruXonve
 language: en
 timezone: null
-url: '__BASE_URL__'
+url: 'http://localhost:4000/'
 root: /
 permalink: 'posts/:abbrlink/'
 permalink_defaults: null
