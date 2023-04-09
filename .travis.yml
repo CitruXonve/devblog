@@ -23,7 +23,7 @@ install:
 
 before_script:
 - git config --global user.name 'CitruXonve'
-- git config --global user.email 'silveritdean@gmail.com'
+- git config --global user.email 'angelikaxu54@gmail.com'
 - git submodule sync
 - git submodule update --init
 - sed -i "s|__BASE_URL__|$BASE_URL|g" ./_config.yml

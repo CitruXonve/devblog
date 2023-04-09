@@ -1,9 +1,10 @@
 ---
 title: Configure a ZFS volume for Time Machine on NAS
-date: 2022-07-20 23:45:03
 tags:
-    - NAS
-    - ZFS
+  - NAS
+  - ZFS
+abbrlink: a6d4d30
+date: 2022-07-20 23:45:03
 ---
 
 ### Preparation
