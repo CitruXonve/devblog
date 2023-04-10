@@ -1,6 +1,13 @@
-version: 2
+workflows:
+  version: 2
+  publish_devblog:
+    jobs:
+      - build_hexo
 jobs:
-  build:
+  build_hexo:
+    filters:
+      branches:
+        only: master
     docker:
       - image: node:17.5
     steps:
