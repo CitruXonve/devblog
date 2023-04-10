@@ -1,6 +1,6 @@
 # Dev Blog of CitruXonve
 
-![Travis-CI build](https://travis-ci.com/CitruXonve/devblog.svg?branch=master)
+[![CircleCI Status](https://dl.circleci.com/status-badge/img/gh/CitruXonve/devblog/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/CitruXonve/devblog/tree/master)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 [Devblog](https://devblog.citruxonve.net/) - the low-latency durable knowledge base of [CitruXonve](https://github.com/CitruXonve).

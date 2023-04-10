@@ -8,6 +8,7 @@ jobs:
     filters:
       branches:
         only: master
+        ignore: gh-pages
     docker:
       - image: node:17.5
     steps:
