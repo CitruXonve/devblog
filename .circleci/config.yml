@@ -13,8 +13,7 @@ jobs:
       - run:
           name: NPM dependencies
           command: |
-            npm i -g yarn hexo-cli
-            yarn
+            npm i
       - run:
           name: Github-pages CNAME setup
           command: |
