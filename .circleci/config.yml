@@ -22,8 +22,8 @@ jobs:
       - run: 
           name: Hexo deployment
           command: |
-            git config user.email "angelikaxu54@gmail.com"
-            git config user.name "CitruXonve"
+            git config --global user.email "angelikaxu54@gmail.com"
+            git config --global user.name "CitruXonve"
             sed -i "s|http://localhost:4000/|$BASE_URL|g" ./_config.yml
             sed -i "s|__ASSETS_HOST_NAME__|$ASSETS_HOST_NAME|g" ./source/_posts/wp*.md
             sed -i "s/__DEPLOY_ACCESS_TOKEN__/$DEPLOY_ACCESS_TOKEN/g" ./_config.yml
