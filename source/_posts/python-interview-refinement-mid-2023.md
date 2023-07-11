@@ -1,20 +1,87 @@
 ---
-title: python-interview-refinement-mid-2023
-date: 2023-07-10 23:07:51
+title: Python Interview Refinement in Mid-2023
 tags:
-    - Python
-    - Interview
+  - Python
+  - Interview
+abbrlink: 7f231503
+date: 2023-07-10 23:07:51
 ---
 
-### LFU Cache
-
-```py3
+### LRU Cache
+```python
 class Node:
-    def __init__(self, key, value, freq = 1):
+    def __init__(self, key, value):
         self.prev = None
         self.next = None
         self.key = key
         self.val = value
+```
+<!--more-->
+```python
+class LRUCache:
+    def __init__(self, capacity):
+        self.cap = capacity
+        self.size = 0
+        self.data = dict()
+        self.head = None  # most recently used
+        self.rear = None  # least recently used
+
+    def add_node(self, key, value):
+        node = Node(key, value)
+        self.data[key] = node
+        node.next = self.head
+        if self.head is not None:
+            self.head.prev = node
+        self.head = node
+        if self.rear is None:
+            self.rear = node
+    
+    def delete_node(self, key):
+        if not key in self.data:
+            return
+        node = self.data[key]
+        if node.prev is not None:
+            node.prev.next = node.next
+        if node.next is not None:
+            node.next.prev = node.prev
+        if node == self.head:
+            self.head = node.next
+        if node == self.rear:
+            self.rear = node.prev
+        del self.data[key]
+
+    def get(self, key):
+        if not key in self.data:
+            return None
+        val = self.data[key].val
+        # renew the node
+        self.delete_node(key)
+        self.add_node(key, val)
+        return val
+
+    def put(self, key, value):
+        if key in self.data:
+            # Case 1: existing key - renew the node
+            self.delete_node(key)
+            self.add_node(key, value)
+            return
+        if not key in self.data and self.size < self.cap:
+            # Case 2: non-existing key - insert the node directly
+            self.add_node(key, value)
+            self.size += 1
+            return
+        # Case 3: non-existing key - vacate the least recently used one and insert the node
+        least_used_key = self.rear.key
+        self.delete_node(least_used_key)
+        self.add_node(key, value)
+```
+
+### LFU Cache
+
+```python
+class Node:
+    def __init__(self, key, value, freq = 1):
+        # similar as LRU Cache Node ...
         self.freq = freq
 
 class LFUCache:
@@ -62,8 +129,8 @@ class LFUCache:
             head = node.next
         if freq in self.freq_table and node == rear:
             rear = node.prev
-        # delete this linked list from freq table
         if head is None or rear is None:
+            # delete this linked list from frequency table
             del self.freq_table[freq]
             # min_freq should NOT be larger than the just deleted freq at any time
             # update min_freq can either be updated to +1 or remain the same
@@ -80,24 +147,25 @@ class LFUCache:
             return None
         val = self.data[key].val
         freq = self.data[key].freq
-        # renew the node
+        # renew the frequency of the node
         self.delete_node(key, freq + 1)
         self.add_node(key, val, freq + 1)
         return val
 
     def put(self, key, value):
         if key in self.data:
-            # renew the node
+            # Case 1: existing key - renew the node
             freq = self.data[key].freq
             self.delete_node(key, freq + 1)
             self.add_node(key, value, freq + 1)
             return
         if not key in self.data and self.size < self.cap:
+            # Case 2: non-existing key - insert the node directly
             self.min_freq = 1
             self.add_node(key, value, 1)
             self.size += 1
             return
-        # not key in self.data and self.size == self.cap
+        # Case 3: non-existing key - vacate the least frequently used one and insert the node
         # min_freq = min(self.freq_table.keys())
         if not self.min_freq in self.freq_table:
             return
@@ -110,7 +178,7 @@ class LFUCache:
 ### LC 787
 
 #### (1) BFS
-```py3
+```python
 def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
     best_price = [sys.maxsize >> 1 for _ in range(n)]
     best_price[src] = 0
@@ -135,7 +203,7 @@ def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int
 ```
 
 #### (2) Modified Dijkstra
-```py3
+```python
 def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
     best_price = [sys.maxsize >> 1 for _ in range(n)]
     best_price[src] = 0
@@ -162,7 +230,7 @@ def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int
 
 #### (3) DP
 Not so efficient in the real time. Higher memory usage.
-```py3
+```python
 def solve(self, dp: List[DefaultDict[int, int]], adj: DefaultDict[int, List[int]], cur: int, dst:int, availStops: int) -> int:
     if availStops < 0:
         return -1
@@ -188,7 +256,7 @@ def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int
 ### LC 1928. Minimum Cost to Reach Destination in Time
 
 #### (1) BFS
-```py3
+```python
 def minCost(self, maxTime: int, edges: List[List[int]], passingFees: List[int]) -> int:
     n = len(passingFees)
     best_price = [sys.maxsize >> 1 for _ in range(n)]
@@ -218,8 +286,8 @@ def minCost(self, maxTime: int, edges: List[List[int]], passingFees: List[int]) 
     return best_price[n - 1] if best_price[n - 1] < (sys.maxsize >> 1) else -1
 ```
 
-#### (2) Mofified Dijkstra
-```py3
+#### (2) Modified Dijkstra
+```python
 def minCost(self, maxTime: int, edges: List[List[int]], passingFees: List[int]) -> int:
     num_nodes = len(passingFees)
     cost = [(passingFees[0], 0, 0)] # (fees, time, node_id)
@@ -250,7 +318,7 @@ def minCost(self, maxTime: int, edges: List[List[int]], passingFees: List[int]) 
 
 #### (3) DP
 Less efficient; consumes more memory.
-```py3
+```python
 def solve(self, dp: List[DefaultDict[int, int]], adj: DefaultDict[int, List[int]], passingFees: List[int], cur: int, availTime: int) -> int:
     if cur == len(passingFees) - 1: # destination
         return passingFees[cur]
