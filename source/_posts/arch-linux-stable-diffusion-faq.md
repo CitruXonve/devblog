@@ -1,8 +1,7 @@
 ---
-title: Generative AI on Arch Linux FAQ
+title: Arch Linux Environmental Setup FAQ
 tags:
   - Arch Linux
-  - Stable Diffusion
 abbrlink: 72c2fcb
 date: 2023-04-09 00:35:36
 ---
@@ -50,4 +49,18 @@ date: 2023-04-09 00:35:36
     Total Installed Size:  29579.85 MiB
 
     :: Proceed with installation? [Y/n]
+    ```
+
+### Appearance
+
+- [Icon font not displaying in Code terminal](https://dev.to/avantar/how-to-fix-zsh-icons-in-visual-studio-code-terminal-38bb)
+
+    > sudo pacman -S ttf-meslo-nerd-font-powerlevel10k
+    
+    ```
+    {
+        ...
+        "terminal.integrated.fontFamily": "MesloLGS NF",
+        ...
+    }
     ```
