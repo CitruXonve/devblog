@@ -1,5 +1,5 @@
 # Version of the configuration file
-version: 5.0.0
+version: 5.1.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
@@ -108,20 +108,20 @@ navbar:
     links:
         Icarus Theme on GitHub:
             icon: fab fa-github
-            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+            url: https://github.com/ppoffice/hexo-theme-icarus
 # Page footer configurations
 footer:
     # Links to be shown on the right of the footer section
     links:
         Creative Commons:
             icon: fab fa-creative-commons
-            url: 'https://creativecommons.org/'
+            url: https://creativecommons.org/
         Attribution 4.0 International:
             icon: fab fa-creative-commons-by
-            url: 'https://creativecommons.org/licenses/by/4.0/'
+            url: https://creativecommons.org/licenses/by/4.0/
         Icarus Theme on GitHub:
             icon: fab fa-github
-            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+            url: https://github.com/ppoffice/hexo-theme-icarus
 # Article related configurations
 article:
     # Code highlight settings
@@ -139,13 +139,13 @@ article:
     licenses:
         Creative Commons:
             icon: fab fa-creative-commons
-            url: 'https://creativecommons.org/'
+            url: https://creativecommons.org/
         Attribution:
             icon: fab fa-creative-commons-by
-            url: 'https://creativecommons.org/licenses/by/4.0/'
+            url: https://creativecommons.org/licenses/by/4.0/
         Noncommercial:
             icon: fab fa-creative-commons-nc
-            url: 'https://creativecommons.org/licenses/by-nc/4.0/'
+            url: https://creativecommons.org/licenses/by-nc/4.0/
 # Search plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Search/
 search:
@@ -202,7 +202,7 @@ comment:
 share:
     type: sharethis
     # URL to the ShareThis share plugin script
-    install_url: 'https://platform-api.sharethis.com/js/sharethis.js#property=60e3b95fb3bfa200125f409c&product=inline-share-buttons'
+    install_url: https://platform-api.sharethis.com/js/sharethis.js#property=60e3b95fb3bfa200125f409c&product=inline-share-buttons
 # Sidebar configurations.
 # Please be noted that a sidebar is only visible when it has at least one widget
 sidebar:
@@ -235,18 +235,18 @@ widgets:
         # Email address for the Gravatar
         gravatar: 
         # URL or path for the follow button
-        follow_link: 'https://github.com/CitruXonve'
+        follow_link: https://github.com/CitruXonve
         # Links to be shown on the bottom of the profile widget
         social_links:
             Github:
                 icon: fab fa-github
-                url: 'https://github.com/CitruXonve'
+                url: https://github.com/CitruXonve
             Facebook:
                 icon: fab fa-facebook
-                url: 'https://www.facebook.com/IrisAmamiya/'
+                url: https://www.facebook.com/IrisAmamiya/
             Twitter:
                 icon: fab fa-twitter
-                url: 'https://twitter.com/Iris_Amamiya/'
+                url: https://twitter.com/Iris_Amamiya/
             # Dribbble:
             #     icon: fab fa-dribbble
             #     url: 'https://dribbble.com'
@@ -300,14 +300,14 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            '雾雨魔理沙': 'http://marisa.moe/'
-            '闪烁之狐': 'https://blinkfox.github.io/'
-            '绯索卡': 'https://phesoca.com/'
-            '笈川伊織（紙喵）': 'https://paperneko.moe/'
-            'Ayaka Neko': 'https://neko.ayaka.moe/'
-            Sukka: 'https://blog.skk.moe/'
-            Hexo: 'https://hexo.io'
-            Bulma: 'https://bulma.io'
+            雾雨魔理沙: http://marisa.moe/
+            闪烁之狐: https://blinkfox.github.io/
+            绯索卡: https://phesoca.com/
+            笈川伊織（紙喵）: https://paperneko.moe/
+            Ayaka Neko: https://neko.ayaka.moe/
+            Sukka: https://blog.skk.moe/
+            Hexo: https://hexo.io
+            Bulma: https://bulma.io
             Function: https://funactional.github.io/
             kuangbin: http://www.kuangbin.net/
             hzwer: http://hzwer.com/
@@ -369,7 +369,7 @@ plugins:
         # Where on the screen the consent popup should display
         position: bottom-left
         # URL to your site's cookie policy
-        policyLink: 'https://www.cookiesandyou.com/'
+        policyLink: https://www.cookiesandyou.com/
     # Enable the lightGallery and Justified Gallery plugins
     gallery: true
     # Google Analytics plugin settings

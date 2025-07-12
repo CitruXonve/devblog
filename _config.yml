@@ -5,9 +5,9 @@ keywords: null
 author: CitruXonve
 language: en
 timezone: null
-url: 'http://localhost:4000/'
+url: http://localhost:4000/
 root: /
-permalink: 'posts/:abbrlink/'
+permalink: posts/:abbrlink/
 permalink_defaults: null
 abbrlink:
   alg: crc32
@@ -44,7 +44,7 @@ default_category: uncategorized
 category_map: null
 tag_map: null
 date_format: MM/DD/YYYY
-time_format: 'HH:mm:ss'
+time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 theme: icarus
@@ -52,7 +52,7 @@ deploy:
   type: git
   repo: https://github.com/CitruXonve/devblog.git
   branch: gh-pages
-  name: "CitruXonve"
+  name: CitruXonve
   token: $DEPLOY_ACCESS_TOKEN
-  email: "angelikaxu54@gmail.com"
+  email: angelikaxu54@gmail.com
 theme_config: null
