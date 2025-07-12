@@ -50,11 +50,8 @@ pagination_dir: page
 theme: icarus
 deploy:
   type: git
-  repo:
-    github:
-      url: https://github.com/CitruXonve/devblog.git
-      branch: gh-pages
-      token: $DEPLOY_ACCESS_TOKEN
+  repo: https://github.com/CitruXonve/devblog.git
+  branch: gh-pages
   name: "CitruXonve"
   email: "angelikaxu54@gmail.com"
 theme_config: null
