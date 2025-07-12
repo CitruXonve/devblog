@@ -34,3 +34,4 @@ jobs:
             git config --global user.name "CitruXonve"
             sed -i "s|http://localhost:4000/|$BASE_URL|g" ./_config.yml
             sed -i "s|__ASSETS_HOST_NAME__|$ASSETS_HOST_NAME|g" ./source/_posts/wp*.md
+            ./node_modules/.bin/hexo d -g
