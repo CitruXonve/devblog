@@ -7,11 +7,113 @@ abbrlink: 33dd1419
 date: 2025-07-12 13:22:52
 ---
 
+The questions below will be in a reverse-chronological order as they appeared in the interviews.
+
 ## Simulated Calculator
 
-Asked during a recent 60-min coding interview with `OpusClip`.
+### Calculator V1 - [LC 224. Basic Calculator (Hard)](https://leetcode.com/problems/basic-calculator/)
 
-### [LC 224. Basic Calculator (Hard)](https://leetcode.com/problems/basic-calculator/description/)
+Essentially, merely `+-` arithmetic operations and parenthesis (nested possible) need to be supported.
+
+#### Concise & efficient Solution after refactoring
+
+Upon second thought, it appears that stack operations are need only when destructing parenthesis and processing the `+-` operators (see also other shared solutions on LeetCode).
+
+```python
+class Solution:
+    def calculate(self, s: str) -> int:
+        res, num, sign = 0, 0, 1
+        stack = [1] # + by default
+
+        for ch in s:
+            if ch.isdigit():
+                num = num * 10 + int(ch)
+            elif ch == '(': # construct
+                stack.append(sign)
+            elif ch == ')': # destruct
+                stack.pop()
+            elif ch in set('+-'):
+                res += sign * num
+                # decide current sign based on parenthesis
+                sign = (1 if ch == '+' else -1) * stack[-1]
+                num = 0 # reset
+        
+        return res + sign * num  # remaining number
+```
+
+#### Intuitive Solution
+
+It's easier to come up with, but results in many edge cases to be taken care of, still likely ending up in `TLE` on LeetCode.
+<!--more-->
+```python
+class Solution:
+    def process_add_sub(self, nums, ops) -> int:
+        if not len(nums):
+            return 0
+        res = nums[0]
+        # for idx, op in enumerate(ops, start=1):
+        for idx in range(1, len(ops) + 1):
+            if idx >= len(nums):
+                break
+            op = ops[idx - 1]
+            # print(f"process_add_sub {idx}:", (op, nums[idx]))
+            res += -nums[idx] if op == '-' else nums[idx]
+        return res
+
+    def locate_last(self, elems: list):
+        if type(elems) == list and (len(elems) < 1 or type(elems[-1]) != list):
+            return elems
+        return self.locate_last(elems[-1])
+
+    def locate_upper(self, elems: list):
+        if type(elems) == list and len(elems) and type(elems[-1]) == list and len(elems[-1]) \
+            and type(elems[-1][-1]) == list:
+            return self.locate_upper(elems[-1])
+        return elems
+
+    def calculate(self, s: str) -> int:
+        nums, ops, prev_ch = [0], [], '0' # init-value
+
+        for ch in s:
+            if ch.isdigit() and not prev_ch.isdigit():
+                tar_nums = self.locate_last(nums)
+                tar_nums.append(int(ch))
+            elif ch.isdigit():
+                tar_nums = self.locate_last(nums)
+                tar_nums[-1] = tar_nums[-1] * 10 + int(ch)
+            elif ch == '(':
+                tar_nums = self.locate_last(nums)
+                tar_nums.append([]) # dummy 0 in case of leading -
+                tar_ops = self.locate_last(ops)
+                tar_ops.append([])
+                # print('(:', nums, ops)
+                pass
+            elif ch == ')':
+                upper_nums = self.locate_upper(nums)
+                tar_nums = upper_nums.pop()
+                upper_ops = self.locate_upper(ops)
+                tar_ops = upper_ops.pop()
+                val = self.process_add_sub(tar_nums, tar_ops)
+                upper_nums.append(val)
+            elif ch in set('+-'):
+                tar_nums = self.locate_last(nums)
+                if len(tar_nums) < 1: # in case of leading +- in parenthesis
+                    tar_nums.append(0)
+                tar_ops = self.locate_last(ops)
+                tar_ops.append(ch)
+            else: # skip invalid character
+                continue
+            prev_ch = ch
+        
+        if len(ops) + 1 < len(nums):
+            ops = [['+'] * (len(nums) - len(ops)), *ops]
+        return self.process_add_sub(nums, ops)
+```
+
+
+### Calculator V2 - [227. Basic Calculator II (Medium)](https://leetcode.com/problems/basic-calculator-ii/)
+
+It was asked during a recent 60-min coding interview with `OpusClip`, in which `+-*/` arithmetic operations need to be supported.
 
 #### Concise & efficient Solution after refactoring
 
@@ -47,7 +149,7 @@ class Solution:
 
 #### Intuitive Solution
 
-It's easier to come up with, but results in too many edge cases to be taken care of, so as to be difficult to complete in a timely manner during an interview.
+Used in the original interview - it's easier to come up with, but results in too many edge cases to be taken care of, so as to be difficult to complete in a timely manner during an interview.
 
 ```python
 class Solution:
