@@ -5,12 +5,9 @@ workflows:
       - build_hexo
 jobs:
   build_hexo:
-    filters:
-      branches:
-        only: master
-        ignore: gh-pages
+    type: build
     docker:
-      - image: node:17.5
+      - image: node:18.20
     steps:
       - checkout
       - run:
