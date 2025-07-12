@@ -53,5 +53,6 @@ deploy:
   repo: https://github.com/CitruXonve/devblog.git
   branch: gh-pages
   name: "CitruXonve"
+  token: $DEPLOY_ACCESS_TOKEN
   email: "angelikaxu54@gmail.com"
 theme_config: null
