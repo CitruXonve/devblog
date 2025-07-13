@@ -19,7 +19,7 @@ Self dismissing modal
 
 Revised implementation w/o error risk when using JSX element VS functional call:
 <!--more-->
-```typescript
+```typescript App.tsx
 import './App.css';
 import 'h8k-components';
 import React, { useState, useEffect } from 'react';
@@ -68,9 +68,7 @@ export default App;
 ```
 
 Original defective implementation during the interview:
-```typescript
-// challenge/src/App.js
-
+```typescript ./src/App.js
 import './App.css';
 import 'h8k-components';
 import React, { useState, useEffect } from 'react';
@@ -136,13 +134,12 @@ const App = () => {
 }
 export default App;
 ```
-```css
-/* challenge/src/App.css */
+
+```css ./src/App.css
 @import '../node_modules/h8k-design/dist/index.css';
 ```
-```typescript
-// challenge/src/index.js
 
+```typescript ./src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -152,8 +149,9 @@ ReactDOM.render(<App />, document.getElementById('root'));
 applyPolyfills().then(() => {
     defineCustomElements(window);
 })
+```
 
-// challenge/package.json
+```json package.json
 {
   "name": "react-app",
   "version": "0.1.0",
@@ -193,7 +191,7 @@ applyPolyfills().then(() => {
 
 External references after revision:
 - [`useRef`](https://react.dev/reference/react/useRef) is a React Hook that lets you reference a value that’s not needed for rendering.
-- [`Window.fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) -- no need to import `axios`.
+- [`Window.fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) -- no need to import `axios` when in a pitch.
 
     Basic usage:
     ```typescript
@@ -207,7 +205,7 @@ External references after revision:
 
 Revised implementation of `App` component:
 
-```typescript
+```typescript App.tsx
 
 function App() {
   const [comments, setComments] = useState([]);
@@ -301,4 +299,95 @@ function App() {
   )
 }
 export default App;
+```
+
+## Wisdom AI 60-min Screening in FE - early-Feb
+
+Problem: Implement a FE page of basic card game using [stackblitz.com](stackblitz.com) online IDE (JS only, no TS support).
+
+```js Constants
+const numbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+const suits = ['♠', '♣', '♥', '♦'];
+```
+
+Revised coding ([online IDE](https://stackblitz.com/edit/react-prnflm6e) / [Live Demo](https://react-prnflm6e.stackblitz.io/)):
+
+```css style.css
+h1,
+p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.card-list {
+  display: flex;
+  column-gap: 4px;
+}
+.card {
+  border: 2px solid green;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+  min-width: 50px;
+  min-height: 30px;
+}
+```
+```js App.js
+import React, { useState } from 'react';
+import './style.css';
+const numbers = [
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  'J',
+  'Q',
+  'K',
+  'A',
+];
+const suits = ['♠', '♣', '♥', '♦'];
+const generate_card = () => {
+  const random_num = Math.floor(Math.random() * numbers.length);
+  const random_suit = Math.floor(Math.random() * suits.length);
+  return numbers[random_num] + suits[random_suit];
+};
+const draw_cards = (card_num) => {
+  const cards = new Set();
+  while (cards.size < card_num) {
+    const new_card = generate_card();
+    if (cards.has(new_card)) {
+      continue;
+    }
+    cards.add(new_card);
+  }
+  return Array.from(cards);
+};
+export default function App() {
+  const [cardNum, setCardNum] = useState(5);
+  const [cardList, setCardList] = useState([]);
+  const deal_a_hand = () => {
+    setCardList(() => {
+      const cards = draw_cards(cardNum);
+      return cards.map((card) => <span className="card">{card}</span>);
+    });
+    setCardNum(4);
+  };
+  return (
+    <div>
+      {/* <h1>Hello StackBlitz!</h1>
+      <p>Start editing to see some magic happen :)</p> */}
+      <button onClick={deal_a_hand}>Deal a Hand</button>
+      <h2>Cards</h2>
+      <div className="card-column">
+        <p className="card-list">{cardList}</p>
+      </div>
+    </div>
+  );
+}
 ```

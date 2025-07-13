@@ -214,9 +214,302 @@ if __name__ == "__main__":
   print('Test passed!')
 ```
 
+## LRUCache && LinkedList
+
+Originally asked by `Aktus AI` in a 30-min
+coding round in mid-February 2025 - [live demo](https://sharepad.io/live/TepsSxj).
+
+The reusability has to be improved in the original implementation during the interview:
+```python
+class LRUCache:
+    class LinkedList:
+        class Node:
+            def __init__(self, val: int, next_node: Optional['Node']=None) -> None:
+                self.data = val
+                self.next = next_node
+            
+        def __init__(self, val: int) -> None:
+            self.head = Node() # dummy node
+            self.rear = self.head
+        
+        def insert(self, val: int) -> None:
+            node = Node(val) # insert a node of value to the rear of the linked list
+            self.rear.next = node
+            self.rear = node
+            # if self.head.next is None:
+                # self.head.next = node
+            
+        def delete(self) -> None: # delete from head
+            if self.head.next is not None:
+                if self.head == self.rear:
+                    self.rear = self.rear.next
+                self.head = self.head.next
+
+    def __init__(self, capacity: int):
+        # self.c
+        pass    
+
+    def get(self, key: int) -> int:
+        pass
+
+    def put(self, key: int, value: int) -> None:
+        pass
+```
+
+### Test cases 
+
+The followings are the notes when asked by the interviewer to test the coding orally:
+```python
+"""
+init LinkedList:
+head rear
+|    |
+Node(next=None)
+
+insert 1:
+new_node=Node(1,next=None)
+head             rear
+|                |
+Node(next=Node(1,))
+
+insert 2:
+new_node=Node(2,next=None)
+head                         rear
+|                            |
+Node(next=Node(1,next=Node(2,)))
+
+insert 3:
+new_node=Node(3,next=None)
+head                                     rear
+|                                        |
+Node(next=Node(1,next=Node(2,next=Node(3,)))
+
+insert 4, delete from head 1:
+new_node=Node(4,next=None)
+head                                       rear
+|                                          |
+Node(1,next=Node(2,next=Node(3,next=Node(4,))
+"""
+```
+
+```python
+if __name__ == '__main__':
+    # Test case 1:
+    print("Test Case 1:")
+    cache = LRUCache(2)
+    cache.put(1, 1)
+    cache.put(2, 2)
+    print(cache.get(1))    # Expected output: 1
+    cache.put(3, 3)        
+    print(cache.get(2))    # Expected output: -1 (not found)
+    cache.put(4, 4)        
+    print(cache.get(1))    # Expected output: -1 (not found)
+    print(cache.get(3))    # Expected output: 3
+    print(cache.get(4))    # Expected output: 4
+
+    # Additional Test Case 2:
+    print("\nTest Case 2:")
+    cache = LRUCache(1)
+    cache.put(1, 10)
+    print(cache.get(1))    # Expected: 10
+    cache.put(2, 20)       
+    print(cache.get(1))    # Expected: -1
+    print(cache.get(2))    # Expected: 20
+
+    # Additional Test Case 3:
+    print("\nTest Case 3:")
+    cache = LRUCache(3)
+    cache.put(1, 1)
+    cache.put(2, 2)
+    cache.put(3, 3)
+    print(cache.get(2))    # Expected: 2
+    cache.put(4, 4)        
+    print(cache.get(1))    # Expected: -1
+    print(cache.get(3))    # Expected: 3
+    print(cache.get(4))    # Expected: 4
+```
+
+## HashTable && LinkedList
+
+Originally asked during a 60-min coding interview with LinkedIn in early-February 2025.
+
+Revised implementation using **doubly-linked nodes** (instead of array/list):
+```python
+from typing import Optional, Union, Callable
+
+class LinkedList:
+    class Node:
+        data: Optional[str]
+        next: Optional['Node'] # type: ignore
+        
+        def __init__(self,
+                    value: Optional[str] = None,
+                    next_node: Optional['Node'] = None) -> None: # type: ignore
+            self.data = value
+            self.next = next_node
+
+    head: Node
+
+    def __init__(self) -> None:
+        self.head = self.Node() # dummy node at creation
+
+    def insert(self, value: Optional[str] = None) -> None: # insert as head node
+        self.head.next = self.Node(value, next_node=self.head.next) # pass existing next node
+
+class Hashtable:
+    key_nums: int
+    data: list[Optional[LinkedList]]
+    hash_func: Callable[[str], int]
+
+    def __init__(self, size: int = 1000007) -> None:
+        self.key_nums = size
+        self.data = [None] * self.key_nums # [LinkedList() for _ in range(self.key_nums)]
+        self.hash_func = lambda key: \
+            sum(pow(10, int(digit[0])) * int(digit[1]) if digit[1] >= '0' and digit[1] <= '9' else ord(digit[1])
+                for digit in enumerate(reversed(key))) % self.key_nums
+
+    def get(self, key: str) -> Union[list[str], str, None]:
+        hashed_key: int = self.hash_func(key)
+        if hashed_key >= 0 and hashed_key < self.key_nums and self.data[hashed_key] is not None:
+            ptr: Optional[LinkedList] = self.data[hashed_key].head # empty data for dummy node
+            res: list[str] = []
+            while ptr.next is not None:
+                ptr = ptr.next
+                res.append(ptr.data)
+            return res if len(res) > 1 else res[0]
+        else:
+            return None
+
+    def put(self, key: str, value: str) -> None:
+        hashed_key: int = self.hash_func(key)
+        if hashed_key >= 0 and hashed_key < self.key_nums:
+            if self.data[hashed_key] is None:
+                self.data[hashed_key] = LinkedList() # initialization
+            # insert or chain nodes of values
+            self.data[hashed_key].insert(value)
+```
+
+### Test cases
+```python
+hash_table = Hashtable()
+print(hash_table.get('10')) # output: None
+print(hash_table.put('10', '20')) # None
+print(hash_table.put('key1', '3')) # None
+print(hash_table.get('10')) # output: 20
+print(hash_table.get('1')) # None
+print(hash_table.put('key2', '4')) # None
+print(hash_table.put('key2', '5')) # None
+print(hash_table.get('key2')) # 5 -> 4
+print(hash_table.get('key1')) # 3
+print(hash_table.put('key2', '-2')) # None
+print(hash_table.get('key1')) # 3
+print(hash_table.get('key2')) # -2 -> 5 -> 4
+```
+
+## Priority Queue
+
+Originally asked by Duolingo in early-February 2025.
+
+Problem description:
+```markdown
+There appears to be a certain data structure, together with trace logs of insertion and pop operations of element values into and out of it, but the type of the data structure is unknown.
+
+The only known types of the data structure are as follows, which can be one type or more out of the following:
+Stack, queue, or priority queue (the minimum element gets popped out first)
+
+Given the trace log as input, determine the potential type(s) of the data structure and output as a set of type strings. If none of the types applies, output an empty set.
+```
+
+Only minor typo occurred in implemenation during interview:
+
+```python
+def data_structure(trace):
+    """
+    Returns:
+        A set containing zero or more of the strings "stack",
+        "queue", or "priority", indicating which data structures
+        the trace can represent
+    """
+    # edge case: empty
+    if len(trace) == 0:
+        return {"stack", "queue", "priority"}
+        # return {"stack", "queue"}
+    # edge case: all inserts or all pops
+    types = set([line[0] for line in trace])
+    if types == {'insert'} or types == {'pop'}:
+        return set()
+    res = {'stack', 'queue', 'priority'}
+    # assume it can be a stack and check for most number of elements in the data structure at any time
+    stack = []
+    # num_elements = 0
+    for line, element in trace:
+        if line == 'insert':
+            stack.append(element)
+            # num_elements += 1
+        elif line == 'pop' and (len(stack) == 0 or element != stack[-1]):
+            res.remove('stack') # not FILO; can't be a stack
+            break
+        elif line == 'pop':
+            stack.pop() # FILO
+            
+    from collections import deque
+    que = deque()
+    for line, element in trace:
+        if line == 'insert':
+            que.append(element)
+        elif line == 'pop' and len(que) == 0:
+            res.remove('queue')
+            break
+        elif line == 'pop' and len(que) > 0 and que.popleft() != element:
+            res.remove('queue')
+            break
+        elif line == 'pop' and len(que) > 0:
+            que.popleft() # FIFO
+    # minimum heap - priority-queue
+    from heapq import heappop, heappush
+    min_heap = []
+    min_element = None
+    for line, element in trace:
+        if line == 'insert':
+            heappush(min_heap, element)
+            min_element = min(element, min_heap[0]) if len(min_heap) > 0 else element
+        elif line == 'pop' and len(min_heap) == 0:
+            res.remove('priority')
+            break
+        elif line == 'pop' and len(min_heap) > 0 and min_heap[0] != min_element:
+            res.remove('priority')
+            break
+        elif line == 'pop':
+            heappop(min_heap)
+            
+    return res
+    pass
+```
+### Test cases
+```python
+def run_tests():
+    """ You should implement some tests here. """
+    trace = [("insert", 5), ("insert", 10), ("pop", 5)]
+    assert data_structure(trace) == {"queue", "priority"}
+    assert data_structure([]) == {"stack", "queue", "priority"}
+    assert data_structure([("pop", 5)]) == set()
+    assert data_structure([("insert", 5), ("pop", 5), ("insert", 0), ("pop", 0)]) == {
+        "stack",
+        "queue",
+        "priority",
+    }
+    assert data_structure([("insert", 5), ("pop", 5), ("insert", 0)]) == {"stack", "queue", "priority"}
+    assert data_structure([("insert", 5), ("pop", 5), ("insert", 0), ("insert", 0)]) == {"stack", "queue", "priority"}
+    
+    print("Success!")
+
+if __name__ == "__main__":
+    run_tests()
+```
+
 ## Multi-unit Conversion as Graph
 
-Originally asked during a recent 60-min coding interview with Snap in mid-Jan 2025. The problem was so challenging that the proper solution wasn't brought up until after about 40 minutes.
+Originally asked during a 60-min coding interview with Snap in mid-Jan 2025. The problem was so challenging that the proper solution wasn't brought up until after about 40 minutes.
 
 Problem Description:
 ```markdown
