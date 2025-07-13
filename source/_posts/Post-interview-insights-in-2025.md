@@ -1,5 +1,5 @@
 ---
-title: Post-interview insights in 2025
+title: Post-interview DS&A Coding Insights in 2025
 tags:
   - Interview
   - Python
@@ -9,7 +9,7 @@ date: 2025-07-12 13:22:52
 
 The questions below will be in a reverse-chronological order as they appeared in the interviews.
 
-## Simulated Calculator
+## Simulated Calculator in String Processing
 
 ### Calculator V1 - [LC 224. Basic Calculator (Hard)](https://leetcode.com/problems/basic-calculator/)
 
@@ -18,7 +18,7 @@ Essentially, merely `+-` arithmetic operations and parenthesis (nested possible)
 #### Concise & efficient Solution after refactoring
 
 Upon second thought, it appears that stack operations are need only when destructing parenthesis and processing the `+-` operators (see also other shared solutions on LeetCode).
-
+<!--more-->
 ```python
 class Solution:
     def calculate(self, s: str) -> int:
@@ -44,7 +44,6 @@ class Solution:
 #### Intuitive Solution
 
 It's easier to come up with, but results in many edge cases to be taken care of, still likely ending up in `TLE` on LeetCode.
-<!--more-->
 ```python
 class Solution:
     def process_add_sub(self, nums, ops) -> int:
@@ -113,7 +112,7 @@ class Solution:
 
 ### Calculator V2 - [227. Basic Calculator II (Medium)](https://leetcode.com/problems/basic-calculator-ii/)
 
-It was asked during a recent 60-min coding interview with `OpusClip`, in which `+-*/` arithmetic operations need to be supported.
+It was asked during a recent 60-min coding interview with `OpusClip` in early-July 2025, in which `+-*/` arithmetic operations need to be supported.
 
 #### Concise & efficient Solution after refactoring
 
@@ -213,4 +212,106 @@ if __name__ == "__main__":
   assert(solution("111+999+111/999") == 111 + 999)
   assert(solution("1787+2136/3/2*2") == 2499)
   print('Test passed!')
+```
+
+## Multi-unit Conversion as Graph
+
+Originally asked during a recent 60-min coding interview with Snap in mid-Jan 2025. The problem was so challenging that the proper solution wasn't brought up until after about 40 minutes.
+
+Problem Description:
+```markdown
+Your old code in javascript has been preserved below.
+
+Create a function convertUnits, to convert a number from a given starting unit to a given ending unit. 
+You're given a list of conversion factors consisting of triple `(c, u, v)`, where `c` is a float and `u, v` are unit names.
+```
+Example:
+```python
+list = [[12, 'in', 'ft'], [3, 'ft', 'yd'], [5280, 'ft', 'mi'], [220, 'yd', 'furlong'], [25.4, 'mm', 'in'], [100, 'cm', 'm'], [10, 'mm', 'cm']]
+
+convertUnits(0.125, 'mi', 'furlong', list) # returns 1
+convertUnits(1, 'mi', 'm', list) # returns 1609.34
+```
+
+After revision, it appears to be totally applicable to convert the problem into graph-traversal:
+
+```python
+from typing import Optional
+from collections import deque, defaultdict
+
+def convertUnits(c: float, u: str, v: str, factors: list[list]) -> Optional[float]:
+    # build adjacency list using dictionary denoting the direct conversion factors of every unit
+    adj_list: defaultdict[str, list[list]] = defaultdict(list) # DefaultDict[str, List[List[str, float]]]
+    for factor in factors:
+        rate: float = factor[0]
+        unit1: str = factor[1]
+        unit2: str = factor[2]
+        # set up conversion list for both units
+        adj_list[unit1].append([rate, unit2])
+        adj_list[unit2].append([1.0 / rate, unit1])
+
+    # perform BFS from u to v and calculate the overall rate
+    visited: dict[str, float] = { u: 1.0 }
+    que: deque[str] = deque()
+    que.append(u)
+    while len(que) and v not in visited:
+        cur_unit = que.popleft()
+        for factor in adj_list.get(cur_unit, []):
+            next_rate: float = factor[0]
+            next_unit: str = factor[1]
+            if next_unit in visited:
+                continue
+            visited[next_unit] = visited[cur_unit] * next_rate
+            que.append(next_unit)
+    
+    return c / visited[v] if v in visited else None
+
+factors = [[12, 'in', 'ft'], [3, 'ft', 'yd'], [5280, 'ft', 'mi'], [220, 'yd', 'furlong'], [25.4, 'mm', 'in'], [100, 'cm', 'm'], [10, 'mm', 'cm']]
+print(convertUnits(0.125, 'mi', 'furlong', factors)) # 1.0
+print(convertUnits(1, 'mi', 'm', factors)) # 1609.344
+```
+
+Original intuitive BFS implementation failed to cope with those beyond 2-step conversions within the tight interview timeline:
+
+```typescript
+const convertUnits = (c: number, u: string, v: string, factors: Array<[number, string, string]>): number => {
+    var ratio: number = 1.0;
+    var conversion: Map<string, number> = new Map();
+    var adj: string[] = [];
+    // key: Array<u, v> -> value: ratio number
+    
+    // parse the ratios
+    for (const factor of factors) {
+        var pair1 = [factor[1], factor[2]].join('');
+        var pair2 = [factor[2], factor[1]].join('');
+        conversion[pair1] = factor[0];
+        conversion[pair2] = 1.0 / factor[0];
+        adj.append(pair1);
+        adj.append(pair2);
+    }
+    // combine the ratios
+    for (const factor1 of factors) {
+        for (const factor2 of factors) {
+            if (factor1[1] === factor2[2]) { // check overlapping units
+                var pair1 = [factor1[2], factor2[1]].join('');
+                var pair2 = [factor2[1], factor1[2]].join('');
+                var rate = factor1[0] * factor2[0]
+                conversion[pair1] = factor1[0] * factor2[0];
+                conversion[pair2] = 1.0 / rate;
+            }
+            //  || factor1[2] === factor2[1]
+        }
+    }
+    
+    // breath-first search using queue
+    var que: string[] = [u];
+    while (que.length > 0) {
+        var top = que[0];
+        que.shift();
+        for (const factor in conversion) {
+            
+        }
+    }
+    return ratio * c;
+};
 ```
