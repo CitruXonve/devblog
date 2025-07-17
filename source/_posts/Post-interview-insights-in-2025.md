@@ -18,7 +18,9 @@ Essentially, merely `+-` arithmetic operations and parenthesis (nested possible)
 #### Concise & efficient Solution after refactoring
 
 Upon second thought, it appears that stack operations are need only when destructing parenthesis and processing the `+-` operators (see also other shared solutions on LeetCode).
+
 <!--more-->
+
 ```python
 class Solution:
     def calculate(self, s: str) -> int:
@@ -37,13 +39,14 @@ class Solution:
                 # decide current sign based on parenthesis
                 sign = (1 if ch == '+' else -1) * stack[-1]
                 num = 0 # reset
-        
+
         return res + sign * num  # remaining number
 ```
 
 #### Intuitive Solution
 
 It's easier to come up with, but results in many edge cases to be taken care of, still likely ending up in `TLE` on LeetCode.
+
 ```python
 class Solution:
     def process_add_sub(self, nums, ops) -> int:
@@ -103,12 +106,11 @@ class Solution:
             else: # skip invalid character
                 continue
             prev_ch = ch
-        
+
         if len(ops) + 1 < len(nums):
             ops = [['+'] * (len(nums) - len(ops)), *ops]
         return self.process_add_sub(nums, ops)
 ```
-
 
 ### Calculator V2 - [227. Basic Calculator II (Medium)](https://leetcode.com/problems/basic-calculator-ii/)
 
@@ -140,7 +142,7 @@ class Solution:
             else: # skip invalid character
                 continue
             prev_ch = ch
-        
+
         self.process_mul_div(nums, ops)
         return nums[0] + sum(-nums[idx + 1] if op == '-' else nums[idx + 1] \
             for idx, op in enumerate(ops))
@@ -214,12 +216,13 @@ if __name__ == "__main__":
   print('Test passed!')
 ```
 
-## LRUCache && LinkedList
+## LRUCache && LinkedList (singly-linked)
 
 Originally asked by `Aktus AI` in a 30-min
 coding round in mid-February 2025 - [live demo](https://sharepad.io/live/TepsSxj).
 
 The reusability has to be improved in the original implementation during the interview:
+
 ```python
 class LRUCache:
     class LinkedList:
@@ -227,18 +230,18 @@ class LRUCache:
             def __init__(self, val: int, next_node: Optional['Node']=None) -> None:
                 self.data = val
                 self.next = next_node
-            
+
         def __init__(self, val: int) -> None:
             self.head = Node() # dummy node
             self.rear = self.head
-        
+
         def insert(self, val: int) -> None:
             node = Node(val) # insert a node of value to the rear of the linked list
             self.rear.next = node
             self.rear = node
             # if self.head.next is None:
                 # self.head.next = node
-            
+
         def delete(self) -> None: # delete from head
             if self.head.next is not None:
                 if self.head == self.rear:
@@ -247,7 +250,7 @@ class LRUCache:
 
     def __init__(self, capacity: int):
         # self.c
-        pass    
+        pass
 
     def get(self, key: int) -> int:
         pass
@@ -256,9 +259,10 @@ class LRUCache:
         pass
 ```
 
-### Test cases 
+### Test cases
 
 The followings are the notes when asked by the interviewer to test the coding orally:
+
 ```python
 """
 init LinkedList:
@@ -300,9 +304,9 @@ if __name__ == '__main__':
     cache.put(1, 1)
     cache.put(2, 2)
     print(cache.get(1))    # Expected output: 1
-    cache.put(3, 3)        
+    cache.put(3, 3)
     print(cache.get(2))    # Expected output: -1 (not found)
-    cache.put(4, 4)        
+    cache.put(4, 4)
     print(cache.get(1))    # Expected output: -1 (not found)
     print(cache.get(3))    # Expected output: 3
     print(cache.get(4))    # Expected output: 4
@@ -312,7 +316,7 @@ if __name__ == '__main__':
     cache = LRUCache(1)
     cache.put(1, 10)
     print(cache.get(1))    # Expected: 10
-    cache.put(2, 20)       
+    cache.put(2, 20)
     print(cache.get(1))    # Expected: -1
     print(cache.get(2))    # Expected: 20
 
@@ -323,17 +327,18 @@ if __name__ == '__main__':
     cache.put(2, 2)
     cache.put(3, 3)
     print(cache.get(2))    # Expected: 2
-    cache.put(4, 4)        
+    cache.put(4, 4)
     print(cache.get(1))    # Expected: -1
     print(cache.get(3))    # Expected: 3
     print(cache.get(4))    # Expected: 4
 ```
 
-## HashTable && LinkedList
+## HashTable && LinkedList (singly-linked)
 
 Originally asked during a 60-min coding interview with LinkedIn in early-February 2025.
 
-Revised implementation using **doubly-linked nodes** (instead of array/list):
+Revised implementation using **singly-linked nodes** (instead of array/list):
+
 ```python
 from typing import Optional, Union, Callable
 
@@ -341,7 +346,7 @@ class LinkedList:
     class Node:
         data: Optional[str]
         next: Optional['Node'] # type: ignore
-        
+
         def __init__(self,
                     value: Optional[str] = None,
                     next_node: Optional['Node'] = None) -> None: # type: ignore
@@ -390,6 +395,7 @@ class Hashtable:
 ```
 
 ### Test cases
+
 ```python
 hash_table = Hashtable()
 print(hash_table.get('10')) # output: None
@@ -406,11 +412,26 @@ print(hash_table.get('key1')) # 3
 print(hash_table.get('key2')) # -2 -> 5 -> 4
 ```
 
+## LRUCache && LinkedList (doubly-linked)
+
+Originally asked during a **90-min offline** coding round with Speechify in early-February 2025.
+
+Requirement: Both most/least recently used nodes need to be accessed.
+
+Learnings: Beware of the modularization and reusability to avoid running into unnecessary issues. When refreshing a node in the middle of a list, avoid mixing the head logic with the mid-node logic.
+
+Note: No need to use dummy node like singly linked list.
+
+## LFUCache && LinkedList (doubly-linked)
+
+Not asked in any interview yet. See [460. LFU Cache (Hard)](https://leetcode.com/problems/lfu-cache/description/).
+
 ## Priority Queue
 
 Originally asked by Duolingo in early-February 2025.
 
 Problem description:
+
 ```markdown
 There appears to be a certain data structure, together with trace logs of insertion and pop operations of element values into and out of it, but the type of the data structure is unknown.
 
@@ -451,7 +472,7 @@ def data_structure(trace):
             break
         elif line == 'pop':
             stack.pop() # FILO
-            
+
     from collections import deque
     que = deque()
     for line, element in trace:
@@ -481,11 +502,13 @@ def data_structure(trace):
             break
         elif line == 'pop':
             heappop(min_heap)
-            
+
     return res
     pass
 ```
+
 ### Test cases
+
 ```python
 def run_tests():
     """ You should implement some tests here. """
@@ -500,7 +523,7 @@ def run_tests():
     }
     assert data_structure([("insert", 5), ("pop", 5), ("insert", 0)]) == {"stack", "queue", "priority"}
     assert data_structure([("insert", 5), ("pop", 5), ("insert", 0), ("insert", 0)]) == {"stack", "queue", "priority"}
-    
+
     print("Success!")
 
 if __name__ == "__main__":
@@ -512,13 +535,16 @@ if __name__ == "__main__":
 Originally asked during a 60-min coding interview with Snap in mid-Jan 2025. The problem was so challenging that the proper solution wasn't brought up until after about 40 minutes.
 
 Problem Description:
+
 ```markdown
 Your old code in javascript has been preserved below.
 
-Create a function convertUnits, to convert a number from a given starting unit to a given ending unit. 
+Create a function convertUnits, to convert a number from a given starting unit to a given ending unit.
 You're given a list of conversion factors consisting of triple `(c, u, v)`, where `c` is a float and `u, v` are unit names.
 ```
+
 Example:
+
 ```python
 list = [[12, 'in', 'ft'], [3, 'ft', 'yd'], [5280, 'ft', 'mi'], [220, 'yd', 'furlong'], [25.4, 'mm', 'in'], [100, 'cm', 'm'], [10, 'mm', 'cm']]
 
@@ -556,7 +582,7 @@ def convertUnits(c: float, u: str, v: str, factors: list[list]) -> Optional[floa
                 continue
             visited[next_unit] = visited[cur_unit] * next_rate
             que.append(next_unit)
-    
+
     return c / visited[v] if v in visited else None
 
 factors = [[12, 'in', 'ft'], [3, 'ft', 'yd'], [5280, 'ft', 'mi'], [220, 'yd', 'furlong'], [25.4, 'mm', 'in'], [100, 'cm', 'm'], [10, 'mm', 'cm']]
@@ -567,44 +593,49 @@ print(convertUnits(1, 'mi', 'm', factors)) # 1609.344
 Original intuitive BFS implementation failed to cope with those beyond 2-step conversions within the tight interview timeline:
 
 ```typescript
-const convertUnits = (c: number, u: string, v: string, factors: Array<[number, string, string]>): number => {
-    var ratio: number = 1.0;
-    var conversion: Map<string, number> = new Map();
-    var adj: string[] = [];
-    // key: Array<u, v> -> value: ratio number
-    
-    // parse the ratios
-    for (const factor of factors) {
-        var pair1 = [factor[1], factor[2]].join('');
-        var pair2 = [factor[2], factor[1]].join('');
-        conversion[pair1] = factor[0];
-        conversion[pair2] = 1.0 / factor[0];
-        adj.append(pair1);
-        adj.append(pair2);
+const convertUnits = (
+  c: number,
+  u: string,
+  v: string,
+  factors: Array<[number, string, string]>
+): number => {
+  var ratio: number = 1.0;
+  var conversion: Map<string, number> = new Map();
+  var adj: string[] = [];
+  // key: Array<u, v> -> value: ratio number
+
+  // parse the ratios
+  for (const factor of factors) {
+    var pair1 = [factor[1], factor[2]].join("");
+    var pair2 = [factor[2], factor[1]].join("");
+    conversion[pair1] = factor[0];
+    conversion[pair2] = 1.0 / factor[0];
+    adj.append(pair1);
+    adj.append(pair2);
+  }
+  // combine the ratios
+  for (const factor1 of factors) {
+    for (const factor2 of factors) {
+      if (factor1[1] === factor2[2]) {
+        // check overlapping units
+        var pair1 = [factor1[2], factor2[1]].join("");
+        var pair2 = [factor2[1], factor1[2]].join("");
+        var rate = factor1[0] * factor2[0];
+        conversion[pair1] = factor1[0] * factor2[0];
+        conversion[pair2] = 1.0 / rate;
+      }
+      //  || factor1[2] === factor2[1]
     }
-    // combine the ratios
-    for (const factor1 of factors) {
-        for (const factor2 of factors) {
-            if (factor1[1] === factor2[2]) { // check overlapping units
-                var pair1 = [factor1[2], factor2[1]].join('');
-                var pair2 = [factor2[1], factor1[2]].join('');
-                var rate = factor1[0] * factor2[0]
-                conversion[pair1] = factor1[0] * factor2[0];
-                conversion[pair2] = 1.0 / rate;
-            }
-            //  || factor1[2] === factor2[1]
-        }
+  }
+
+  // breath-first search using queue
+  var que: string[] = [u];
+  while (que.length > 0) {
+    var top = que[0];
+    que.shift();
+    for (const factor in conversion) {
     }
-    
-    // breath-first search using queue
-    var que: string[] = [u];
-    while (que.length > 0) {
-        var top = que[0];
-        que.shift();
-        for (const factor in conversion) {
-            
-        }
-    }
-    return ratio * c;
+  }
+  return ratio * c;
 };
 ```
