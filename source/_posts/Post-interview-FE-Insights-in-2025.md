@@ -8,6 +8,105 @@ abbrlink: d0983c6a
 date: 2025-03-10 12:07:21
 ---
 
+## Uber 60-min FE Interview - mid-July
+
+Problem: on Hackerrank online IDE, given the function definitions, implement certain logic to obtain the expected output while ensuring the function calls running **in parallel**.
+
+Note that (based on clarification made by the interviewer):
+
+- Only JS/TS allowed for this problem;
+- The function of `getNameById` is meant to simulate certain time consuming task; no change should be made other than under `TODO` inside `asyncMap`;
+- `callback` param passed into `getNameById` is not the same as that in `asyncMap`.
+
+```js
+function getNameById(id, callback) {
+  // simulating async request
+  const randomRequestTime = Math.floor(Math.random() * 100) * 200;
+  setTimeout(() => {
+    callback("User" + id);
+  }, randomRequestTime);
+}
+
+// Input
+const userIds = [1, 2, 3, 4, 5];
+async function asyncMap(input, iterateeFn, callback) {
+  // TODO: implement this function, ensuring parallelism and the correct ordering in the output
+}
+
+asyncMap(userIds, getNameById, (names) => {
+  console.log(names); // * ["user1", "user2", "user3", "user4", "user5"]
+});
+```
+
+<!--more-->
+
+Revise via vibe coding:
+
+```js
+async function asyncMap(input, iterateeFn, callback) {
+  const names = new Set();
+  const output = [];
+  // Convert callback-based function to Promise-based
+  // This is needed because Promise.all() requires all promises to resolve before executing .then()
+  // Without this conversion, Promise.all() would resolve immediately when setTimeout is scheduled,
+  // not when the actual callback execution completes, leading to race conditions
+  const promiseBasedIteratee = (id, taskCallback) => {
+    return new Promise((resolve) => {
+      iterateeFn(id, async (taskName) => {
+        resolve();
+        await taskCallback(taskName);
+      });
+    });
+  };
+  Promise.all(
+    input.map(async (id) => {
+      await promiseBasedIteratee(id, async (taskName) => {
+        // wait for all previous tasks to finish before adding the current task to the set
+        for (let prev = 1; prev < id; prev++) {
+          while (!names.has(prev)) {
+            await new Promise((resolve) => setTimeout(resolve, 100));
+          }
+        }
+        names.add(id);
+        // ensure taskName is added in the expected ordering
+        output.push(taskName);
+      });
+    })
+  ).then(async () => {
+    while (output.length < userIds.length) {
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+    callback(output);
+  });
+}
+```
+
+Notes:
+
+- Beware of the location of `resolve` param inside Promise Object, which may affect parallelism.
+- The original function param `iterateeFn` is callback-based and may lead to race conditions if not converted into Promise-based, in which case `Promise.all()` resolves immediately VS when the actual callback execution completes.
+- `Promise.all()` resolves as soon as all calls complete regardless of ordering, not ensuring the resolving/completion.
+
+### Reference:
+
+https://shnoman97.medium.com/parallel-processing-in-javascript-with-concurrency-c214e9facefd
+
+Non-native parallel implementation based on `Promise.all`.
+
+Example:
+
+```js
+async function parallel(arr, fn, threads = 2) {
+  const result = [];
+  while (arr.length) {
+    const res = await Promise.all(arr.splice(0, threads).map((x) => fn(x)));
+    result.push(res);
+  }
+  return result.flat();
+}
+const res = await parallel(arr, apiLikeFunction, 5);
+```
+
 ## Nuro 45-min FE Interview - late-June
 
 Problem description:
@@ -18,7 +117,7 @@ Self dismissing modal
 ```
 
 Revised implementation w/o error risk when using JSX element VS functional call:
-<!--more-->
+
 ```typescript App.tsx
 import './App.css';
 import 'h8k-components';
