@@ -4,6 +4,7 @@ tags:
   - Interview
   - React
   - TypeScript
+  - network
 abbrlink: 8ecb62b2
 date: 2025-08-07 16:44:38
 ---
@@ -22,7 +23,9 @@ Functional Requirements:
 - Disconnection should be handled in a clean way.
 - Should be able to receive and forward messages among clients (message is not echoed back to sender).
 
-Original defective implementation during the interview (single incoming connection allowed at a time; keeping blocked until the disconnection):
+<!--more-->
+
+Original defective implementation during the interview (single incoming connection allowed at a time; keeping blocked until the disconnection), in which the purpose of introducing socket was unclear:
 
 ```py
 import socketserver
@@ -75,6 +78,74 @@ if __name__ == "__main__":
         thread.join()
 ```
 
+Revised version supporting multiple concurrent connections with multi-threading and simulated clean-up:
+
+```py
+import socketserver
+import threading
+import socket
+
+HOST, PORT = "localhost", 9999
+
+class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
+    """
+    Reusing the single TCP connection handler.
+    """
+
+    def handle(self):
+        cur_thread = threading.current_thread()
+        while True:
+            recv = self.request.recv(2000)
+            if len(recv) < 1 or recv == '\x03':
+                print(f"Disconnected from {self.client_address[0]}.")
+                break
+            print(f"Received from {self.client_address} handled by {cur_thread.name}:")
+            print(recv.decode("utf-8"))
+
+        print('Terminating thread:', cur_thread, '\n')
+
+class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    """
+    Wrapper class definition.
+    """
+    pass
+
+def client_socket(ip, port):
+    # Without socket binding, the server thread will quit immediately
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.connect((ip, port))
+        response = str(sock.recv(1024), 'ascii')
+        print("Received: {}".format(response))
+
+def multi_conn_server():
+    with ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler) as server:
+        ip, port = server.server_address
+
+        # Start a thread with the server -- that thread will then start one
+        # more thread for each request
+        server_thread = threading.Thread(target=server.serve_forever)
+        # Exit the server thread when the main thread terminates
+        server_thread.daemon = True
+        server_thread.start()
+        print(f"Server listening at {ip}:{port}")
+        print("Server loop running in thread:", server_thread.name)
+
+        client_socket(ip, port)
+
+if __name__ == "__main__":
+    multi_conn_server()
+```
+
+### Testing / Debugging
+
+Once the server-side Python script is running in the CLI, this can be used to simulate client connecting and messaging, as well as disconnecting by `^C`:
+
+```bash
+nc [hostname] [port]
+```
+
 ### Reference
 
 [Non-blocking Multi-threading Solution](https://www.finalroundai.com/interview-questions/discord-tcp-chat-server-build) - this addressed the basic functional requirement, but potentially left the post-disconnection cleanup and message forwarding unhandled.
+
+[Asynchronous Mixins](https://docs.python.org/3/library/socketserver.html#asynchronous-mixins) - native asynchronous handler with examples.
