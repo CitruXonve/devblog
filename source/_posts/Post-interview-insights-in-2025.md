@@ -424,7 +424,193 @@ Note: No need to use dummy node like singly linked list.
 
 ## LFUCache && LinkedList (doubly-linked)
 
-Not asked in any interview yet. See [460. LFU Cache (Hard)](https://leetcode.com/problems/lfu-cache/description/).
+~~Not asked in any interview yet.~~ It was asked by EvenUp in a coding round as part of the final interviews in early-Aug 2025. See [460. LFU Cache (Hard)](https://leetcode.com/problems/lfu-cache/description/).
+
+Although there was an uncommon solution based on Priority Queue to sort the keys by frequencies and timestamps that was tested passing on LeetCode, it relied on the [`remove` method](https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html#remove-java.lang.Object-) of native Priority Queue class in Java, of which no equivalent implementation exists in Python `heapify` library.
+
+A more acceptable solution is to reuse and extend the LRU Cache class design using doubly-linked lists.
+
+```py
+from collections import defaultdict
+from typing import Optional
+
+class Node:
+    def __init__(self, key, value, freq):
+        self.prev = None
+        self.next = None
+        self.key = key
+        self.val = value
+        self.freq = freq
+
+class LFUCache:
+    def __init__(self, capacity):
+        self.cap = capacity
+        self.size = 0
+        self.min_freq = 1
+        self.data = dict() # key -> Node
+        self.freq = defaultdict(lambda : { 'head': None, 'rear': None }) # freq -> {head, rear} # most recently used, least recently used
+
+    def _add_node(self, key, value, frequency) -> None:
+        node = Node(key, value, frequency)
+        self.data[key] = node
+
+        head = self.freq[frequency]['head']
+        rear = self.freq[frequency]['rear']
+        node.next = head
+
+        if head is not None:
+            head.prev = node
+        self.freq[frequency]['head'] = node
+        if rear is None:
+            self.freq[frequency]['rear'] = node
+
+    def _delete_node(self, key) -> None:
+        if not key in self.data:
+            return
+        node = self.data[key]
+        frequency = node.freq
+        if node.prev is not None:
+            node.prev.next = node.next
+        if node.next is not None:
+            node.next.prev = node.prev
+
+        head = self.freq[frequency]['head']
+        rear = self.freq[frequency]['rear']
+        if node == head:
+            self.freq[frequency]['head'] = head.next
+        if node == rear:
+            self.freq[frequency]['rear'] = rear.prev
+        del self.data[key]
+
+    def _renew_node(self, key, value = None) -> int:
+        val = value if value is not None else self.data[key].val
+        freq = self.data[key].freq
+        self._delete_node(key)
+        self._add_node(key, val, freq + 1)
+        if self.freq[freq]['head'] is None and self.freq[freq]['rear'] is None:
+            del self.freq[freq]
+            # update it if current frequency happens to be the global minimum frequency
+            self.min_freq = freq + 1 if freq == self.min_freq else self.min_freq
+        return val
+
+    def get(self, key) -> Optional[int]:
+        if not key in self.data:
+            return None
+        return self._renew_node(key)
+
+    def put(self, key, value) -> None:
+        if key in self.data:
+            self._renew_node(key, value)
+            return
+        if not key in self.data and self.size < self.cap:
+            self._add_node(key, value, 1)
+            self.size += 1
+            self.min_freq = 1
+            return
+        # if not key in self.data and self.size == self.cap
+        least_freq_key = self.freq[self.min_freq]['rear']
+        if least_freq_key is not None:
+            self._delete_node(least_freq_key.key)
+        self._add_node(key, value, 1)
+        self.min_freq = 1
+```
+
+### OrderedDict
+
+An alternative solution is to use `OrderedDict` to simulate a linked list for conciseness, of which adding a key can be handled by value (`None`) assignment and removing can be achieved by `popitem(last=False)`.
+
+```py
+from collections import defaultdict, OrderedDict
+
+class LFUCache:
+    def __init__(self, capacity: int):
+        self.cap = capacity
+        self.size = 0
+        self.min_freq = 0
+        self.kv = {}                       # key -> (value, freq)
+        self.freq_buckets = defaultdict(OrderedDict)  # freq -> OrderedDict of keys for LRU
+
+    def _bump(self, key: int, new_value=None):
+        """Increase key's frequency and (optionally) update its value."""
+        value, f = self.kv[key]
+        if new_value is not None:
+            value = new_value
+
+        # Remove from current freq bucket (LRU structure)
+        del self.freq_buckets[f][key]
+        if not self.freq_buckets[f]:
+            del self.freq_buckets[f]
+            self.min_freq = f + 1 if self.min_freq == f else self.min_freq
+
+        # Add to next freq bucket at the MRU position
+        nf = f + 1
+        self.freq_buckets[nf][key] = None
+        self.kv[key] = (value, nf)
+
+        return value  # convenient for get()
+
+    def get(self, key: int):
+        if key not in self.kv or self.cap == 0:
+            return None
+        return self._bump(key)
+
+    def put(self, key: int, value: int):
+        if self.cap == 0:
+            return
+
+        if key in self.kv:
+            # Update value and bump freq
+            self._bump(key, new_value=value)
+            return
+
+        # Evict if full
+        if self.size == self.cap:
+            # Evict the LRU key from the current min_freq bucket
+            evict_key, _ = self.freq_buckets[self.min_freq].popitem(last=False)
+            del self.kv[evict_key]
+            if not self.freq_buckets[self.min_freq]:
+                del self.freq_buckets[self.min_freq]
+            # size remains the same after eviction
+        else:
+            self.size += 1
+
+        # Insert new key with freq = 1
+        self.kv[key] = (value, 1)
+        self.freq_buckets[1][key] = None
+        self.min_freq = 1
+```
+
+### Test cases
+
+```python
+cache = LFUCache(2)
+cache.put(1, 1)
+cache.put(2, 2)
+assert(cache.get(1) == 1)
+cache.put(3, 3) # 2 evicted
+assert(cache.get(2) is None)
+assert(cache.get(3) == 3)
+cache.put(4, 4) # 1 evicted
+assert(cache.get(1) is None)
+assert(cache.get(3) == 3)
+assert(cache.get(4) == 4)
+print("Test case 1 passed!")
+
+cache = LFUCache(3)
+cache.put(1, 1)
+cache.put(3, 3)
+cache.put(8, 8)
+assert(cache.get(3) == 3)
+cache.put(2, 2)
+cache.put(-1, -1)
+assert(cache.get(1) is None)
+assert(cache.get(8) is None)
+cache.put(5, 5)
+assert(cache.get(3) == 3)
+assert(cache.get(-1) == -1)
+assert(cache.get(2) is None)
+print("Test case 2 passed!")
+```
 
 ## Priority Queue
 
