@@ -110,8 +110,10 @@ const res = await parallel(arr, apiLikeFunction, 5);
 ## Nuro 45-min FE Interview - late-June
 
 Problem description:
+
 ```markdown
 Self dismissing modal
+
 1. When button is clicked, modal should cover the page
 2. After 5 seconds, the modal closes on it's own
 ```
@@ -119,135 +121,161 @@ Self dismissing modal
 Revised implementation w/o error risk when using JSX element VS functional call:
 
 ```typescript App.tsx
-import './App.css';
-import 'h8k-components';
-import React, { useState, useEffect } from 'react';
+import "./App.css";
+import "h8k-components";
+import React, { useState, useEffect } from "react";
 const title = "React App";
 const App = () => {
-    const [count, setCount] = useState(0);
-    const [modalVisible, setModalVisible] = useState(false);
+  const [count, setCount] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
 
-    useEffect(() => {
-        if (modalVisible) {
-            const interval = setInterval(() => {
-                if (modalVisible && count > 0) {
-                    setCount(count => count - 1);
-                }
-            }, 1000);
-            
-            return () => {
-                clearInterval(interval);
-            }
+  useEffect(() => {
+    if (modalVisible) {
+      const interval = setInterval(() => {
+        if (modalVisible && count > 0) {
+          setCount((count) => count - 1);
         }
-    }, [modalVisible]);
-    // step 1: add a basic modal as an overlay
-    // step 3: enable auto-closing in the modal
-    const Modal = () => (
-        <div style={{ display: modalVisible ? 'flex' : 'none', flexDirection: 'column', padding: '18px' }}>
-            <h2>This is a modal</h2>
-            <p>Countdown: {count} second(s) left ...</p>
-        </div>);
-    return (
-        <div className="App">
-            <Modal />
-            {/* {Modal()} */}
-            <h8k-navbar header={title}></h8k-navbar>
-            <div className="fill-height layout-column justify-content-center align-items-center">
-                {/* step 2: replace the button to open the model */}
-                <button onClick={() => {
-                    setModalVisible(true);
-                    setCount(5);
-                    setTimeout(() => setModalVisible(false), 5000);
-                }} disabled={modalVisible}>Open Modal</button>
-            </div>
-        </div>
-    );
-}
+      }, 1000);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [modalVisible]);
+  // step 1: add a basic modal as an overlay
+  // step 3: enable auto-closing in the modal
+  const Modal = () => (
+    <div
+      style={{
+        display: modalVisible ? "flex" : "none",
+        flexDirection: "column",
+        padding: "18px",
+      }}
+    >
+      <h2>This is a modal</h2>
+      <p>Countdown: {count} second(s) left ...</p>
+    </div>
+  );
+  return (
+    <div className="App">
+      <Modal />
+      {/* {Modal()} */}
+      <h8k-navbar header={title}></h8k-navbar>
+      <div className="fill-height layout-column justify-content-center align-items-center">
+        {/* step 2: replace the button to open the model */}
+        <button
+          onClick={() => {
+            setModalVisible(true);
+            setCount(5);
+            setTimeout(() => setModalVisible(false), 5000);
+          }}
+          disabled={modalVisible}
+        >
+          Open Modal
+        </button>
+      </div>
+    </div>
+  );
+};
 export default App;
 ```
 
 Original defective implementation during the interview:
+
 ```typescript ./src/App.js
-import './App.css';
-import 'h8k-components';
-import React, { useState, useEffect } from 'react';
+import "./App.css";
+import "h8k-components";
+import React, { useState, useEffect } from "react";
 const title = "React App";
 // Self dismissing modal
 // 1. When button is clicked, modal should cover the page
 // 2. After 5 seconds, the modal closes on it's own
 const App = () => {
-    const [count, setCount] = useState(0);
-    const [modalVisible, setModalVisible] = useState(false);
-    const [countDown, setCountDown] = useState(false);
-    // if (countDown) {
-    //     setCountDown(false);
-    //     setInterval(() => {
-    //         if (modalVisible && count > 0) {
-    //             console.log('time left:', count);
-    //             setCount(count => count - 1);
-    //         }
-    //     }, 1000);
-    // }
-    useEffect(() => {
-        console.log('modal visible:', modalVisible);
-        if (modalVisible && !countDown) {
-        setInterval(() => {
-            if (modalVisible && count > 0) {
-                console.log('time left:', count);
-                // setCount(count => count - 1);
-            }
-        }, 1000);
+  const [count, setCount] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [countDown, setCountDown] = useState(false);
+  // if (countDown) {
+  //     setCountDown(false);
+  //     setInterval(() => {
+  //         if (modalVisible && count > 0) {
+  //             console.log('time left:', count);
+  //             setCount(count => count - 1);
+  //         }
+  //     }, 1000);
+  // }
+  useEffect(() => {
+    console.log("modal visible:", modalVisible);
+    if (modalVisible && !countDown) {
+      setInterval(() => {
+        if (modalVisible && count > 0) {
+          console.log("time left:", count);
+          // setCount(count => count - 1);
         }
-        return () => {
-            clearTimeout();
-        }
-    }, [modalVisible]);
-    // step 1: add a basic modal as an overlay
-    const Modal = () => {
-        // useEffect(() => {console.log('useEffect time left:', count);}, [count]);
-
-        // step 3: enable auto-closing in the modal
-        return (<div style={{ display: modalVisible ? 'flex' : 'none', flexDirection: 'column', padding: '18px' }}>
-                <h2>This is a modal</h2>
-                <p>Countdown: {count} second(s) left ...</p>
-            </div>)
+      }, 1000);
+    }
+    return () => {
+      clearTimeout();
     };
+  }, [modalVisible]);
+  // step 1: add a basic modal as an overlay
+  const Modal = () => {
+    // useEffect(() => {console.log('useEffect time left:', count);}, [count]);
+
+    // step 3: enable auto-closing in the modal
     return (
-        <div className="App">
-            <Modal />
-            {/* {Modal()} */}
-            <h8k-navbar header={title}></h8k-navbar>
-            <div className="fill-height layout-column justify-content-center align-items-center">
-                {/* <p data-testid="output">You clicked {count} times ...</p> */}
-                {/* <button data-testid="add-button" onClick={() => setCount(count + 1)}>Click Me</button> */}
-                {/* step 2: replace the button to open the model */}
-                <button onClick={() => {
-                    setModalVisible(true);
-                    setCount(5);
-                    setTimeout(() => setModalVisible(false), 5000);
-                    setCountDown(true);
-                }} disabled={modalVisible}>Open Modal</button>
-            </div>
-        </div>
+      <div
+        style={{
+          display: modalVisible ? "flex" : "none",
+          flexDirection: "column",
+          padding: "18px",
+        }}
+      >
+        <h2>This is a modal</h2>
+        <p>Countdown: {count} second(s) left ...</p>
+      </div>
     );
-}
+  };
+  return (
+    <div className="App">
+      <Modal />
+      {/* {Modal()} */}
+      <h8k-navbar header={title}></h8k-navbar>
+      <div className="fill-height layout-column justify-content-center align-items-center">
+        {/* <p data-testid="output">You clicked {count} times ...</p> */}
+        {/* <button data-testid="add-button" onClick={() => setCount(count + 1)}>Click Me</button> */}
+        {/* step 2: replace the button to open the model */}
+        <button
+          onClick={() => {
+            setModalVisible(true);
+            setCount(5);
+            setTimeout(() => setModalVisible(false), 5000);
+            setCountDown(true);
+          }}
+          disabled={modalVisible}
+        >
+          Open Modal
+        </button>
+      </div>
+    </div>
+  );
+};
 export default App;
 ```
 
 ```css ./src/App.css
-@import '../node_modules/h8k-design/dist/index.css';
+@import "../node_modules/h8k-design/dist/index.css";
 ```
 
 ```typescript ./src/index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import {applyPolyfills, defineCustomElements} from 'h8k-components/loader';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { applyPolyfills, defineCustomElements } from "h8k-components/loader";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 applyPolyfills().then(() => {
-    defineCustomElements(window);
-})
+  defineCustomElements(window);
+});
 ```
 
 ```json package.json
@@ -272,11 +300,7 @@ applyPolyfills().then(() => {
     "cross-env": "^7.0.2"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -289,41 +313,44 @@ applyPolyfills().then(() => {
 ## Yahoo Final Rounds - FE Section - mid-March
 
 External references after revision:
+
 - [`useRef`](https://react.dev/reference/react/useRef) is a React Hook that lets you reference a value that’s not needed for rendering.
 - [`Window.fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) -- no need to import `axios` when in a pitch.
 
-    Basic usage:
-    ```typescript
-    const response = await fetch(url);
-        if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-        }
+  Basic usage:
 
-    const json = await response.json();
-    ```
+  ```typescript
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Response status: ${response.status}`);
+  }
+
+  const json = await response.json();
+  ```
 
 Revised implementation of `App` component:
 
 ```typescript App.tsx
-
 function App() {
   const [comments, setComments] = useState([]);
   const [inputValue, setInputValue] = useState({
-    id: '',
-    name: '',
-    email: '',
-    body: '',
+    id: "",
+    name: "",
+    email: "",
+    body: "",
   });
-  
+
   const getComments = async () => {
     try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts/1/comments');
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts/1/comments"
+      );
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-      
+
       const json = await response.json();
-      console.log('resp:', json);
+      console.log("resp:", json);
       setComments(json);
     } catch (error) {
       console.error(error.message);
@@ -331,71 +358,99 @@ function App() {
   };
   const submitComment = (event) => {
     event.preventDefault();
-    
+
     // update comment list
     const newComment = {
-      ...inputValue
+      ...inputValue,
     };
-    console.log('inputs:', newComment);
+    console.log("inputs:", newComment);
     setComments((prevComments) => [newComment, ...prevComments]);
-    setInputValue({ id: '', name: '', email: '', body: '' });
+    setInputValue({ id: "", name: "", email: "", body: "" });
     // POST new comment ...
   };
   useEffect(() => {
     getComments();
   }, []);
-  
+
   return (
     <div className="app">
       <h1>Comments</h1>
       <form>
         <div>
           <span>ID:</span>
-          <input id="id-input" type="text" value={inputValue.id} onChange={(e) => setInputValue((prevInput) => {
-            return { ...prevInput, id: e.target.value }
-          })}/>
+          <input
+            id="id-input"
+            type="text"
+            value={inputValue.id}
+            onChange={(e) =>
+              setInputValue((prevInput) => {
+                return { ...prevInput, id: e.target.value };
+              })
+            }
+          />
         </div>
         <div>
           <span>Name:</span>
-          <input id="name-input" type="text" value={inputValue.name} onChange={(e) => setInputValue((prevInput) => {
-            return { ...prevInput, name: e.target.value }
-          })}/>
+          <input
+            id="name-input"
+            type="text"
+            value={inputValue.name}
+            onChange={(e) =>
+              setInputValue((prevInput) => {
+                return { ...prevInput, name: e.target.value };
+              })
+            }
+          />
         </div>
         <div>
           <span>Email:</span>
-          <input id="email-input" type="text" value={inputValue.email} onChange={(e) => setInputValue((prevInput) => {
-            return { ...prevInput, email: e.target.value }
-          })}/>
+          <input
+            id="email-input"
+            type="text"
+            value={inputValue.email}
+            onChange={(e) =>
+              setInputValue((prevInput) => {
+                return { ...prevInput, email: e.target.value };
+              })
+            }
+          />
         </div>
         <div>
           <span>Content:</span>
-          <input id="comment-input" type="text" value={inputValue.body} onChange={(e) => {
-            // console.log('Input onchange:', e.target.value, e.currentTarget.value);
-            // setInputValue(e.target.value);
-            setInputValue((prevInput) => {
-              return { ...prevInput, body: e.target.value }
-            })
-          }} />
+          <input
+            id="comment-input"
+            type="text"
+            value={inputValue.body}
+            onChange={(e) => {
+              // console.log('Input onchange:', e.target.value, e.currentTarget.value);
+              // setInputValue(e.target.value);
+              setInputValue((prevInput) => {
+                return { ...prevInput, body: e.target.value };
+              });
+            }}
+          />
         </div>
-        <button type="submit" onClick={submitComment}>Submit Comment</button>
+        <button type="submit" onClick={submitComment}>
+          Submit Comment
+        </button>
       </form>
       <ul>
-        {
-          comments.map((comment) => {
-            const { id, name, email, body } = comment;
-            return (
-              <li key={`comment-key-${id}`}>
-                <div>
-                  <h4>{name} {email}</h4>
-                  <p>{body}</p>
-                </div>
-              </li>
-            );
-          })
-        }
+        {comments.map((comment) => {
+          const { id, name, email, body } = comment;
+          return (
+            <li key={`comment-key-${id}`}>
+              <div>
+                <h4>
+                  {name} {email}
+                </h4>
+                <p>{body}</p>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
-  )
+  );
 }
 export default App;
 ```
@@ -405,8 +460,22 @@ export default App;
 Problem: Implement a FE page of basic card game using [stackblitz.com](stackblitz.com) online IDE (JS only, no TS support).
 
 ```js Constants
-const numbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-const suits = ['♠', '♣', '♥', '♦'];
+const numbers = [
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K",
+  "A",
+];
+const suits = ["♠", "♣", "♥", "♦"];
 ```
 
 Revised coding ([online IDE](https://stackblitz.com/edit/react-prnflm6e) / [Live Demo](https://react-prnflm6e.stackblitz.io/)):
@@ -414,8 +483,8 @@ Revised coding ([online IDE](https://stackblitz.com/edit/react-prnflm6e) / [Live
 ```css style.css
 h1,
 p {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .card-list {
   display: flex;
@@ -432,25 +501,26 @@ p {
   min-height: 30px;
 }
 ```
+
 ```js App.js
-import React, { useState } from 'react';
-import './style.css';
+import React, { useState } from "react";
+import "./style.css";
 const numbers = [
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '10',
-  'J',
-  'Q',
-  'K',
-  'A',
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K",
+  "A",
 ];
-const suits = ['♠', '♣', '♥', '♦'];
+const suits = ["♠", "♣", "♥", "♦"];
 const generate_card = () => {
   const random_num = Math.floor(Math.random() * numbers.length);
   const random_suit = Math.floor(Math.random() * suits.length);
