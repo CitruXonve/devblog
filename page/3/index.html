@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>CitruXonve&#039;s another far end</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="CitruXonve&#039;s another far end"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CitruXonve&#039;s another far end"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="CitruXonve&#039;s another far end"><meta property="og:url" content="https://devblog.citruxonve.net/"><meta property="og:site_name" content="CitruXonve&#039;s another far end"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://devblog.citruxonve.net/img/og_image.png"><meta property="article:author" content="CitruXonve"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://devblog.citruxonve.net/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://devblog.citruxonve.net"},"headline":"CitruXonve's another far end","image":["https://devblog.citruxonve.net/img/og_image.png"],"author":{"@type":"Person","name":"CitruXonve"},"publisher":{"@type":"Organization","name":"CitruXonve's another far end","logo":{"@type":"ImageObject","url":"https://devblog.citruxonve.net/img/logo.svg"}},"description":null}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="CitruXonve&#039;s another far end" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">CrXon Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Icarus Theme on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-09-13T19:45:47.000Z" title="9/13/2020, 7:45:47 PM">09/13/2020</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.022Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">a minute read (About 177 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/28045272/">Miscellanies about initializing an Ubuntu Server (II)</a></p><div class="content"><h3 id="Error-Permission-denied-…-when-running-Docker-perviously-seen"><a href="#Error-Permission-denied-…-when-running-Docker-perviously-seen" class="headerlink" title="Error: Permission denied … when running Docker (perviously seen)"></a>Error: Permission denied … when running Docker (perviously seen)</h3><p>Better solution than before:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br><span class="line">sudo usermod -aG docker $USER</span><br><span class="line">sudo service docker restart</span><br></pre></td></tr></table></figure>
+
+<p>[UPDATE]<br>Looks like it is also required to logging out and back so that the group membership change takes effect (<a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket">how?</a>):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su -s $&#123;USER&#125;</span><br></pre></td></tr></table></figure>
+
+<p>And this is to <a target="_blank" rel="noopener" href="https://askubuntu.com/questions/136788/how-do-i-list-the-members-of-a-group">check for group membership</a>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getent group groupname | awk -F: &#x27;&#123;print $4&#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Potential-issue-when-Docker-for-Ubuntu-is-installed-and-managed-by-Snap"><a href="#Potential-issue-when-Docker-for-Ubuntu-is-installed-and-managed-by-Snap" class="headerlink" title="Potential issue when Docker for Ubuntu is installed and managed by Snap"></a>Potential issue when Docker for Ubuntu is installed and managed by Snap</h3><p>Either <code>systemd</code> or <code>systemctl</code> won’t be able to locate or control <code>Docker</code>, which would occur when Docker is pre-installed with Ubuntu Server. Use <a target="_blank" rel="noopener" href="https://codeburst.io/how-to-install-and-use-snap-on-ubuntu-18-04-9fcb6e3b34f9">snap commands</a> instead:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap services docker</span><br><span class="line">sudo snap restart docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="Local-Build-Preparation"><a href="#Local-Build-Preparation" class="headerlink" title="Local Build Preparation"></a>Local Build Preparation</h3><p>This is likely to be a cure-all:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y build-essential</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-08-15T17:15:03.000Z" title="8/15/2020, 5:15:03 PM">08/15/2020</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.022Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">3 minutes read (About 414 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/735e7650/">ryzen-build-improvement</a></p><div class="content"><h3 id="Proposal-1-A-NAS-build-is-not-exactly-NAS-compliant"><a href="#Proposal-1-A-NAS-build-is-not-exactly-NAS-compliant" class="headerlink" title="Proposal 1: A NAS build is not exactly NAS-compliant"></a>Proposal 1: A NAS build is not exactly NAS-compliant</h3><p><code>Athlon 200GE</code> doesn’t support ECC, though literally all Ryzen CPUs do.</p>
+<p><code>B450</code> supports ECC with some limitations, accordint to the <a target="_blank" rel="noopener" href="https://download.asrock.com/Manual/Fatal1ty%20B450%20Gaming-ITXac.pdf">example user manual</a>:</p>
+<blockquote>
+<ul>
+<li>AMD Ryzen series CPUs (Pinnacle Ridge) support DDR4 3466+(OC)&#x2F;3200(OC)&#x2F;2933&#x2F;2667&#x2F;2400&#x2F;2133 ECC &amp; nonECC, un-buffered memory*</li>
+<li>AMD Ryzen series CPUs (Summit Ridge) support DDR4 3466+(OC)&#x2F;3200(OC)&#x2F;2933(OC)&#x2F;2667&#x2F;2400&#x2F;2133 ECC &amp; non-ECC, un-buffered memory*</li>
+<li>AMD Ryzen series CPUs (Raven Ridge) support DDR4 3466+(OC)&#x2F;3200(OC)&#x2F;2933(OC)&#x2F;2667&#x2F;2400&#x2F;2133 non-ECC, un-buffered memory*</li>
+<li>For Ryzen Series CPUs (Raven Ridge), ECC is only supported with PRO CPUs.</li>
+</ul>
+</blockquote>
+<p>Part of <a target="_blank" rel="noopener" href="https://www.asrock.com/mb/AMD/Fatal1ty%20B450%20Gaming-ITXac/index.us.asp#CPU">CPU Support List</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Socket</th>
+<th>Family</th>
+<th>Model</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>PRO 3200G (YD320BC5M4MFH)	65W	Picasso	3.6GHz	2MB	B1	P3.30</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>PRO 3200GE (YD320BC6M4MFH)	35W	Picasso	3.3GHz	2MB	B1	P3.30</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>3200G (YD3200C5M4MFH)	65W	Picasso	3.6GHz	2MB	B1	P3.30</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>3200GE (YD3200C6M4MFH)	35W	Picasso	3.3GHz	2MB	B1	P3.30</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>PRO 2200G (YD220BC5M4MFB)	65W	Raven Ridge	3.5GHz	2MB	B0	All</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>PRO 2200GE (YD220BC6M4MFB)	35W	Raven Ridge	3.2GHz	2MB	B0	All</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>2200G (YD2200C5M4MFB)	65W	Raven Ridge	3.5GHz	2MB	B0	All</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>2200GE (YD2200C6M4MFB)	35W	Raven Ridge	3.2GHz	2MB	B0	All</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Ryzen 3</td>
+<td>PRO 1300 (YD130BBBM4KAE)	65W	Summit Ridge	3.4GHz	2MB	B1	All</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Athlon</td>
+<td>3000G (YD3000C6M2OFH)	35W	Picasso	3.5GHz	1MB	B1	P3.50</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Athlon</td>
+<td>Athlon PRO 200GE (YD200BC6M2OFB)	35W	Raven Ridge	3.2GHz	1MB	B0	All</td>
+</tr>
+<tr>
+<td>AM4</td>
+<td>Athlon</td>
+<td>Athlon 200GE (YD200GC6M2OFB)	35W	Raven Ridge	3.2GHz	1MB	B0	All</td>
+</tr>
+</tbody></table>
+<p>To support ECC and avoid the use of a dedicated GPU at the same time, <code>PRO 2200G/GE</code> is proposed as the lowest-end eligible CPU for refreshed NAS build.</p>
+<p>SSD cache is <strong>optional</strong> for RAM less than 32GB.</p>
+<p>Cheap refurbished NICs can be actually kinda model many years ago. 40mm quiet cooling fan replacement needed.</p>
+<h3 id="Proposal-2-MSI-RMA-request"><a href="#Proposal-2-MSI-RMA-request" class="headerlink" title="Proposal 2: MSI RMA request"></a>Proposal 2: MSI RMA request</h3><p>Exchange done.</p>
+<h3 id="Proposal-3-Ultimate-casual-video-editing-rig-unlimited-budget"><a href="#Proposal-3-Ultimate-casual-video-editing-rig-unlimited-budget" class="headerlink" title="Proposal 3: Ultimate casual video editing rig, unlimited budget"></a>Proposal 3: Ultimate casual video editing rig, unlimited budget</h3><p>Wait for annual refresh of <code>Threadripper</code>. <code>TRX40</code> should continue to receive support.</p>
+<p>1200W PSU for dual-GPU. ASUS ROG PSU can be installed upside-down.</p>
+<p>Build samples:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://lambdalabs.com/deep-learning/laptops/tensorbook">TensorBook</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sabrepc.com/Deep-Learning-2x-GPU-Workstations">Deep Learning Workstation</a></li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-08-11T17:19:00.000Z" title="8/11/2020, 5:19:00 PM">08/11/2020</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.022Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">a few seconds read (About 48 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/f5daccde/">How to quickly solve Ryzen Heat Issue</a></p><div class="content"><h4 id="Do-not-mistakenly-accuse-the-cooler-for-the-most-common-overheating-issue-under-Windows10"><a href="#Do-not-mistakenly-accuse-the-cooler-for-the-most-common-overheating-issue-under-Windows10" class="headerlink" title="Do not mistakenly accuse the cooler for the most common overheating issue under Windows10."></a>Do not mistakenly accuse the cooler for the most common overheating issue under Windows10.</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6NcZCMu5kCw">The cause is actually the unreasonable Windows power management plan.</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=_WOtXtDZLd8">“Performance Mode” actually means “Balanced Mode” and vice versa.</a></p>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-08-04T20:13:05.000Z" title="8/4/2020, 8:13:05 PM">08/04/2020</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.021Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">a few seconds read (About 61 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/85d30cd2/">Development Environment Management</a></p><div class="content"><p>Building environment setup can be very subtle and in-depth.  Even the same <code>python 3.6</code> has a different dependent static library on Linux than on Mac.</p>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><blockquote>
+<p>brew install nvm<br>nvm ls<br>nvm install 11<br>nvm use 11  </p>
+</blockquote>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><blockquote>
+<p>&#x2F;usr&#x2F;libexec&#x2F;java_home [-V] [-v 1.8]</p>
+</blockquote>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Mac built-in python wasn’t fully workable.</p>
+<blockquote>
+<p>brew install pyenv<br>pyenv versions<br>pyenv install 3.6.10<br>pyenv local&#x2F;global 3.6.10  </p>
+</blockquote>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-02-06T11:25:32.000Z" title="2/6/2020, 11:25:32 AM">02/06/2020</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.021Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">a few seconds read (About 0 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/9d23339/">macos-env-conf-revision</a></p><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-01-16T06:31:21.000Z" title="1/16/2020, 6:31:21 AM">01/16/2020</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.022Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">2 minutes read (About 282 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/44b662bb/">The plan to equip Ryzen</a></p><div class="content"><h2 id="Division-1-A-Baseline-NAS"><a href="#Division-1-A-Baseline-NAS" class="headerlink" title="Division 1: A Baseline NAS"></a>Division 1: A Baseline NAS</h2><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Product Name</th>
+<th align="right">Cost</th>
+<th align="right">Source</th>
+<th align="right">Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HDD</td>
+<td>Beracuda 2TB</td>
+<td align="right"></td>
+<td align="right">JD</td>
+<td align="right">Already owned</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>AMD Athlon 200GE with Radeon Vega Graphics</td>
+<td align="right">¥239</td>
+<td align="right">Taobao</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Mobo</td>
+<td>ASRock B450 Gaming-ITX&#x2F;ac (AM4 Socket)</td>
+<td align="right">¥853</td>
+<td align="right">JD</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>MAXSUN Q3 DDR4 2666 8G</td>
+<td align="right">¥179</td>
+<td align="right">Taobao</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>PSU</td>
+<td>FSP MS450 450W SFX</td>
+<td align="right">¥439</td>
+<td align="right">JD</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Case</td>
+<td>CyberPowerPC Syber CSCCO100 Orange Mini ITX Gaming Case</td>
+<td align="right">$34.99</td>
+<td align="right">Gamestop</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Heat sink</td>
+<td></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Subtotal</td>
+<td></td>
+<td align="right">~$281.5</td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody></table>
+<h2 id="Division-2-A-“Rig”-for-Computing-Rendering"><a href="#Division-2-A-“Rig”-for-Computing-Rendering" class="headerlink" title="Division 2: A “Rig” for Computing &amp; Rendering"></a>Division 2: A “Rig” for Computing &amp; Rendering</h2><h3 id="Stage-1"><a href="#Stage-1" class="headerlink" title="Stage 1"></a>Stage 1</h3><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Product Name</th>
+<th align="right">Cost</th>
+<th align="right">Source</th>
+<th align="right">Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Graphics</td>
+<td>Sapphire Radeon NITRO+ RX 590 8GB GDDR5 PCI-E</td>
+<td align="right">$215.99</td>
+<td align="right">Amazon</td>
+<td align="right">Already owned</td>
+</tr>
+<tr>
+<td>PSU</td>
+<td>Thermaltake Smart White RGB 500W 80+ White 12V ATX - PS-SPR-0500NHFAWU-1</td>
+<td align="right">$49.99</td>
+<td align="right">Walmart</td>
+<td align="right">Already owned</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>G.Skill TridentZ RGB Series 16GB (2 x 8GB) 288-Pin SDRAM DDR4 3200 (PC4 25600) F4-3200C14D-16GTZR</td>
+<td align="right">$164.54</td>
+<td align="right">Amazon</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Case</td>
+<td>BitFenix Prodigy M</td>
+<td align="right">$94.99</td>
+<td align="right">Amazon</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Mobo</td>
+<td>MSI B450M MORTAR</td>
+<td align="right">¥618.99</td>
+<td align="right">JD</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>SSD</td>
+<td>SAMSUNG 500GB M.2(NVMe) 970 EVO MZ-V7E500BW</td>
+<td align="right">¥598.99</td>
+<td align="right">JD</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>AMD RYZEN 7 3700X w&#x2F; Wraith Prism Cooler</td>
+<td align="right">$324.99</td>
+<td align="right">Amazon</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Subtotal</td>
+<td></td>
+<td align="right">~$1026</td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody></table>
+<p>Notes:</p>
+<ul>
+<li>Some may suggest <code>MSI B450M MORTAR TITANIUM / MAX</code>, which turn out to be almost the same except in another color &#x2F; capable of higher RAM frequency.</li>
+<li>The stylish inverted <code>BitFenix Prodigy M</code> case has some unique air flow issues.</li>
+</ul>
+<h3 id="Stage-2"><a href="#Stage-2" class="headerlink" title="Stage 2"></a>Stage 2</h3><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Product Name</th>
+<th align="right">Cost</th>
+<th align="right">Source</th>
+<th align="right">Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RAM</td>
+<td>** The same (2 x 8GB) **</td>
+<td align="right">$154.99</td>
+<td align="right">Amazon</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td>** Starting from GTX1660 Super, RX 5700, RTX 2060, … **</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>PSU</td>
+<td>Thermaltake Toughpower Grand RGB 750W 80+ Gold MB 12V RGB</td>
+<td align="right">$112.85</td>
+<td align="right">Amazon</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Water Cooling</td>
+<td>JONSBO SHADOW 240</td>
+<td align="right">¥399</td>
+<td align="right">JD</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td>Fan</td>
+<td>CoolerMaster MasterFan MF120R ARGB x3 bundle w&#x2F; controller</td>
+<td align="right">¥349</td>
+<td align="right">JD</td>
+<td align="right">New</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody></table>
+<p>Notes:</p>
+<ul>
+<li>Entry-level AIO water coolers are not recommended, which can’t even beat tower fan coolers.</li>
+</ul>
+<h2 id="Video-Editing-PC-Building"><a href="#Video-Editing-PC-Building" class="headerlink" title="Video Editing PC Building"></a><a target="_blank" rel="noopener" href="https://www.logicalincrements.com/articles/videoediting">Video Editing PC Building</a></h2><h2 id="Deep-Learning-Rig-Building"><a href="#Deep-Learning-Rig-Building" class="headerlink" title="Deep Learning Rig Building"></a>Deep Learning Rig Building</h2></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-12-02T13:28:38.000Z" title="12/2/2019, 1:28:38 PM">12/02/2019</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.020Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">a few seconds read (About 18 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/202415b4/">Additions to Shadowsocks Server</a></p><div class="content"><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/nodejh/nodejh.github.io/issues/30">Prerequisite of <code>chacha20</code>: libsodium</a></li>
+</ul>
+<p>The service moved to V2ray.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-11-20T14:59:01.000Z" title="11/20/2019, 2:59:01 PM">11/20/2019</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.021Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">a minute read (About 165 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/158914ad/">macos-disk-cleanup</a></p><div class="content"><h2 id="Basics-Purgeable-space-is-not-unused-space"><a href="#Basics-Purgeable-space-is-not-unused-space" class="headerlink" title="Basics: Purgeable space is not unused space."></a>Basics: Purgeable space is not unused space.</h2><p>Purgeable space is logically unoccupied at the scope of macOS System, but physically not.</p>
+<p>Idiot apps like <code>Xcode</code> would refuse to install, though the “available” space is fairly enough, given that purgeable space included.</p>
+<p>Use <code>df -h</code> to query for unused disk space physically.</p>
+<p><a target="_blank" rel="noopener" href="https://www.reddit.com/r/iOSProgramming/comments/b5uecg/how_much_space_does_xcode_require_to_update/ejgyn0j/?utm_source=share&utm_medium=web2x">Purgeable space can be released manually by making local snapshots thinner.</a></p>
+<blockquote>
+<p>tmutil thinlocalsnapshots &#x2F; 10000000000 4</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://dzone.com/articles/shrink-your-time-machine">Shrink TimeMachine backups.</a></p>
+<h2 id="Remove-local-Photo-Library"><a href="#Remove-local-Photo-Library" class="headerlink" title="Remove local Photo Library"></a>Remove local Photo Library</h2><p><a target="_blank" rel="noopener" href="https://www.quora.com/How-can-I-delete-photos-from-my-Mac-but-keep-them-in-iCloud">Stop icloud photo syncing.</a></p>
+<h2 id="Remove-unused-Simulators"><a href="#Remove-unused-Simulators" class="headerlink" title="Remove unused Simulators"></a>Remove unused Simulators</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33419301/macos-xcode-coresimulator-folder-very-big-is-it-ok-to-delete-content">They can be downloaded again from Xcode when in need.</a></p>
+<blockquote>
+<p>xcrun simctl delete unavailable&#x2F;all</p>
+</blockquote>
+<h2 id="Remove-unused-Docker-local-image"><a href="#Remove-unused-Docker-local-image" class="headerlink" title="Remove unused Docker local image"></a>Remove unused Docker local image</h2></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-09-29T17:43:18.000Z" title="9/29/2019, 5:43:18 PM">09/29/2019</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.022Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">a few seconds read (About 107 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/63f46c53/">Advanced Python Programming</a></p><div class="content"><ul>
+<li><p>What are the method(s) that iterator object must implement?</p>
+<blockquote>
+<p>__iter__() and __next__()</p>
+</blockquote>
+</li>
+<li><p>If a function contains at least one yield statement, it becomes <strong>a generator function</strong>.</p>
+</li>
+<li><p>In Python, there is a built-in function property() that returns a property object. The property object has which of the following methods?</p>
+<blockquote>
+<p>getter(), setter() and delete()</p>
+</blockquote>
+</li>
+<li><p><code>zip</code> produces an iterator which can only be iterated once. Once you have iterated it, it’s exhausted.</p>
+</li>
+<li><p>Where to use closure</p>
+<ul>
+<li>We must have a nested function (function inside a function).</li>
+<li>The nested function must refer to a value defined in the enclosing function.</li>
+<li>The enclosing function must return the nested function.</li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-09-29T17:29:39.000Z" title="9/29/2019, 5:29:39 PM">09/29/2019</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-16T07:00:30.021Z" title="12/16/2025, 7:00:30 AM">12/16/2025</time></span><span class="level-item">2 minutes read (About 278 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/d9dccee6/">Insight into advanced C++ OOP</a></p><div class="content"><h1 id="Source-and-Header"><a href="#Source-and-Header" class="headerlink" title="Source and Header"></a>Source and Header</h1><p>The reasons to separate are:</p>
+<ul>
+<li>To improve build times. Faster recompiles: If your implementation is split up into separate compilation units, you only need to recompile the ones that change when making edits.</li>
+<li>To link against code without having the source for the definitions.</li>
+<li>To avoid marking everything “inline”.</li>
+</ul>
+<h1 id="Polymorphism-in-C"><a href="#Polymorphism-in-C" class="headerlink" title="Polymorphism in C++"></a>Polymorphism in C++</h1><h2 id="Compile-time-polymorphism"><a href="#Compile-time-polymorphism" class="headerlink" title="Compile time polymorphism"></a>Compile time polymorphism</h2><h3 id="Function-Operator-Overloading"><a href="#Function-Operator-Overloading" class="headerlink" title="Function&#x2F;Operator Overloading"></a>Function&#x2F;Operator Overloading</h3><h2 id="Runtime-polymorphism"><a href="#Runtime-polymorphism" class="headerlink" title="Runtime polymorphism"></a>Runtime polymorphism</h2><h3 id="Function-overriding-on-the-other-hand-occurs-when-a-derived-class-has-a-definition-for-one-of-the-member-functions-of-the-base-class"><a href="#Function-overriding-on-the-other-hand-occurs-when-a-derived-class-has-a-definition-for-one-of-the-member-functions-of-the-base-class" class="headerlink" title="Function overriding on the other hand occurs when a derived class has a definition for one of the member functions of the base class."></a>Function overriding on the other hand occurs when a derived class has a definition for one of the member functions of the base class.</h3><ul>
+<li><p>To avoid ambiguity error when multiple inheritence.</p>
+</li>
+<li><p>Virtual functions are functions that can be overridden in derived class with the same signature.</p>
+</li>
+<li><p>Virtual functions enable run-time polymorphism in a inheritance hierarchy.</p>
+</li>
+<li><p>If a function is ‘virtual’ in the base class, the most-derived class’s implementation of the function is called according to the actual type of the object referred to, regardless of the declared type of the pointer or reference. In non-virtual functions, the functions are called according to the type of reference or pointer.</p>
+</li>
+<li><p>Static functions are class specific and may not be called on objects. Virtual functions are called according to the pointed or referred object.</p>
+</li>
+<li><p>Virtual function has a VPTR that poccesses some memory.</p>
+</li>
+<li><p>A member function can be virtual even if we have not uses virtual keyword with it. When a class has a virtual function, functions with same signature in all descendant classes automatically become virtual. We don’t need to use virtual keyword in declaration of fun() in B and C. They are anyways virtual.</p>
+</li>
+<li><p>A base class function can be accessed with scope resolution operator even if the function is virtual.</p>
+</li>
+</ul>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/2/">Previous</a></div><div class="pagination-next"><a href="/page/4/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link" href="/page/2/">2</a></li><li><a class="pagination-link is-current" href="/page/3/">3</a></li><li><a class="pagination-link" href="/page/4/">4</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/30/">30</a></li></ul></nav></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://ui-avatars.com/api/?name=Citru+Xonve&amp;background=0D8ABC&amp;color=fff&amp;size=128" alt="CitruXonve"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">CitruXonve</p><p class="is-size-6 is-block">Fullstack Developer, Data Platform, UI/UX</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Sunnyvale, CA, US</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives/"><p class="title">293</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories/"><p class="title">36</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags/"><p class="title">148</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/CitruXonve" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/CitruXonve"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://www.facebook.com/IrisAmamiya/"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com/Iris_Amamiya/"><i class="fab fa-twitter"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/ACM-ICPC/"><span class="level-start"><span class="level-item">ACM-ICPC</span></span><span class="level-end"><span class="level-item tag">95</span></span></a><ul><li><a class="level is-mobile" href="/categories/ACM-ICPC/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">94</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/About/"><span class="level-start"><span class="level-item">About</span></span><span class="level-end"><span class="level-item tag">22</span></span></a></li><li><a class="level is-mobile" href="/categories/Computing/"><span class="level-start"><span class="level-item">Computing</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Computing/Graphic/"><span class="level-start"><span class="level-item">Graphic</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing/Graphic/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Computing-Cloud/"><span class="level-start"><span class="level-item">Computing - Cloud</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Computing-Cloud/Notes/"><span class="level-start"><span class="level-item">Notes</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Criticisms/"><span class="level-start"><span class="level-item">Criticisms</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Deployment/"><span class="level-start"><span class="level-item">Deployment</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/DevOps/"><span class="level-start"><span class="level-item">DevOps</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">25</span></span></a><ul><li><a class="level is-mobile" href="/categories/Developing/Environment/"><span class="level-start"><span class="level-item">Environment</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Developing/Server/"><span class="level-start"><span class="level-item">Server</span></span><span class="level-end"><span class="level-item tag">6</span></span></a><ul><li><a class="level is-mobile" href="/categories/Developing/Server/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Developing/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Development/"><span class="level-start"><span class="level-item">Development</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/English/"><span class="level-start"><span class="level-item">English</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Environment/"><span class="level-start"><span class="level-item">Environment</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Environment/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Graphic/"><span class="level-start"><span class="level-item">Graphic</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Graphic/Developing/"><span class="level-start"><span class="level-item">Developing</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Graphic/Developing/Game/"><span class="level-start"><span class="level-item">Game</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Hardware/"><span class="level-start"><span class="level-item">Hardware</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Industrial/"><span class="level-start"><span class="level-item">Industrial</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Network/"><span class="level-start"><span class="level-item">Network</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">34</span></span></a></li><li><a class="level is-mobile" href="/categories/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">21</span></span></a><ul><li><a class="level is-mobile" href="/categories/Programing/ACM-ICPC/"><span class="level-start"><span class="level-item">ACM-ICPC</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Programing/ACM-ICPC/Programing/"><span class="level-start"><span class="level-item">Programing</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Server/"><span class="level-start"><span class="level-item">Server</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/Web/About/"><span class="level-start"><span class="level-item">About</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/iOS/"><span class="level-start"><span class="level-item">iOS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/ACM-ICPC/"><span class="tag">ACM-ICPC</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"><span class="tag">AC自动机</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AWS/"><span class="tag">AWS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Adobe/"><span class="tag">Adobe</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Angular/"><span class="tag">Angular</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Apache/"><span class="tag">Apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Arch-Linux/"><span class="tag">Arch Linux</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/BFS/"><span class="tag">BFS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/BIT/"><span class="tag">BIT</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bestcoder/"><span class="tag">Bestcoder</span><span class="tag">23</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bitset/"><span class="tag">Bitset</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bootstrap/"><span class="tag">Bootstrap</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CCPC/"><span class="tag">CCPC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Catalan/"><span class="tag">Catalan</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CentOS/"><span class="tag">CentOS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Clover/"><span class="tag">Clover</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Compiler/"><span class="tag">Compiler</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Contest/"><span class="tag">Contest</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Cpp/"><span class="tag">Cpp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DFS/"><span class="tag">DFS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DNS/"><span class="tag">DNS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DP/"><span class="tag">DP</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DSDT/"><span class="tag">DSDT</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Data-Analytics/"><span class="tag">Data Analytics</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dinic/"><span class="tag">Dinic</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker/"><span class="tag">Docker</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Eclipse/"><span class="tag">Eclipse</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Expect/"><span class="tag">Expect</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Fibonacci/"><span class="tag">Fibonacci</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Frontend/"><span class="tag">Frontend</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GLUT/"><span class="tag">GLUT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GPT/"><span class="tag">GPT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GUI/"><span class="tag">GUI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gentoo/"><span class="tag">Gentoo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Geometry/"><span class="tag">Geometry</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Github/"><span class="tag">Github</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Graduate/"><span class="tag">Graduate</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash/"><span class="tag">Hash</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Interview/"><span class="tag">Interview</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JNUOJ/"><span class="tag">JNUOJ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/K8s/"><span class="tag">K8s</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/KMP/"><span class="tag">KMP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Live-Archive/"><span class="tag">Live Archive</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MBR/"><span class="tag">MBR</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MS-DOS/"><span class="tag">MS=DOS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mac/"><span class="tag">Mac</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Manhattan/"><span class="tag">Manhattan</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Multi-Uni/"><span class="tag">Multi-Uni</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mobius%E5%8F%8D%E6%BC%94/"><span class="tag">Möbius反演</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NAS/"><span class="tag">NAS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NetworkFlow/"><span class="tag">NetworkFlow</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NoSQL/"><span class="tag">NoSQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OS/"><span class="tag">OS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenCV/"><span class="tag">OpenCV</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenGL/"><span class="tag">OpenGL</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/RMQ/"><span class="tag">RMQ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/React/"><span class="tag">React</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Regional/"><span class="tag">Regional</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Repost/"><span class="tag">Repost</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Ryzen/"><span class="tag">Ryzen</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQLserver/"><span class="tag">SQLserver</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSH/"><span class="tag">SSH</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSL/"><span class="tag">SSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/System-Design/"><span class="tag">System Design</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TOEFL/"><span class="tag">TOEFL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Template/"><span class="tag">Template</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Trie/"><span class="tag">Trie</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TypeScript/"><span class="tag">TypeScript</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UEFI/"><span class="tag">UEFI</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UX/"><span class="tag">UX</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Ubuntu/"><span class="tag">Ubuntu</span><span class="tag">15</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Unix/"><span class="tag">Unix</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Windows/"><span class="tag">Windows</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Wordpress/"><span class="tag">Wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ZFS/"><span class="tag">ZFS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ZOJ/"><span class="tag">ZOJ</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ajax/"><span class="tag">ajax</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/asm/"><span class="tag">asm</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/css/"><span class="tag">css</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cuda/"><span class="tag">cuda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cudnn/"><span class="tag">cudnn</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/curl/"><span class="tag">curl</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/es6/"><span class="tag">es6</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/font/"><span class="tag">font</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ftp/"><span class="tag">ftp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gitlab/"><span class="tag">gitlab</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hardware/"><span class="tag">hardware</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/html/"><span class="tag">html</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/https/"><span class="tag">https</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/iOS/"><span class="tag">iOS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/interview/"><span class="tag">interview</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/javascript/"><span class="tag">javascript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jdk/"><span class="tag">jdk</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jquery/"><span class="tag">jquery</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/js/"><span class="tag">js</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kext/"><span class="tag">kext</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/macOS/"><span class="tag">macOS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nginx/"><span class="tag">nginx</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/node/"><span class="tag">node</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nodejs/"><span class="tag">nodejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/npm/"><span class="tag">npm</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/react/"><span class="tag">react</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/react-native/"><span class="tag">react native</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/regex/"><span class="tag">regex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/string/"><span class="tag">string</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"><span class="tag">二分图</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"><span class="tag">二分查找</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%BC%88/"><span class="tag">博弈</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"><span class="tag">容斥原理</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"><span class="tag">并查集</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"><span class="tag">并行计算</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"><span class="tag">微积分</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/"><span class="tag">扫描线</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%88%97/"><span class="tag">数列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E7%8B%AC/"><span class="tag">数独</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E8%AE%BA/"><span class="tag">数论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87/"><span class="tag">概率</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%8B%9F/"><span class="tag">模拟</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/"><span class="tag">欧拉回路</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/"><span class="tag">百度之星</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E4%B9%8E/"><span class="tag">知乎</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"><span class="tag">离散化</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB/"><span class="tag">约瑟夫</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"><span class="tag">线段树</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E8%B5%9B/"><span class="tag">网络赛</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%83%8C%E5%8C%85/"><span class="tag">背包</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"><span class="tag">背包问题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AC%E8%BD%BD%E5%8D%9A%E6%96%87/"><span class="tag">转载博文</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%92%E5%BD%92/"><span class="tag">递归</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="http://marisa.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">雾雨魔理沙</span></span><span class="level-right"><span class="level-item tag">marisa.moe</span></span></a></li><li><a class="level is-mobile" href="https://blinkfox.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">闪烁之狐</span></span><span class="level-right"><span class="level-item tag">blinkfox.github.io</span></span></a></li><li><a class="level is-mobile" href="https://phesoca.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">绯索卡</span></span><span class="level-right"><span class="level-item tag">phesoca.com</span></span></a></li><li><a class="level is-mobile" href="https://paperneko.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">笈川伊織（紙喵）</span></span><span class="level-right"><span class="level-item tag">paperneko.moe</span></span></a></li><li><a class="level is-mobile" href="https://neko.ayaka.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Ayaka Neko</span></span><span class="level-right"><span class="level-item tag">neko.ayaka.moe</span></span></a></li><li><a class="level is-mobile" href="https://blog.skk.moe/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Sukka</span></span><span class="level-right"><span class="level-item tag">blog.skk.moe</span></span></a></li><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li><li><a class="level is-mobile" href="https://funactional.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Function</span></span><span class="level-right"><span class="level-item tag">funactional.github.io</span></span></a></li><li><a class="level is-mobile" href="http://www.kuangbin.net/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">kuangbin</span></span><span class="level-right"><span class="level-item tag">www.kuangbin.net</span></span></a></li><li><a class="level is-mobile" href="http://hzwer.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">hzwer</span></span><span class="level-right"><span class="level-item tag">hzwer.com</span></span></a></li><li><a class="level is-mobile" href="http://tsyao.tk/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">tsyao</span></span><span class="level-right"><span class="level-item tag">tsyao.tk</span></span></a></li><li><a class="level is-mobile" href="http://c.ejq.me/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">氢酱</span></span><span class="level-right"><span class="level-item tag">c.ejq.me</span></span></a></li><li><a class="level is-mobile" href="http://coderunion.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">CoderUnion</span></span><span class="level-right"><span class="level-item tag">coderunion.github.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/dangxuandev" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">当轩</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://zhuanlan.zhihu.com/simplyy" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">SimplyY</span></span><span class="level-right"><span class="level-item tag">zhuanlan.zhihu.com</span></span></a></li><li><a class="level is-mobile" href="http://blog.xen0n.name/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">xen0n</span></span><span class="level-right"><span class="level-item tag">blog.xen0n.name</span></span></a></li><li><a class="level is-mobile" href="https://github.com/NaturalL" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">NaturalL</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://huaji8.top/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">幻想帖</span></span><span class="level-right"><span class="level-item tag">huaji8.top</span></span></a></li><li><a class="level is-mobile" href="https://otakism.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">宅談</span></span><span class="level-right"><span class="level-item tag">otakism.com</span></span></a></li><li><a class="level is-mobile" href="https://liyin.date/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">天空之间</span></span><span class="level-right"><span class="level-item tag">liyin.date</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="CitruXonve&#039;s another far end" height="28"></a><p class="is-size-7"><span>&copy; 2025 CitruXonve</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Icarus Theme on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
