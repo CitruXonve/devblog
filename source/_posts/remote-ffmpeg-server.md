@@ -15,6 +15,14 @@ See also [remote Docker server via SSH](posts/8f9620b4/).
 
 [Reference: FFmpeg syntax and examples](https://ffmpeg-api.com/learn/ffmpeg/guide/syntax-and-examples)
 
+## Quick reference
+
+Combining video and audio streams from different sources (assuming stream #0 for video and stream #1 for audio):
+
+```bash
+ffmpeg -i [input_source_0] -i [input_source_1] -c copy -map 0:v:0 -map 1:a:0 [output]
+```
+
 ## Streaming
 
 ### Streaming capability
@@ -61,6 +69,7 @@ ssh [remote_user]@[remote_host] "ffmpeg -i [input_source] -f [format] pipe:1" | 
 
 [Reference 1](https://stackoverflow.com/questions/44510765/gpu-accelerated-video-processing-with-ffmpeg)  
 [Reference 2](https://unix.stackexchange.com/questions/794394/how-to-make-ffmpeg-use-gpu-mostly-for-reducing-file-sizes)
+[Using FFmpeg with NVIDIA GPU Hardware Acceleration](https://docs.nvidia.com/video-technologies/video-codec-sdk/13.0/ffmpeg-with-nvidia-gpu/index.html)
 
 CUDA
 
@@ -79,3 +88,7 @@ Full hardware transcode with NVDEC and NVENC
 ```
 ffmpeg -hwaccel cuda -hwaccel_output_format cuda -i [input] -c:v h264_nvenc [output]
 ```
+
+## Further extension - batch operation
+
+[Batch video processing](https://img.ly/blog/building-a-production-ready-batch-video-processing-server-with-ffmpeg/)

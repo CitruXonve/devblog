@@ -29,6 +29,8 @@ Counter-intuitively, there's actually no need to install or run Docker Desktop a
 
 Either **Docker daemon** and **Docker CLI** can be installed on the common \*nix OS or distros including MacOS. If on Windows, **Windows Subsystem Linux (WSL)** will be helpful to prepare the runtime environment without the need to reinstall the entire OS or run a virtual machine, by enabling the certain optional feature instead.
 
+Even if Docker Desktop is installed on Windows, the runtime environment has to be held in WSL anyway.
+
 ## Server-side setup in Linux/WSL distro of Ubuntu (as an example)
 
 - Package sources
@@ -120,7 +122,6 @@ Either **Docker daemon** and **Docker CLI** can be installed on the common \*nix
   ```
 
   By default the daemon stores data in:
-
   - `/var/lib/docker` on Linux
   - `C:\ProgramData\docker` on Windows
 
@@ -299,3 +300,13 @@ What's more, the current versions of WSL are `2.x`, also referred to as `WSL2`. 
   ```bash
   sudo apt install [-y] ssh-askpass
   ```
+
+- "Connection timeout" even with SSH connection tested okay
+
+Check `docker context` on both host and client sides:
+
+```
+docker context ls
+docker context show
+docker context use [context name]
+```
