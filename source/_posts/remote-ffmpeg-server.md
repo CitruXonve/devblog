@@ -71,23 +71,36 @@ ssh [remote_user]@[remote_host] "ffmpeg -i [input_source] -f [format] pipe:1" | 
 [Reference 2](https://unix.stackexchange.com/questions/794394/how-to-make-ffmpeg-use-gpu-mostly-for-reducing-file-sizes)
 [Using FFmpeg with NVIDIA GPU Hardware Acceleration](https://docs.nvidia.com/video-technologies/video-codec-sdk/13.0/ffmpeg-with-nvidia-gpu/index.html)
 
-CUDA
+CUDA basic usage:
 
 ```
 ffmpeg -i [input] -hwaccel cuda [output]
 ```
 
-CUVID
+CUVID basic usage:
 
 ```
 ffmpeg -i [input] -c:v h264_cuvid [output]
 ```
 
-Full hardware transcode with NVDEC and NVENC
+Full hardware transcoding with NVDEC and NVENC:
 
 ```
 ffmpeg -hwaccel cuda -hwaccel_output_format cuda -i [input] -c:v h264_nvenc [output]
 ```
+
+Full hardware encoding with transforms supported by GPU by practice:
+
+```
+ffmpeg -hwaccel cuda -hwaccel_output_format cuda -c:v h264_cuvid \
+-crop [top]x[bottom]x[left]x[right] \
+-i [input] -c:v h264_nvenc \
+-vf 'fps=[fps],scale_cuda=[width]:[height],setsar=1,scale_cuda=format=yuv420p' \ # fix stretched output pixels
+-preset slow -cq:v 18 \ # similar to "crf=18" option of x264
+[output]
+```
+
+(options like "pad" still need to be processed by CPU)
 
 ## Further extension - batch operation
 
