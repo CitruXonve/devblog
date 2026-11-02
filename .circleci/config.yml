@@ -7,7 +7,7 @@ jobs:
   build_hexo:
     type: build
     docker:
-      - image: node:18.20
+      - image: node:22.23.4
     steps:
       - checkout
       - run:
