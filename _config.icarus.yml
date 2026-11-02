@@ -284,6 +284,8 @@ widgets:
         # Where should the widget be placed, left sidebar or right sidebar
         position: right
         type: tags
+        # Cap visible tags so the expanded widget stays manageable
+        amount: 30
     # Google FeedBurner email subscription widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
