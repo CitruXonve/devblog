@@ -42,11 +42,18 @@
     width: 100%;
   }
 
+  /* Match .section horizontal padding so the bar aligns with main content. */
+  .navbar.navbar-main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .print-author-bar {
     display: flex !important;
     align-items: center;
     gap: 0.75rem;
     width: 100%;
+    box-sizing: border-box;
     padding: 0.25rem 0;
   }
 
