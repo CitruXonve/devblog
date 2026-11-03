@@ -12,6 +12,21 @@
   }
 }
 
+/* Printer / “Print” dialog: drop sidebars so only article content prints. */
+@media print {
+  .column.column-left,
+  .column.column-right,
+  .column.column-right-shadow {
+    display: none !important;
+  }
+
+  .column.column-main {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 /* Foldable sidebar widgets: categories, tags, links */
 .card.widget[data-type="categories"] .menu-label,
 .card.widget[data-type="tags"] .menu-label,
