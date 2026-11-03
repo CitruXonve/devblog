@@ -1,0 +1,136 @@
+/* Site overlay for Icarus: responsive sidebar + foldable widgets */
+
+/* Hide right sidebar below Bulma desktop (1088px); give main content full width. */
+@media screen and (max-width: 1087px) {
+  .column.column-right {
+    display: none !important;
+  }
+
+  .column.column-main {
+    flex: none !important;
+    width: 100% !important;
+  }
+}
+
+/* Print-only author strip (injected; moved into .navbar-brand). Hidden on screen. */
+.print-author-bar {
+  display: none !important;
+}
+
+/* Printer / “Print” dialog: drop sidebars; swap navbar logo/links for profile fields. */
+@media print {
+  .column.column-left,
+  .column.column-right,
+  .column.column-right-shadow {
+    display: none !important;
+  }
+
+  .column.column-main {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .navbar-logo,
+  .navbar-menu {
+    display: none !important;
+  }
+
+  .navbar-brand {
+    display: flex !important;
+    justify-content: flex-start !important;
+    width: 100%;
+  }
+
+  /* Match .section horizontal padding so the bar aligns with main content. */
+  .navbar.navbar-main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .print-author-bar {
+    display: flex !important;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.25rem 0;
+  }
+
+  .print-author-avatar {
+    height: 28px !important;
+    width: 28px !important;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .print-author-avatar.is-rounded {
+    border-radius: 50%;
+  }
+
+  .print-author-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.75rem;
+    min-width: 0;
+  }
+
+  .print-author-name {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .print-author-title,
+  .print-author-location {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  .print-author-title::before,
+  .print-author-location::before {
+    content: "·";
+    margin-right: 0.75rem;
+    opacity: 0.6;
+  }
+
+  .print-author-meta > :first-child::before {
+    content: none;
+    margin: 0;
+  }
+}
+
+/* Foldable sidebar widgets: categories, tags, links */
+.card.widget[data-type="categories"] .menu-label,
+.card.widget[data-type="tags"] .menu-label,
+.card.widget[data-type="links"] .menu-label {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card.widget[data-type="categories"] .menu-label::after,
+.card.widget[data-type="tags"] .menu-label::after,
+.card.widget[data-type="links"] .menu-label::after {
+  content: "\f078"; /* fa-chevron-down */
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", FontAwesome;
+  font-weight: 900;
+  font-size: 0.75em;
+  opacity: 0.65;
+  transition: transform 0.15s ease;
+}
+
+.card.widget[data-type="categories"].is-collapsed .menu-label::after,
+.card.widget[data-type="tags"].is-collapsed .menu-label::after,
+.card.widget[data-type="links"].is-collapsed .menu-label::after {
+  transform: rotate(-90deg);
+}
+
+.card.widget[data-type="categories"].is-collapsed .card-content > .menu > :not(.menu-label),
+.card.widget[data-type="tags"].is-collapsed .card-content > .menu > :not(.menu-label),
+.card.widget[data-type="links"].is-collapsed .card-content > .menu > :not(.menu-label) {
+  display: none;
+}
